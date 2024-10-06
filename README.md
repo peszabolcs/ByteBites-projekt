@@ -501,7 +501,7 @@ Erőforrásigény: 0.5 személynap
 
 Színjelölések:
 - Piros: Mindenki
-- Sötétkék: Szabolcs
+- Sötétkék: Perjési Szabolcs
 - Narancssárga: Imreh Júlia
 - Világoskék: Molnár Zsolt
 - Zöld: Rózsa Veronika
