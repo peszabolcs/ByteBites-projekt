@@ -499,6 +499,13 @@ Erőforrásigény: 0.5 személynap
 
 ![image](./projektterv.png)
 
+Színjelölések:
+- Piros: Mindenki
+- Sötétkék: Szabolcs
+- Narancssárga: Imreh Júlia
+- Világoskék: Molnár Zsolt
+- Zöld: Rózsa Veronika
+
 ## 10. Projekt költségvetés
 
 ### 10.1. Részletes erőforrásigény (személynap)
