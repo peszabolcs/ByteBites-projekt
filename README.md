@@ -99,14 +99,14 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
 
 1. megbeszélés:
 
-- Időpont: 2024.10.04
+- Időpont: 2024.10.04.
 - Hely: SZTE Irinyi épület - Szeged, Tisza Lajos krt. 103
 - Résztvevők: Perjési Szabolcs, Molnár Zsolt, Rózsa Veronika
 - Érintett témák: Ismerkedés, rendszerfunkciók meghatározása
 
 2. megbeszélés:
 
-- Időpont: 2021.09.22.
+- Időpont: 2024.10.05.
 - Hely: Online megbeszélés
 - Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
 - Érintett témák: A projektben használt technológiák rögzítése, a projektterv kitöltése, szerepkörök és vállalások kiosztása
@@ -235,7 +235,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.2.8 Meetingek koordinálása
+#### 8.2.8. Meetingek koordinálása
 
 Felelős: Perjési Szabolcs
 
@@ -249,7 +249,7 @@ Ennek a feladatnak az a célja, hogy egy működő prototípust hozzunk létre, 
 
 Részfeladatai a következők:
 
-#### 8.3.1 Regisztráció megvalósítása (CR)
+#### 8.3.1. Regisztráció megvalósítása (CR)
 
 Felelős: Molnár Zsolt
 
@@ -257,7 +257,7 @@ Tartam: 4 nap
 
 Erőforrásigény: 4 személynap
 
-#### 8.3.2 Bejelentkezés megvalósítása (CR)
+#### 8.3.2. Bejelentkezés megvalósítása (CR)
 
 Felelős: Molnár Zsolt
 
@@ -265,7 +265,7 @@ Tartam: 3 nap
 
 Erőforrásigény: 3 személynap
 
-#### 8.3.3 Felhasználók kezelése adminisztrációs felületen(CRUD)
+#### 8.3.3. Felhasználók kezelése adminisztrációs felületen(CRUD)
 
 Felelős: Imreh Júlia
 
@@ -273,7 +273,7 @@ Tartam: 7 nap
 
 Erőforrásigény: 4 személynap
 
-#### 8.3.4 Éttermek keresése helyszín alapján
+#### 8.3.4. Éttermek keresése helyszín alapján
 
 Felelős: Imreh Júlia
 
@@ -281,7 +281,7 @@ Tartam: 3 nap
 
 Erőforrásigény: 2 személynap
 
-#### 8.3.5 Éttermek keresése további szűrők alapján
+#### 8.3.5. Éttermek keresése további szűrők alapján
 
 Felelős: Imreh Júlia
 
@@ -289,7 +289,7 @@ Tartam: 5 nap
 
 Erőforrásigény: 3 személynap
 
-#### 8.3.6 Felhasználói felület létrehozása
+#### 8.3.6. Felhasználói felület létrehozása
 
 Felelős: Perjési Szabolcs
 
@@ -297,7 +297,7 @@ Tartam: 14 nap
 
 Erőforrásigény: 8 személynap
 
-#### 8.3.7 Kosár funciók megvalósítása
+#### 8.3.7. Kosár funciók megvalósítása
 
 Felelős: Perjési Szabolcs
 
@@ -305,7 +305,7 @@ Tartam: 4 nap
 
 Erőforrásigény: 3 személynap
 
-#### 8.3.8 Rendelés funkciók megvalósítása
+#### 8.3.8. Rendelés funkciók megvalósítása
 
 Felelős: Perjési Szabolcs
 
@@ -313,7 +313,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1 személynap
 
-#### 8.3.9 Rendelési előzmények megtekintése
+#### 8.3.9. Rendelési előzmények megtekintése
 
 Felelős: Molnár Zsolt
 
@@ -321,7 +321,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1 személynap
 
-#### 8.3.10 Adatbázisok létrehozása és feltöltése
+#### 8.3.10. Adatbázisok létrehozása és feltöltése
 
 Felelős: Rózsa Veronika
 
@@ -329,7 +329,7 @@ Tartam: 10 nap
 
 Erőforrásigény: 7 személynap
 
-#### 8.3.11 Tesztelési dokumentum a regisztáció és bejelentkezés funckióhoz (TP, TC)
+#### 8.3.11. Tesztelési dokumentum a regisztáció és bejelentkezés funckióhoz (TP, TC)
 
 Felelős: Molnár Zsolt
 
@@ -337,7 +337,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1 személynap
 
-#### 8.3.12 Tesztelési dokumentum az admin felülethez (TP, TC)
+#### 8.3.12. Tesztelési dokumentum az admin felülethez (TP, TC)
 
 Felelős: Imreh Júlia
 
@@ -345,7 +345,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 2 személynap
 
-#### 8.3.13 Tesztelési dokumentum az étterem keresési funckióhoz (TP, TC)
+#### 8.3.13. Tesztelési dokumentum az étterem keresési funckióhoz (TP, TC)
 
 Felelős: Perjési Szabolcs
 
@@ -353,7 +353,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1.5 személynap
 
-#### 8.3.14 Tesztelési dokumentum a felhasználói felülethez (TP, TC)
+#### 8.3.14. Tesztelési dokumentum a felhasználói felülethez (TP, TC)
 
 Felelős: Rózsa Veronika
 
@@ -361,7 +361,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1.5 személynap
 
-#### 8.3.15 Tesztelési dokumentum a kosár funkcióhoz (TP, TC)
+#### 8.3.15. Tesztelési dokumentum a kosár funkcióhoz (TP, TC)
 
 Felelős: Rózsa Veronika
 
@@ -369,7 +369,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1 személynap
 
-#### 8.3.16 Tesztelési dokumentum a rendelés funkcióhoz (TP, TC)
+#### 8.3.16. Tesztelési dokumentum a rendelés funkcióhoz (TP, TC)
 
 Felelős: Molnár Zsolt
 
@@ -377,7 +377,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.3.17 Tesztelési dokumentum a korábbi rendelések funkcióhoz (TP, TC)
+#### 8.3.17. Tesztelési dokumentum a korábbi rendelések funkcióhoz (TP, TC)
 
 Felelős: Imreh Júlia
 
@@ -385,7 +385,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.3.18 A prototípus kitelepítése éles környezetbe
+#### 8.3.18. A prototípus kitelepítése éles környezetbe
 
 Felelős: Rózsa Veronika
 
@@ -431,7 +431,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 1 személynap
 
-#### 8.4.5 Regisztráció és bejelentkezés tesztelése (TP)
+#### 8.4.5. Regisztráció és bejelentkezés tesztelése (TP)
 
 Felelős: Molnár Zsolt
 
@@ -439,7 +439,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.4.6 Admin felület tesztelése (TP)
+#### 8.4.6. Admin felület tesztelése (TP)
 
 Felelős: Imreh Júlia
 
@@ -447,7 +447,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.4.6 Étterem keresés funkció tesztelése (TP)
+#### 8.4.7. Étterem keresés funkció tesztelése (TP)
 
 Felelős: Perjési Szabolcs
 
@@ -455,7 +455,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.4.7 Felhasználói felület tesztelése (TP)
+#### 8.4.8. Felhasználói felület tesztelése (TP)
 
 Felelős: Molnár Zsolt
 
@@ -463,7 +463,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.4.8 Kosár funkció tesztelése (TP)
+#### 8.4.9. Kosár funkció tesztelése (TP)
 
 Felelős: Molnár Zsolt
 
@@ -471,7 +471,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.4.9 Rendelés funkció tesztelése (TP)
+#### 8.4.10. Rendelés funkció tesztelése (TP)
 
 Felelős: Molnár Zsolt
 
@@ -479,7 +479,7 @@ Tartam: 1 nap
 
 Erőforrásigény: 0.5 személynap
 
-#### 8.4.10 Korábbi rendelések funkció tesztelése (TP)
+#### 8.4.11. Korábbi rendelések funkció tesztelése (TP)
 
 Felelős: Molnár Zsolt
 
