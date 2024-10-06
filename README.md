@@ -1,93 +1,532 @@
-# etel
+# Étel Projektterv 2024
 
+## 1. Összefoglaló
 
+Az ételszállítás lényege, hogy az ételek a lehető legkisebb költséggel, legbiztonságosabban, és legoptimálisabb időben jussanak el a rendeltetési helyükre. Ez tipikusan megkövetel egy online is elérhető nyilvántartást, ahol rugalmasan és egyszerűen lehet kezelni a kapcsolódó feladatokat. Éppen ezért ennek a projektnek a célja, hogy a futárcégek számára egy webalkalmazást fejlesszünk, amely képes leváltani a hagyományos, papír alapú nyilvántartásokat. Legyen szó ételkészletről, futárokról vagy útvonalakról, a cél, hogy a kapcsolódó funkciókat egy letisztult felületen keresztül tudja elérni a futárcég.
 
-## Getting started
+## 2. A projekt bemutatása
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Ez a projektterv az Étel projektet mutatja be, amely 2024-09-13-tól 2024-12-06-ig tart, azaz összesen 84 napon keresztül fog futni. A projekten négy fejlesztő fog dolgozni, az elvégzett feladatokat pedig négy alkalommal fogjuk prezentálni a megrendelőnek, annak érdekében, hogy biztosítsuk a projekt folyamatos előrehaladását.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### 2.1. Rendszerspecifikáció
 
-## Add your files
+A rendszernek képesnek kell lennie arra, hogy egy adott ételszállító cég éttermeit és azok kínálatát (ételek, elérhetőség, speciális tulajdonságok pl. vegetáriánus vagy gluténmentes) nyilvántartsa annak érdekében, hogy a felhasználók könnyedén böngészhessenek és szűrhessenek az éttermek és ételek között. Ezenkívül a felhasználóknak lehetőséget kell biztosítani rendelés leadására, valamint a korábbi rendeléseik visszanézésére. Minden funkció a megfelelő felhasználói jogosultság mellett használható, annak függvényében írható, olvasható vagy nem megtekinthető az adat.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### 2.2. Funkcionális követelmények
 
-```
-cd existing_repo
-git remote add origin https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel.git
-git branch -M main
-git push -uf origin main
-```
+- Regisztráció és bejelentkezés (CR)
+- Admin felület (CRUD)
+- Felhasználók kezelése (CRUD)
+- Éttermek keresése
+- Éttermek szűrése
+- Ételek keresése
+- Kosár/rendelés leadása
+- Rendelési előzmények megtekintése
 
-## Integrate with your tools
+### 2.3. Nem funkcionális követelmények
 
-- [ ] [Set up project integrations](https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/settings/integrations)
+- A kliens oldal böngészőfüggetlen legyen
+- Reszponzív megjelenés
+- Az érzékeny adatokat biztonságosan tároljuk
+- A legfrissebb technológiákat használja a rendszer
 
-## Collaborate with your team
+## 3. Költség- és erőforrás-szükségletek
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Az erőforrásigényünk összesen 72 személynap, átlagosan 18 személynap/fő.
 
-## Test and Deploy
+A rendelkezésünkre áll összesen 4 * 70 = 280 pont.
 
-Use the built-in continuous integration in GitLab.
+## 4. Szervezeti felépítés és felelősségmegosztás
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+A projekt megrendelője Dr. Kertész Attila. Az Étel projektet a projektcsapat fogja végrehajtani, amely jelenleg négy elhivatott pályakezdő fejlesztőből áll. A csapat minden tagja lelkes és motivált, hogy sikeresen teljesítse a projektet.
 
-***
+- Perjési Szabolcs (1 év egyetemi tapasztalat)
+- Rózsa Veronika (2 év egyetemi tapasztalat)
+- Imreh Júlia (2 év egyetemi tapasztalat)
+- Molnár Zsolt (2 év egyetemi tapasztalat)
 
-# Editing this README
+### 4.1 Projektcsapat
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+A projekt a következő emberekből áll:
 
-## Suggestions for a good README
+| Név              | Pozíció          | E-mail cím (stud-os)     |
+| ---------------- | ---------------- | ------------------------ |
+| Perjési Szabolcs | Projektmenedzser | h376113@stud.u-szeged.hu |
+| Rózsa Veronika   | Projekt tag      | h163493@stud.u-szeged.hu |
+| Imreh Júlia      | Projekt tag      | h159073@stud.u-szeged.hu |
+| Molnár Zsolt     | Projekt tag      | h267695@stud.u-szeged.hu |
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## 5. A munka feltételei
 
-## Name
-Choose a self-explaining name for your project.
+### 5.1. Munkakörnyezet
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+A projekt a következő munkaállomásokat fogja használni a munka során:
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+- Munkaállomások: 4 db, Windows 11-es és 10-es operációs rendszerrel vegyesen
+- Asztali számítógép (CPU: AMD Ryzen 5 7600x, RAM: 32GB, GPU: Nvidia RTX 4070)
+- ASUS Tuf Gaming FX505DD laptop (CPU: AMD Ryzen 7 3750H, RAM: 16 GB, GPU:Radeon Vega Mobile Gfx)
+- Acer Nitro 5 (CPU: Intel Core i7-10750H, RAM: 16GB, GPU: NVIDIA GeForce RTX 3050 Laptop GPU)
+- Lenovo ideapad c340-14api (CPU: AMD Ryzen 3 3200U, RAM: 4GB GPU: AMD Radeon Vega 3 Graphics)
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+A projekt a következő technológiákat/szoftvereket fogja használni a munka során:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+- Heroku platformszolgáltatás a webalkalmazás hosztolásához
+- Heroku által biztosított PostgreSQL adatbázisszerver
+- Spring Boot keretrendszer
+- Visual Studio Code
+- Maven szoftverprojekt menedzselő szoftver
+- Webstorm IDE fejlesztőkörnyezet
+- PHPstorm IDE fejlesztőkörnyezet
+- Git verziókövető (GitLab)
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### 5.2. Rizikómenedzsment
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+| Kockázat                                  | Leírás                                                                                                                                                                                   | Valószínűség | Hatás |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ----- |
+| Betegség                                  | Súlyosságtól függően hátráltatja vagy bizonyos esetekben teljes mértékben korlátozza a munkavégzőt, így az egész projektre kihatással van. Megoldás: a feladatok átcsoportosítása        | nagy         | erős  |
+| Kommunikációs fennakadás a csapattagokkal | A csapattagok között nem elégséges az információ áramlás, nem pontosan, esetleg késve vagy nem egyértelműen tájékoztatjuk egymást. Megoldás: még gyakoribb megbeszélések és ellenőrzések | kis          | erős  |
+| Szoftver/hardver probléma                 | A csapattagok közül valakinek nem várt kár vagy hiba keletkezik a munkaállomásában. Megoldás: a feladatok átcsoportosítása                                                               | kis          | erős  |
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## 6. Jelentések
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### 6.1. Munka menedzsment
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+A munkát Perjési Szabolcs koordinálja. Fő feladata, hogy folyamatosan egyeztessen a csapattagokkal az előrehaladásról és a fellépő problémákról, esetlegesen a megoldásban is segítséget nyújhat a projekt csúszásának elkerülése végett. További feladata a heti szinten tartandó csoportgyűlések időpontjának és helyszínének leszervezése, erről Messengeren tájékoztatja a projektcsapatot.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### 6.2. Csoportgyűlések
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problémáit, illetve hogy megbeszéljék a következő hét feladatait. A megbeszélésről minden esetben memó készül.
 
-## License
-For open source projects, say how it is licensed.
+1. megbeszélés:
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Időpont: 2024.10.04
+- Hely: SZTE Irinyi épület - Szeged, Tisza Lajos krt. 103
+- Résztvevők: Perjési Szabolcs, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: Ismerkedés, rendszerfunkciók meghatározása
+
+2. megbeszélés:
+
+- Időpont: 2021.09.22.
+- Hely: Online megbeszélés
+- Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: A projektben használt technológiák rögzítése, a projektterv kitöltése, szerepkörök és vállalások kiosztása
+
+### 6.3. Minőségbiztosítás
+
+Az elkészült terveket a terveken nem dolgozó csapattársak közül átnézik, hogy megfelel-e a specifikációnak és az egyes diagramtípusok összhangban vannak-e egymással. A meglévő rendszerünk helyes működését a prototípusok bemutatása előtt a tesztelési dokumentumban leírtak végrehajtása alapján ellenőrizzük és összevetjük a specifikációval, hogy az elvárt eredményt kapjuk-e. További tesztelési lehetőségek: unit tesztek írása az egyes modulokhoz vagy a kód közös átnézése (code review) egy, a vizsgált modul programozásában nem résztvevő csapattaggal. Szoftverünk minőségét a végső leadás előtt javítani kell a rendszerünkre lefuttatott kódelemzés során kapott metrikaértékek és szabálysértések figyelembevételével.
+Az alábbi lehetőségek vannak a szoftver megfelelő minőségének biztosítására:
+
+- Specifikáció és tervek átnézése (kötelező)
+- Teszttervek végrehajtása (kötelező)
+- Unit tesztek írása (választható)
+- Kód átnézése (választható)
+
+### 6.4. Átadás, eredmények elfogadása
+
+A projekt eredményeit a megrendelő, Dr. Kertész Attila fogja elfogadni. A projektterven változásokat csak a megrendelő írásos engedélyével lehet tenni. A projekt eredményesnek bizonyul, ha specifikáció helyes és határidőn belül készül el. Az esetleges késések pontlevonást eredményeznek.
+Az elfogadás feltételeire és beadás formájára vonatkozó részletes leírás a következő honlapon olvasható: https://okt.inf.szte.hu/rf1/
+
+### 6.5. Státuszjelentés
+
+Minden mérföldkő leadásnál a projekten dolgozók jelentést tesznek a mérföldkőben végzett munkájukról a a megadott sablon alapján. A gyakorlatvezetővel folytatott csapatmegbeszéléseken a csapat áttekintik és felmérik az eredményeket és teendőket. Továbbá gazdálkodnak az erőforrásokkal és szükség esetén a megrendelővel egyeztetnek a projektterv módosításáról.
+
+## 7. A munka tartalma
+
+### 7.1. Tervezett szoftverfolyamat modell és architektúra
+
+A szoftver fejlesztése során az agilis fejlesztési modellt alkalmazzuk, mivel a fejlesztés során nagy hangsúlyt fektetünk a folyamatos kommunikcióra. A fejlesztés során a szoftver specifikációi rugalmasan vátozhatnak, és ezzel a módszertannal tudunk a leggyorsabban alkalmazkodni az új elvárásokhoz.
+
+### 7.2. Átadandók és határidők
+
+A főbb átadandók és határidők a projekt időtartama alatt a következők:
+
+| Szállítandó |                                 Neve                                  | Határideje |
+| :---------: | :-------------------------------------------------------------------: | :--------: |
+|     D1      |       Projektterv és Gantt chart, prezentáció, egyéni jelentés        | 2024-10-18 |
+|    P1+D2    |    UML, adatbázis- és képernyőtervek, prezentáció, egyéni jelentés    | 2024-11-01 |
+|    P1+D3    |       Prototípus I. és tesztelési dokumentáció, egyéni jelentés       | 2024-11-22 |
+|    P2+D4    | Prototípus II. és frissített tesztelési dokumentáció, egyéni jelentés | 2024-12-06 |
+
+## 8. Feladatlista
+
+A következőkben a tervezett feladatok részletes összefoglalása található.
+
+### 8.1. Projektterv (1. mérföldkő)
+
+Ennek a feladatnak az a célja, hogy megvalósításhoz szükséges lépéseket, az erőforrásigényeket, az ütemezést, a felelősöket és a feladatok sorrendjét meghatározzuk, majd vizualizáljuk Gantt diagram segítségével.
+
+Részfeladatai a következők:
+
+#### 8.1.1. Projektterv kitöltése
+
+Felelős: Mindenki
+
+Tartam: 4 nap
+
+Erőforrásigény: 1 személynap/fő
+
+#### 8.1.2. Bemutató elkészítése
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+### 8.2. UML és adatbázis- és képernyőtervek (2. mérföldkő)
+
+Ennek a feladatnak az a célja, hogy a rendszerarchitektúrát, az adatbázist és webalkalmazás kinézetét megtervezzük.
+
+Részfeladatai a következők:
+
+#### 8.2.1. Use Case diagram
+
+Felelős: Molnár Zsolt
+
+Tartam: 3 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.2.2. Class diagram
+
+Felelős: Imreh Júlia
+
+Tartam: 4 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.2.3. Sequence diagram
+
+Felelős: Imreh Júlia
+
+Tartam: 3 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.2.4. Egyed-kapcsolat diagram adatbázishoz
+
+Felelős: Rózsa Veronika
+
+Tartam: 4 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.2.5. Package diagram
+
+Felelős: Molnár Zsolt
+
+Tartam: 3 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.2.6. Képernyőtervek
+
+Felelős: Rózsa Veronika
+
+Tartam: 3 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.2.7. Bemutató elkészítése
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.2.8 Meetingek koordinálása
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+### 8.3. Prototípus I. (3. mérföldkő)
+
+Ennek a feladatnak az a célja, hogy egy működő prototípust hozzunk létre, ahol a vállalt funkcionális követelmények nagy része már prezentálható állapotban van.
+
+Részfeladatai a következők:
+
+#### 8.3.1 Regisztráció megvalósítása (CR)
+
+Felelős: Molnár Zsolt
+
+Tartam: 4 nap
+
+Erőforrásigény: 4 személynap
+
+#### 8.3.2 Bejelentkezés megvalósítása (CR)
+
+Felelős: Molnár Zsolt
+
+Tartam: 3 nap
+
+Erőforrásigény: 3 személynap
+
+#### 8.3.3 Felhasználók kezelése adminisztrációs felületen(CRUD)
+
+Felelős: Imreh Júlia
+
+Tartam: 7 nap
+
+Erőforrásigény: 4 személynap
+
+#### 8.3.4 Éttermek keresése helyszín alapján
+
+Felelős: Imreh Júlia
+
+Tartam: 3 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.3.5 Éttermek keresése további szűrők alapján
+
+Felelős: Imreh Júlia
+
+Tartam: 5 nap
+
+Erőforrásigény: 3 személynap
+
+#### 8.3.6 Felhasználói felület létrehozása
+
+Felelős: Perjési Szabolcs
+
+Tartam: 14 nap
+
+Erőforrásigény: 8 személynap
+
+#### 8.3.7 Kosár funciók megvalósítása
+
+Felelős: Perjési Szabolcs
+
+Tartam: 4 nap
+
+Erőforrásigény: 3 személynap
+
+#### 8.3.8 Rendelés funkciók megvalósítása
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.3.9 Rendelési előzmények megtekintése
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.3.10 Adatbázisok létrehozása és feltöltése
+
+Felelős: Rózsa Veronika
+
+Tartam: 10 nap
+
+Erőforrásigény: 7 személynap
+
+#### 8.3.11 Tesztelési dokumentum a regisztáció és bejelentkezés funckióhoz (TP, TC)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.3.12 Tesztelési dokumentum az admin felülethez (TP, TC)
+
+Felelős: Imreh Júlia
+
+Tartam: 1 nap
+
+Erőforrásigény: 2 személynap
+
+#### 8.3.13 Tesztelési dokumentum az étterem keresési funckióhoz (TP, TC)
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 1.5 személynap
+
+#### 8.3.14 Tesztelési dokumentum a felhasználói felülethez (TP, TC)
+
+Felelős: Rózsa Veronika
+
+Tartam: 1 nap
+
+Erőforrásigény: 1.5 személynap
+
+#### 8.3.15 Tesztelési dokumentum a kosár funkcióhoz (TP, TC)
+
+Felelős: Rózsa Veronika
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.3.16 Tesztelési dokumentum a rendelés funkcióhoz (TP, TC)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.3.17 Tesztelési dokumentum a korábbi rendelések funkcióhoz (TP, TC)
+
+Felelős: Imreh Júlia
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.3.18 A prototípus kitelepítése éles környezetbe
+
+Felelős: Rózsa Veronika
+
+Tartam: 1 nap
+
+Erőforrásigény: 2 személynap
+
+### 8.4. Prototípus II. (4. mérföldkő)
+
+Ennek a feladatnak az a célja, hogy az előző mérföldkő hiányzó funkcióit pótoljuk, illetve a hibásan működő funkciókat és az esetlegesen felmerülő új funkciókat megvalósítsuk. Továbbá az alkalmazás alapos tesztelése is a mérföldkőben történik az előző mérföldkőben összeállított tesztesetek alapján.
+
+Részfeladatai a következők:
+
+#### 8.4.1. Javított minőségű prototípus új funkciókkal
+
+Felelős: Imreh Júlia
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.4.2. Javított minőségű prototípus javított funkciókkal
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.4.3. Javított minőségű prototípus a korábbi hiányzó funkciókkal
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.4.4. Javított minőségű prototípus új funkciókkal
+
+Felelős: Rózsa Veronika
+
+Tartam: 1 nap
+
+Erőforrásigény: 1 személynap
+
+#### 8.4.5 Regisztráció és bejelentkezés tesztelése (TP)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.6 Admin felület tesztelése (TP)
+
+Felelős: Imreh Júlia
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.6 Étterem keresés funkció tesztelése (TP)
+
+Felelős: Perjési Szabolcs
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.7 Felhasználói felület tesztelése (TP)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.8 Kosár funkció tesztelése (TP)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.9 Rendelés funkció tesztelése (TP)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.10 Korábbi rendelések funkció tesztelése (TP)
+
+Felelős: Molnár Zsolt
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+#### 8.4.12. A prototípus kitelepítésének frissítése
+
+Felelős: Rózsa Veronika
+
+Tartam: 1 nap
+
+Erőforrásigény: 0.5 személynap
+
+## 9. Részletes időbeosztás
+
+![image](./projektterv.png)
+
+## 10. Projekt költségvetés
+
+### 10.1. Részletes erőforrásigény (személynap)
+
+| Név              | M1  | M2  | M3   | M4  | Összesen |
+| ---------------- | --- | --- | ---- | --- | -------- |
+| Perjési Szabolcs | 1.5 | 1.5 | 13.5 | 1.5 | 18       |
+| Rózsa Veronika   | 1   | 4   | 11.5 | 1.5 | 18       |
+| Imreh Júlia      | 1   | 4   | 11.5 | 1.5 | 18       |
+| Molnár Zsolt     | 1   | 4   | 9.5  | 3.5 | 18       |
+
+### 10.2. Részletes feladatszámok
+
+| Név              | M1  | M2  | M3  | M4  | Összesen |
+| ---------------- | --- | --- | --- | --- | -------- |
+| Perjési Szabolcs | 2   | 2   | 4   | 2   | 10       |
+| Rózsa Veronika   | 1   | 2   | 4   | 2   | 9        |
+| Imreh Júlia      | 1   | 2   | 5   | 2   | 10       |
+| Molnár Zsolt     | 1   | 2   | 5   | 6   | 14       |
+
+### 10.3. Részletes költségvetés
+
+| Név                                | M1  | M2   | M3   | M4   | Összesen  |
+| ---------------------------------- | --- | ---- | ---- | ---- | --------- |
+| Maximálisan megszerezhető pontszám | (7) | (20) | (35) | (28) | 100% (70) |
+| Perjési Szabolcs                   | 7   | 12   | 35   | 16   | 70        |
+| Rózsa Veronika                     | 4   | 15   | 35   | 16   | 70        |
+| Imreh Júlia                        | 4   | 20   | 32   | 14   | 70        |
+| Molnár Zsolt                       | 4   | 18   | 23   | 25   | 70        |
+
+Szeged, 2024-10-05.
