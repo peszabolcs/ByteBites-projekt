@@ -1,6 +1,6 @@
 ### Összefoglaló az `1.` mérföldkőben végzett munkáról
 
-### Projekt tag: ``
+### Projekt tag: `Rózsa Veronika`
 
 ___
 
@@ -10,7 +10,7 @@ ___
 
     ##### A feladathoz tartozó issue(k):
 
-     - 
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/issues/4
 
     ##### A feladat elvégzését alátámasztó commit(ok):
 
@@ -26,13 +26,3 @@ ___
 
 ___
 
-#### Megjegyzések
-
-Ha van ..
-
-
-```
-Csak az adott mérföldkő feladatait igazoló commit-okat másolj ide!
-Egy korábbi feladat teljesítését igazoló commit (csak azért mert ennek a mérföldkőnek az időszakába esik)
- nem fogadható el a mérföldkőben végzett munkának.
-```
