@@ -111,6 +111,13 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
 - Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
 - Érintett témák: A projektben használt technológiák rögzítése, a projektterv kitöltése, szerepkörök és vállalások kiosztása
 
+3. megbeszélés:
+
+- Időpont: 2024.10.10.
+- Hely: Online megbeszélés
+- Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: 1.mérföldkő lezárása, ismerkedés a 2.mérföldkő feladataival
+
 ### 6.3. Minőségbiztosítás
 
 Az elkészült terveket a terveken nem dolgozó csapattársak közül átnézik, hogy megfelel-e a specifikációnak és az egyes diagramtípusok összhangban vannak-e egymással. A meglévő rendszerünk helyes működését a prototípusok bemutatása előtt a tesztelési dokumentumban leírtak végrehajtása alapján ellenőrizzük és összevetjük a specifikációval, hogy az elvárt eredményt kapjuk-e. További tesztelési lehetőségek: unit tesztek írása az egyes modulokhoz vagy a kód közös átnézése (code review) egy, a vizsgált modul programozásában nem résztvevő csapattaggal. Szoftverünk minőségét a végső leadás előtt javítani kell a rendszerünkre lefuttatott kódelemzés során kapott metrikaértékek és szabálysértések figyelembevételével.
