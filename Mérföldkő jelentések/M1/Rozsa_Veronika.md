@@ -14,15 +14,4 @@ ___
 
     ##### A feladat elvégzését alátámasztó commit(ok):
 
-
-
-___
-
- - 8.1.XX További feladat, ha van ..
-
-     ##### A feladathoz tartozó issue(k): ..
-
-     ##### A feladat elvégzését alátámasztó commit(ok): ..
-
-___
-
+    - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/d4f2e66abe2281624e30b025aa82a81ff52b7176
