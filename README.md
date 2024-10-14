@@ -2,7 +2,7 @@
 
 ## 1. Összefoglaló
 
-Az ételszállítás lényege, hogy az ételek a lehető legkisebb költséggel, legbiztonságosabban, és legoptimálisabb időben jussanak el a rendeltetési helyükre. Ez tipikusan megkövetel egy online is elérhető nyilvántartást, ahol rugalmasan és egyszerűen lehet kezelni a kapcsolódó feladatokat. Éppen ezért ennek a projektnek a célja, hogy a futárcégek számára egy webalkalmazást fejlesszünk, amely képes leváltani a hagyományos, papír alapú nyilvántartásokat. Legyen szó ételkészletről, futárokról vagy útvonalakról, a cél, hogy a kapcsolódó funkciókat egy letisztult felületen keresztül tudja elérni a futárcég.
+Az ételszállítás lényege, hogy az ételek a lehető legkisebb költséggel, legbiztonságosabban, és optimális időben jussanak el a rendeltetési helyükre. Ez tipikusan megkövetel egy online is elérhető nyilvántartást, ahol rugalmasan és egyszerűen lehet kezelni a kapcsolódó feladatokat. Éppen ezért ennek a projektnek a célja, hogy a futárcégek számára egy webalkalmazást fejlesszünk, amely képes leváltani a hagyományos, papír alapú nyilvántartásokat. Legyen szó ételkészletről, futárokról vagy útvonalakról, a cél, hogy a kapcsolódó funkciókat egy letisztult felületen keresztül tudja elérni a futárcég.
 
 ## 2. A projekt bemutatása
 
