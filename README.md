@@ -47,7 +47,7 @@ A projekt megrendelője Dr. Kertész Attila. Az Étel projektet a projektcsapat 
 
 ### 4.1 Projektcsapat
 
-A projekt a következő emberekből áll:
+Az alábbi emberek vesznek részt a projektben:
 
 | Név              | Pozíció          | E-mail cím (stud-os)     |
 | ---------------- | ---------------- | ------------------------ |
