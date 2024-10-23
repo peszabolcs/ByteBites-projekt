@@ -34,7 +34,7 @@ A rendszernek képesnek kell lennie arra, hogy egy adott ételszállító cég �
 
 Az erőforrásigényünk összesen 72 személynap, átlagosan 18 személynap/fő.
 
-A rendelkezésünkre áll összesen 4 * 70 = 280 pont.
+A rendelkezésünkre áll összesen 4 \* 70 = 280 pont.
 
 ## 4. Szervezeti felépítés és felelősségmegosztás
 
@@ -124,6 +124,13 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
 - Hely: Online megbeszélés
 - Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
 - Érintett témák: Class diagram és képernyőtervek átbeszélése
+
+5. megbeszélés:
+
+- Időpont: 2024.10.18.
+- Hely: Online megbeszélés
+- Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: Diagramok összhangja, adatbázis és képernyőtervek közötti kapcsolat
 
 ### 6.3. Minőségbiztosítás
 
@@ -514,6 +521,7 @@ Erőforrásigény: 0.5 személynap
 ![image](./projektterv.png)
 
 Színjelölések:
+
 - Piros: Mindenki
 - Sötétkék: Perjési Szabolcs
 - Narancssárga: Imreh Júlia
