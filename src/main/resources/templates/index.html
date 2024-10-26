@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{fragments/header :: head}"></th:block>
+  <body>
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <section class="hero-section">
+      <img
+        th:src="@{/img/elsodleges/landing_page_futar.png}"
+        alt="Scooter picture"
+        class="left-image"
+      />
+      <div class="content">
+        <h2>Fedezd fel a finom ízek világát! 🍔</h2>
+        <h2>Rendelj most!</h2>
+        <div class="search-box">
+          <p>Írd be az irányítószámod, hogy lásd, mit szállítunk hozzád:</p>
+          <form action="#">
+            <input type="text" placeholder="Utca, házszám és település" />
+            <button type="submit">Ez kell nekem!</button>
+          </form>
+          <p>
+            <a href="Pages/login.html">Jelentkezz be</a>, az előző címedet
+            elmentettük.
+          </p>
+        </div>
+      </div>
+      <img
+        th:src="@{/img/elsodleges/landing_page_burger.png}"
+        alt="Burger picture"
+        class="right-image"
+      />
+    </section>
+
+    <section class="city-section">
+      <h3>Megtalálsz minket ezeken a településeken és még sok helyen</h3>
+      <div class="city-grid">
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button>CityName</button>
+        <button class="add-city-button">Város hozzáadása</button>
+      </div>
+    </section>
+
+    <div class="section-image">
+      <img src="./src/img/elsodleges/banner.jpg" alt="Extra Image" />
+    </div>
+
+    <section class="info-section">
+      <h3>Tudtad?</h3>
+      <p>
+        A házhoz rendelt étel igazán megkönnyíti az életed. Ha a ByteBites-en
+        keresztül rendelsz, nemcsak finom ételeket kapsz gyorsan, hanem több
+        ezer elkötelezett étterem és futár munkáját is támogatod.
+      </p>
+    </section>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+    <script th:src="@{/js/main.js}"></script>
+  </body>
+</html>

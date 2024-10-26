@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head th:fragment="head">
+    <meta charset="UTF-8" />
+    <title th:text="${pageTitle}">BYTEBITES</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <header>
+      <h1>BYTEBITES</h1>
+      <div class="buttons">
+        <a href="Pages/login.html" class="login" id="login-btn"
+          >Bejelentkezés</a
+        >
+        <a href="Pages/register.html" class="register" id="register-btn"
+          >Regisztráció</a
+        >
+        <div class="user-container" id="user-container" style="display: none">
+          <span id="username" class="username register">USERNAME</span>
+          <div class="dropdown">
+            <ul>
+              <li>Profilom</li>
+              <li>Admin</li>
+              <li>Rendeléseim</li>
+              <li>Kedvenceim</li>
+              <li>Ügyfélszolgálat</li>
+              <li>Segítség</li>
+              <li>Kijelentkezés</li>
+            </ul>
+          </div>
+          <a href="./Pages/cart.html" id="cart-icon" class="cart-icon">Kosár</a>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
