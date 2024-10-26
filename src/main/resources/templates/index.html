@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu" xmlns:th="http://www.thymeleaf.org">
-  <th:block th:replace="~{fragments/header :: head}"></th:block>
+  <head th:replace="~{fragments/header :: head(cssFile='style.css')}"></head>
   <body>
     <header th:replace="~{fragments/header :: header}"></header>
 
