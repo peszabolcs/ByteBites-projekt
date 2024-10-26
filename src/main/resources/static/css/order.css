@@ -1,0 +1,249 @@
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #4c4db7, #6a8fd9, #a0e3ff);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 10px 40px;
+  font-size: 24px; /* Nagyobb betűméret a címhez */
+  color: #00c8c8; /* A "BYTEBITES" szöveg színe */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold; /* Vastag betű */
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+header a {
+  text-decoration: none;
+  color: #00c8c8;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #00c8c8;
+  text-align: left; /* Balra igazítja a szöveget */
+  padding: 0 30px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.username {
+  color: #00c8c8; /* Türkiz szín */
+  font-weight: bold;
+  border: 2px solid #00c8c8;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.username:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+}
+
+.dropdown a {
+  color: #333;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.cart-icon {
+  color: #00c8c8;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0; /* Távolítja el a gomb keretezését */
+  border: none;
+}
+
+.order-title-bar {
+  width: 100%;
+  background-color: #6f88c7;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-title-bar h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.order-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-section {
+  background-color: #f9fafb;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.info-section h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.info-section button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.summary {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.summary h3 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.summary p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.summary hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 15px 0;
+}
+
+.summary button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00a4a2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.summary button:hover {
+  background-color: #008b8b;
+}
+
+footer {
+  width: 100%; /* Teljes szélesség beállítása */
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0; /* Függőleges padding */
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer minden oszlopban a címsorok stílusa */
+footer div h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Footer linkek stílusa */
+footer div a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+footer div a:hover {
+  text-decoration: underline; /* Hover aláhúzás */
+}
+
+/* Oszlopok igazítása mobilon */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center; /* Középre igazítja az oszlopokat */
+  }
+
+  footer div {
+    margin-bottom: 20px;
+    text-align: center; /* Mobilon középre igazítja a szöveget */
+  }
+}

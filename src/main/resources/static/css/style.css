@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: #00c8c8;
+}
+
+header .buttons .login {
+  background-color: #00c8c8; /* Light blue */
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #00c8c8;
+  border-radius: 20px;
+}
+
+header .buttons .login:hover {
+  background-color: #009999; /* Slightly darker blue */
+  color: #fff;
+}
+
+/* Registration button */
+header .buttons .register {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #00c8c8;
+  padding: 10px 20px;
+  border: 1px solid #00c8c8;
+  border-radius: 20px;
+}
+
+header .buttons .register:hover {
+  background-color: #00c8c8;
+  color: #fff;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  position: relative;
+}
+
+/* Username styling */
+.username {
+  cursor: pointer;
+  color: #333;
+  position: relative;
+}
+
+/* Dropdown styling */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 30px; /* Adjusts position below username */
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 8px 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdown ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Cart icon styling */
+.cart-icon {
+  color: #00c8c8;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #7d4de8, #3bbef6);
+  padding: 80px;
+  position: relative;
+}
+
+.hero-section .content {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1;
+}
+
+.hero-section .left-image {
+  position: absolute;
+  left: 0;
+  width: 500px;
+  height: auto;
+  margin: 0 20px;
+}
+
+.hero-section .right-image {
+  position: absolute;
+  right: 0;
+  width: 250px;
+  height: auto;
+  margin: 0 20px;
+}
+
+.hero-section .search-box {
+  background-color: #ffffff; /* Fehér háttér */
+  padding: 40px; /* Térköz a tartalom körül */
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 10px; /* Kerekített sarkak */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Finom árnyék */
+  text-align: center; /* Szöveg középre igazítása */
+  max-width: 600px; /* Maximális szélesség */
+  margin: 0 auto; /* Középre helyezi a dobozt */
+  font-size: 18px;
+}
+.hero-section h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.hero-section .search-box form {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Gomb és input középre igazítása */
+  align-items: center;
+}
+
+.hero-section .search-box input {
+  padding: 15px;
+  font-size: 18px;
+  border: 1px solid #00c8c8;
+  border-radius: 5px;
+  flex: 1;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Korlátozott szélesség */
+}
+
+.hero-section .search-box button {
+  background-color: #3bbef6;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.hero-section .search-box button:hover {
+  background-color: #299ac3;
+}
+
+.hero-section .search-box a {
+  color: #00c8c8;
+  text-decoration: none;
+}
+
+.hero-section .search-box a:hover {
+  text-decoration: underline;
+  color: #299ac3;
+}
+
+.city-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.city-section h3 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.city-grid button {
+  padding: 20px;
+  border: 3px solid #00c8c8;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.city-grid button:hover {
+  background-color: #f0f8f8;
+}
+
+.add-city-button {
+  background-color: #555;
+  color: #fff;
+}
+
+.section-image {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.section-image img {
+  max-width: 100%; /* Adjust size as needed */
+  height: auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+.info-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff; /* Fehér háttér a dobozhoz */
+  border: 5px solid #00c8c8; /* Türkiz keret */
+  border-radius: 15px; /* Kerekített sarkak */
+  max-width: 800px; /* Maximális szélesség */
+  margin: 40px auto; /* Középre igazítás */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Finom árnyék hozzáadása */
+}
+
+/* Tudtad? címsor stílus */
+.info-section h3 {
+  color: #00c8c8;
+  font-size: 28px;
+  font-weight: bold; /* Félkövér szöveg */
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
+/* Leírás stílus */
+.info-section p {
+  font-size: 18px;
+  color: #333;
+  max-width: 700px; /* Szöveg maximális szélessége */
+  margin: 0 auto; /* Középre igazítás */
+}
+/* Footer teljes terület */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Szöveg középre igazítása */
+}
+
+/* Footer oszlopok igazítása */
+.footer-content {
+  display: flex;
+  justify-content: space-around; /* Egyenletes elosztás */
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer minden oszlopban a címsorok stílusa */
+footer div h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Footer linkek stílusa */
+footer div a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+footer div a:hover {
+  text-decoration: underline; /* Hover aláhúzás */
+}
+
+/* Oszlopok igazítása mobilon */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center; /* Középre igazítja az oszlopokat */
+  }
+
+  footer div {
+    margin-bottom: 20px;
+    text-align: center; /* Mobilon középre igazítja a szöveget */
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteBites Kosár</title>
+    <link rel="stylesheet" href="../src/css/cart.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html"><h1>BYTEBITES</h1></a>
+      <div class="user-menu">
+        <span>USERNAME</span>
+        <button>Kosár</button>
+      </div>
+    </header>
+
+    <div class="cart-title-bar">
+      <h2>Kosár tartalma:</h2>
+    </div>
+    <div class="center-wrapper">
+      <div class="container">
+        <div class="cart-items">
+          <!-- Kosár elem -->
+          <div class="cart-item">
+            <img src="../src/img/elsodleges/kep.jpg" alt="Kaja kép" />
+            <div class="item-details">
+              <strong>Étel neve</strong>
+              <p>Étterem neve</p>
+            </div>
+            <div class="item-quantity">
+              <button>-</button>
+              <input type="number" value="1" />
+              <button>+</button>
+            </div>
+            <div class="item-price">unsigned int Ft</div>
+            <button class="remove-item">✖</button>
+          </div>
+        </div>
+
+        <div class="summary">
+          <h3>Rendelés összegző:</h3>
+          <p>Teljes összeg: 1234 Ft</p>
+          <p>Kiszállítási díj: 234 Ft</p>
+          <p>Rendszerhasználati díj: 125 Ft</p>
+          <hr />
+          <p>Összesen: 1234 Ft</p>
+          <button onclick="redirectToOrderPage()">
+            Tovább a megrendeléshez
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div>
+          <h4>ByteBites partner</h4>
+          <a href="#">Futárként</a>
+          <a href="#">Éttermeként</a>
+        </div>
+        <div>
+          <h4>Cég</h4>
+          <a href="#">Rólunk</a>
+          <a href="#">Mit képviselünk</a>
+          <a href="#">Állások</a>
+          <a href="#">Biztonság</a>
+          <a href="#">Befektetők</a>
+        </div>
+        <div>
+          <h4>Hasznos linkek</h4>
+          <a href="#">Ügyfélszolgálat</a>
+          <a href="#">Adatkezelés</a>
+          <a href="#">Kapcsolat</a>
+        </div>
+        <div>
+          <h4>Kövess minket</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Griff</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">X</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function redirectToOrderPage() {
+        window.location.href = "./order.html";
+      }
+    </script>
+  </body>
+</html>

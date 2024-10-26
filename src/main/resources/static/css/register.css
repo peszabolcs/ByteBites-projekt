@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #7d3fe3,
+    #00d4d8
+  ); /* Háttér színátmenet */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 24px;
+  color: #00a4a2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header a {
+  text-decoration: none;
+  color: #00a4a2;
+}
+
+.center-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px; /* Fejléc távolság */
+  padding-bottom: 80px; /* Footer távolság */
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  align-items: stretch; /* A kép és a regisztrációs rész teljes magasságban legyen */
+}
+
+.image-section {
+  width: 45%; /* A kép szélessége */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-section img {
+  width: 100%; /* A kép teljesen kitölti a szekciót */
+  height: 100%;
+  object-fit: cover; /* Arányos kitöltés a teljes területre */
+}
+
+.register-section {
+  width: 55%; /* A szöveges rész szélessége */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.register-section p {
+  margin-bottom: 10px;
+}
+
+.register-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-section label {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.register-section input[type="text"],
+.register-section input[type="email"],
+.register-section input[type="password"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-section .password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.register-section .password-container input[type="password"] {
+  width: 100%;
+}
+
+.register-section .error-message {
+  color: red;
+  font-size: 14px;
+}
+
+.register-section button {
+  padding: 10px;
+  background-color: #00a4a2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-section button:hover {
+  background-color: #007f7d;
+}
+
+footer {
+  width: 100%; /* Teljes szélesség beállítása */
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0; /* Függőleges padding */
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer minden oszlopban a címsorok stílusa */
+footer div h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Footer linkek stílusa */
+footer div a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+footer div a:hover {
+  text-decoration: underline; /* Hover aláhúzás */
+}
+
+/* Oszlopok igazítása mobilon */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center; /* Középre igazítja az oszlopokat */
+  }
+
+  footer div {
+    margin-bottom: 20px;
+    text-align: center; /* Mobilon középre igazítja a szöveget */
+  }
+}

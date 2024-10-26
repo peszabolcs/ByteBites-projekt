@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #4c4db7, #6a8fd9, #a0e3ff);
+
+  background-attachment: fixed; /* A gradiens fix marad a scrollozás közben */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px; /* Nagyobb betűméret a címhez */
+  color: #00a4a2; /* A "BYTEBITES" szöveg színe */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold; /* Vastag betű */
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+header a {
+  text-decoration: none;
+  color: #00a4a2;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #00a4a2;
+  text-align: left; /* Balra igazítja a szöveget */
+  padding: 0 30px;
+}
+
+.cart-title-bar {
+  width: 100%;
+  background-color: #6f88c7;
+  color: white; /* Fehér szöveg a jó kontraszt érdekében */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-title-bar h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.user-menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu span {
+  margin-right: 10px;
+}
+
+.user-menu button {
+  background-color: #00a4a2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.center-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cart-items {
+  width: 65%;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.item-details {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.item-details strong {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.item-quantity button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #00a4a2;
+  background-color: #00a4a2;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.item-quantity input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.item-price {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.remove-item {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.summary {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f9fafb; /* Világosabb háttérszín */
+  color: #333; /* Sötétebb szöveg a jobb olvashatóságért */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enyhe árnyék */
+  text-align: left;
+}
+
+.summary h3 {
+  font-size: 22px;
+  color: #444; /* Sötétebb szín a címnek */
+  margin-bottom: 15px;
+}
+
+.summary p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.summary hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+.summary button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00a4a2; /* Kiemelt türkiz gombszín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.summary button:hover {
+  background-color: #008b8b; /* Sötétebb türkiz árnyalat hover esetén */
+}
+
+footer {
+  width: 100%; /* Teljes szélesség beállítása */
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0; /* Függőleges padding */
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer minden oszlopban a címsorok stílusa */
+footer div h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Footer linkek stílusa */
+footer div a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+footer div a:hover {
+  text-decoration: underline; /* Hover aláhúzás */
+}
+
+/* Oszlopok igazítása mobilon */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center; /* Középre igazítja az oszlopokat */
+  }
+
+  footer div {
+    margin-bottom: 20px;
+    text-align: center; /* Mobilon középre igazítja a szöveget */
+  }
+}

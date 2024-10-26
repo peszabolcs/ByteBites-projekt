@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteBites Regisztráció</title>
+    <link rel="stylesheet" href="../src/css/register.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html"><h1>BYTEBITES</h1></a>
+    </header>
+    <div class="center-wrapper">
+      <div class="container">
+        <div class="image-section">
+          <img src="../src/img/elsodleges/login03.jpg" alt="Étel kép" />
+        </div>
+        <div class="register-section">
+          <h2>Üdvözlünk,<br />az oldalunkon!</h2>
+          <p>Van már fiókod? <a href="login.html">Bejelentkezés</a></p>
+          <form>
+            <label for="firstname">Vezetéknév</label>
+            <input type="text" id="firstname" required />
+
+            <label for="lastname">Keresztnév</label>
+            <input type="text" id="lastname" required />
+
+            <label for="email">E-mail cím</label>
+            <input type="email" id="email" required />
+
+            <label for="password">Jelszó</label>
+            <div class="password-container">
+              <input type="password" id="password" required />
+            </div>
+
+            <label for="confirm-password">Jelszó megerősítése</label>
+            <div class="password-container">
+              <input type="password" id="confirm-password" required />
+            </div>
+
+            <p class="error-message">Hibaüzenetek.</p>
+            <button type="submit">Regisztráció</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div>
+          <h4>ByteBites partner</h4>
+          <a href="#">Futárként</a>
+          <a href="#">Éttermeként</a>
+        </div>
+        <div>
+          <h4>Cég</h4>
+          <a href="#">Rólunk</a>
+          <a href="#">Mit képviselünk</a>
+          <a href="#">Állások</a>
+          <a href="#">Biztonság</a>
+          <a href="#">Befektetők</a>
+        </div>
+        <div>
+          <h4>Hasznos linkek</h4>
+          <a href="#">Ügyfélszolgálat</a>
+          <a href="#">Adatkezelés</a>
+          <a href="#">Kapcsolat</a>
+        </div>
+        <div>
+          <h4>Kövess minket</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Griff</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">X</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
