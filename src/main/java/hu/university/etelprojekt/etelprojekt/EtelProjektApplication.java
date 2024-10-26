@@ -1,3 +1,4 @@
+package hu.university.etelprojekt.etelprojekt;
 
 
 import org.springframework.boot.SpringApplication;

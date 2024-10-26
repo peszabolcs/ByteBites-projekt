@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ByteBites Kosár</title>
-    <link rel="stylesheet" href="../src/css/cart.css" />
-  </head>
+  <head th:replace="~{fragments/header :: head(cssFile='cart.css')}"></head>
   <body>
-    <header>
-      <a href="../index.html"><h1>BYTEBITES</h1></a>
-      <div class="user-menu">
-        <span>USERNAME</span>
-        <button>Kosár</button>
-      </div>
-    </header>
+    <header th:replace="~{fragments/header :: header}"></header>
 
     <div class="cart-title-bar">
       <h2>Kosár tartalma:</h2>
@@ -21,7 +10,6 @@
     <div class="center-wrapper">
       <div class="container">
         <div class="cart-items">
-          <!-- Kosár elem -->
           <div class="cart-item">
             <img src="../src/img/elsodleges/kep.jpg" alt="Kaja kép" />
             <div class="item-details">
@@ -52,37 +40,7 @@
       </div>
     </div>
 
-    <footer>
-      <div class="footer-content">
-        <div>
-          <h4>ByteBites partner</h4>
-          <a href="#">Futárként</a>
-          <a href="#">Éttermeként</a>
-        </div>
-        <div>
-          <h4>Cég</h4>
-          <a href="#">Rólunk</a>
-          <a href="#">Mit képviselünk</a>
-          <a href="#">Állások</a>
-          <a href="#">Biztonság</a>
-          <a href="#">Befektetők</a>
-        </div>
-        <div>
-          <h4>Hasznos linkek</h4>
-          <a href="#">Ügyfélszolgálat</a>
-          <a href="#">Adatkezelés</a>
-          <a href="#">Kapcsolat</a>
-        </div>
-        <div>
-          <h4>Kövess minket</h4>
-          <a href="#">Facebook</a>
-          <a href="#">Instagram</a>
-          <a href="#">Griff</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">X</a>
-        </div>
-      </div>
-    </footer>
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
     <script>
       function redirectToOrderPage() {
         window.location.href = "./order.html";
