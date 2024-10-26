@@ -41,10 +41,6 @@
     </div>
 
     <footer th:replace="~{fragments/footer :: footer}"></footer>
-    <script>
-      function redirectToOrderPage() {
-        window.location.href = "./order.html";
-      }
-    </script>
+    <script th:src="@{/js/main.js}"></script>
   </body>
 </html>

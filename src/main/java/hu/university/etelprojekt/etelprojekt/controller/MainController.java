@@ -14,12 +14,10 @@ public class MainController {
     }
     
 
-    // @GetMapping("/cart")
-    // public String cart(Model model) {
-    //     model.addAttribute("cssFile", "cart.css"); // A kosár oldal saját CSS fájlja
-    //     model.addAttribute("pageTitle", "BYTEBITES - Kosár");
-    //     return "cart"; // A Thymeleaf automatikusan a templates mappából tölti be
-    // }
+    @GetMapping("/index")
+    public String indexPage() {
+        return "index"; // Az index.html betöltése a templates mappából
+    }
 
     @GetMapping("/cart")
     public String cartPage() {

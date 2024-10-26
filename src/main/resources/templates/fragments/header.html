@@ -1,11 +1,12 @@
 <head th:fragment="head">
   <meta charset="UTF-8" />
   <title th:text="${pageTitle}">BYTEBITES</title>
+  <link rel="stylesheet" th:href="@{/css/header-footer.css}" />
   <link rel="stylesheet" th:href="@{/css/{cssFile}(cssFile=${cssFile})}" />
 </head>
 <body>
   <header>
-    <h1>BYTEBITES</h1>
+    <a th:href="@{/index}"><h1>BYTEBITES</h1></a>
     <div class="buttons">
       <a href="Pages/login.html" class="login" id="login-btn">Bejelentkezés</a>
       <a href="Pages/register.html" class="register" id="register-btn"

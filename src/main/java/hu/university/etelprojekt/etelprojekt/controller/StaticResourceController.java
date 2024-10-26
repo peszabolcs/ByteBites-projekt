@@ -1,4 +1,4 @@
-package hu.controller;
+package hu.university.etelprojekt.etelprojekt.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
