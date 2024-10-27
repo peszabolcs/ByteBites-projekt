@@ -33,14 +33,14 @@
           <p>Rendszerhasználati díj: 125 Ft</p>
           <hr />
           <p>Összesen: 1234 Ft</p>
-          <button onclick="redirectToOrderPage()">
-            Tovább a megrendeléshez
-          </button>
+          <form th:action="@{/order}" method="get">
+            <button type="submit">Tovább a megrendeléshez</button>
+          </form>
         </div>
       </div>
     </div>
 
     <footer th:replace="~{fragments/footer :: footer}"></footer>
-    <script th:src="@{/js/main.js}"></script>
+    <!-- <script th:src="@{/js/main.js}"></script> -->
   </body>
 </html>

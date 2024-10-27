@@ -33,4 +33,9 @@ public class MainController {
     public String registerPage() {
         return "Pages/register"; // Így a "templates/Pages/register.html" fájlt tölti be
     }
+
+    @GetMapping("/order")
+    public String showOrderPage() {
+        return "Pages/order"; // The name of your Thymeleaf template for the order page
+    }
 }
