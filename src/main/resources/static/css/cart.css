@@ -140,17 +140,17 @@ h2 {
 .summary {
   width: 100%;
   max-width: 400px;
-  background-color: #f9fafb; /* Világosabb háttérszín */
-  color: #333; /* Sötétebb szöveg a jobb olvashatóságért */
+  background-color: #f9fafb;
+  color: #333;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enyhe árnyék */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
 
 .summary h3 {
   font-size: 22px;
-  color: #444; /* Sötétebb szín a címnek */
+  color: #444;
   margin-bottom: 15px;
 }
 
@@ -169,7 +169,7 @@ h2 {
 .summary button {
   width: 100%;
   padding: 12px;
-  background-color: #00a4a2; /* Kiemelt türkiz gombszín */
+  background-color: #00a4a2;
   color: white;
   border: none;
   border-radius: 4px;
@@ -179,5 +179,5 @@ h2 {
 }
 
 .summary button:hover {
-  background-color: #008b8b; /* Sötétebb türkiz árnyalat hover esetén */
+  background-color: #008b8b;
 }

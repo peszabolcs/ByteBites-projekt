@@ -8,34 +8,34 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("cssFile", "style.css"); // Az index oldal saját CSS fájlja
+        model.addAttribute("cssFile", "style.css");
         model.addAttribute("pageTitle", "BYTEBITES - Kezdőlap");
-        return "index"; // A Thymeleaf automatikusan a templates mappából tölti be
+        return "index";
     }
     
 
     @GetMapping("/index")
     public String indexPage() {
-        return "index"; // Az index.html betöltése a templates mappából
+        return "index";
     }
 
     @GetMapping("/cart")
     public String cartPage() {
-        return "Pages/cart"; // Így a "templates/Pages/cart.html" fájlt tölti be
+        return "Pages/cart";
     }
 
     @GetMapping("/login")
     public String loginPage() {
-        return "Pages/login"; // Így a "templates/Pages/login.html" fájlt tölti be
+        return "Pages/login";
     }
 
     @GetMapping("/register")
     public String registerPage() {
-        return "Pages/register"; // Így a "templates/Pages/register.html" fájlt tölti be
+        return "Pages/register";
     }
 
     @GetMapping("/order")
     public String showOrderPage() {
-        return "Pages/order"; // The name of your Thymeleaf template for the order page
+        return "Pages/order";
     }
 }

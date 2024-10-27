@@ -37,15 +37,15 @@ body {
 }
 
 .hero-section .search-box {
-  background-color: #ffffff; /* Fehér háttér */
-  padding: 40px; /* Térköz a tartalom körül */
+  background-color: #ffffff;
+  padding: 40px;
   width: 100%;
   max-width: 1000px;
-  border-radius: 10px; /* Kerekített sarkak */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Finom árnyék */
-  text-align: center; /* Szöveg középre igazítása */
-  max-width: 600px; /* Maximális szélesség */
-  margin: 0 auto; /* Középre helyezi a dobozt */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
   font-size: 18px;
 }
 .hero-section h2 {
@@ -56,7 +56,7 @@ body {
 .hero-section .search-box form {
   display: flex;
   gap: 10px;
-  justify-content: center; /* Gomb és input középre igazítása */
+  justify-content: center;
   align-items: center;
 }
 
@@ -68,7 +68,7 @@ body {
   flex: 1;
   background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px; /* Korlátozott szélesség */
+  max-width: 400px;
 }
 
 .hero-section .search-box button {
@@ -137,36 +137,34 @@ body {
 }
 
 .section-image img {
-  max-width: 100%; /* Adjust size as needed */
+  max-width: 100%;
   height: auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .info-section {
   padding: 40px;
   text-align: center;
-  background-color: #ffffff; /* Fehér háttér a dobozhoz */
-  border: 5px solid #00c8c8; /* Türkiz keret */
-  border-radius: 15px; /* Kerekített sarkak */
-  max-width: 800px; /* Maximális szélesség */
-  margin: 40px auto; /* Középre igazítás */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Finom árnyék hozzáadása */
+  background-color: #ffffff;
+  border: 5px solid #00c8c8;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Tudtad? címsor stílus */
 .info-section h3 {
   color: #00c8c8;
   font-size: 28px;
-  font-weight: bold; /* Félkövér szöveg */
+  font-weight: bold;
   margin-bottom: 15px;
   margin-top: 0px;
 }
 
-/* Leírás stílus */
 .info-section p {
   font-size: 18px;
   color: #333;
-  max-width: 700px; /* Szöveg maximális szélessége */
-  margin: 0 auto; /* Középre igazítás */
+  max-width: 700px;
+  margin: 0 auto;
 }

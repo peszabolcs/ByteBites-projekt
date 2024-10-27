@@ -16,7 +16,7 @@ header a {
 }
 
 header .buttons .login {
-  background-color: #00c8c8; /* Light blue */
+  background-color: #00c8c8;
   color: #fff;
   margin-left: 15px;
   text-decoration: none;
@@ -26,11 +26,10 @@ header .buttons .login {
 }
 
 header .buttons .login:hover {
-  background-color: #009999; /* Slightly darker blue */
+  background-color: #009999;
   color: #fff;
 }
 
-/* Registration button */
 header .buttons .register {
   margin-left: 15px;
   text-decoration: none;
@@ -53,18 +52,16 @@ header .buttons .register:hover {
   position: relative;
 }
 
-/* Username styling */
 .username {
   cursor: pointer;
   color: #333;
   position: relative;
 }
 
-/* Dropdown styling */
 .dropdown {
   display: none;
   position: absolute;
-  top: 30px; /* Adjusts position below username */
+  top: 30px;
   left: 0;
   background-color: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
@@ -89,7 +86,6 @@ header .buttons .register:hover {
   background-color: #f0f0f0;
 }
 
-/* Cart icon styling */
 .cart-icon {
   color: #00c8c8;
   font-weight: bold;
@@ -97,7 +93,6 @@ header .buttons .register:hover {
   cursor: pointer;
 }
 
-/* Footer teljes terület */
 footer {
   background-color: #333;
   color: #fff;
@@ -108,7 +103,6 @@ footer {
   text-align: center;
 }
 
-/* Footer oszlopok igazítása */
 .footer-content {
   display: flex;
   justify-content: space-around;
@@ -120,10 +114,9 @@ footer {
 
 .footer-content div {
   flex: 1;
-  min-width: 150px; /* Megfelelő minimum szélesség */
+  min-width: 150px;
 }
 
-/* Footer minden oszlopban a címsorok stílusa */
 footer div h4 {
   font-size: 18px;
   font-weight: bold;
@@ -148,16 +141,15 @@ footer div h4 {
   text-decoration: underline;
 }
 
-/* Oszlopok igazítása mobilon */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    align-items: center; /* Középre igazítja az oszlopokat */
+    align-items: center;
   }
 
   footer div {
     margin-bottom: 20px;
-    text-align: center; /* Mobilon középre igazítja a szöveget */
+    text-align: center;
   }
 }
 

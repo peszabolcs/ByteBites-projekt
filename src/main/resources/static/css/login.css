@@ -1,10 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(
-    135deg,
-    #7d3fe3,
-    #00d4d8
-  ); /* Háttér színátmenet */
+  background: linear-gradient(135deg, #7d3fe3, #00d4d8);
   min-height: 100vh;
   align-items: center;
 }
@@ -22,8 +18,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px; /* Fejléc távolság */
-  padding-bottom: 80px; /* Footer távolság */
+  padding-top: 100px;
+  padding-bottom: 80px;
 }
 
 .container {
@@ -34,12 +30,12 @@ body {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  align-items: stretch; /* Biztosítja, hogy a kép és login rész teljes magasságban legyen */
-  margin: auto 0; /* Függőlegesen középre igazítja az oldalon */
+  align-items: stretch;
+  margin: auto 0;
 }
 
 .image-section {
-  width: 45%; /* Kicsit kisebb szélesség a képrész számára */
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,8 +43,8 @@ body {
 }
 
 .login-section {
-  width: 55%; /* A login szakasz szélessége */
-  padding: 30px; /* Csökkentett padding, hogy kisebb legyen a panel */
+  width: 55%;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +89,7 @@ input[type="password"] {
 }
 
 .password-container input[type="password"] {
-  width: 100%; /* A mező teljes szélességét kitölti */
+  width: 100%;
 }
 
 .error-message {

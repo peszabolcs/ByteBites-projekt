@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const isLoggedIn = true; // Replace with your actual login logic
+  const isLoggedIn = true;
   const loginBtn = document.getElementById("login-btn");
   const registerBtn = document.getElementById("register-btn");
   const userContainer = document.getElementById("user-container");
@@ -12,10 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     userContainer.style.display = "flex";
   }
 
-  // Toggle dropdown visibility on click
   username.addEventListener("click", function (event) {
-    console.log("Username clicked"); // Debugging: Check if click is detected
-    event.stopPropagation(); // Prevent immediate close
+    console.log("Username clicked");
+    event.stopPropagation();
     dropdown.style.display =
       dropdown.style.display === "block" ? "none" : "block";
     console.log("Dropdown display:", dropdown.style.display); // Debugging: Check dropdown status
