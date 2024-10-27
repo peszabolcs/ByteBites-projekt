@@ -111,6 +111,10 @@ header .buttons .register:hover {
   z-index: 10;
 }
 
+.admin-menu.visible {
+  display: block;
+}
+
 .admin-menu h2 {
   color: #00c4cc;
   margin-bottom: 20px;
@@ -125,6 +129,17 @@ header .buttons .register:hover {
 .admin-menu ul li {
   margin: 5px 0;
   padding: 5px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.admin-menu ul li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .admin-menu ul li:not(.section-header) {
