@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head
+    th:replace="~{fragments/header :: head(cssFile='categories.css')}"
+  ></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Categories Content -->
+    <main class="categories-content">
+      <h2>Kategóriák</h2>
+
+      <!-- Add New Category Section -->
+      <section class="add-category">
+        <h3>Új kategória hozzáadása</h3>
+        <div class="category-box">
+          <div class="category-pic">Kategória kép</div>
+          <input
+            type="text"
+            placeholder="Kategória név"
+            class="category-name-input"
+          />
+          <button class="add-category-button">Új kategória hozzáadása</button>
+        </div>
+      </section>
+
+      <!-- Change Categories Section -->
+      <section class="change-categories">
+        <h3>Kategóriák módosítása</h3>
+        <div class="category-box">
+          <img src="burger.jpg" alt="Hamburger kép" class="category-image" />
+          <input type="text" value="Hamburger" class="category-name-input" />
+          <button class="delete-category-button">Kategória törlése</button>
+          <button class="save-changes-button">Változások mentése</button>
+        </div>
+        <div class="category-box">
+          <img src="pizza.jpg" alt="Pizza kép" class="category-image" />
+          <input type="text" value="Pizza" class="category-name-input" />
+          <button class="delete-category-button">Kategória törlése</button>
+          <button class="save-changes-button">Változások mentése</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>

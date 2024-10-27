@@ -1,0 +1,104 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #7d3fe3, #00d4d8);
+  margin: 0;
+}
+
+.categories-content {
+  padding: 30px;
+  background: transparent;
+  min-height: calc(
+    100vh - 100px
+  ); /* Adjusting height to account for header and footer */
+}
+
+.categories-content h2 {
+  font-size: 24px;
+  color: #fff; /* White h2 as requested */
+  margin-bottom: 20px;
+}
+
+.add-category,
+.change-categories {
+  margin-bottom: 20px;
+}
+
+.category-box {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.category-pic {
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00c8c8;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.category-image {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.category-name-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #00c8c8;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-category-button,
+.delete-category-button,
+.save-changes-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px; /* Adds 5px margin below each button */
+}
+
+.add-category-button {
+  background-color: #00c8c8;
+  color: #fff;
+  border: none;
+}
+
+.add-category-button:hover {
+  background-color: #009999;
+}
+
+.delete-category-button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+}
+
+.delete-category-button:hover {
+  background-color: #ff3333;
+}
+
+.save-changes-button {
+  background-color: #00c8c8;
+  color: #fff;
+  border: none;
+}
+
+.save-changes-button:hover {
+  background-color: #009999;
+}

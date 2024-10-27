@@ -69,4 +69,9 @@ public class MainController {
     public String showEndUsersPage() {
         return "Pages/endUsers";
     }
+
+    @GetMapping("/categories")
+    public String showCategoriesPage() {
+        return "Pages/categories";
+    }
 }
