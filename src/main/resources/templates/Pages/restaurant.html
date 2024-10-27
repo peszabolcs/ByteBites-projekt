@@ -4,12 +4,9 @@
     th:replace="~{fragments/header :: head(cssFile='restaurant.css')}"
   ></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Restaurant Menu Content -->
     <main class="restaurant-menu-content">
-      <!-- Restaurant Details Section -->
       <section class="restaurant-details">
         <div class="restaurant-image">KAJA KÉP</div>
         <div class="restaurant-info">
@@ -25,7 +22,6 @@
         <button class="favorite-button">❤️ Hozzáadás a kedvencekhez</button>
       </section>
 
-      <!-- Menu Navigation Section -->
       <nav class="menu-navigation">
         <button>Menü1</button>
         <button>Menü2</button>
@@ -39,7 +35,6 @@
         </div>
       </nav>
 
-      <!-- Menu Items Section -->
       <section class="menu-items">
         <div class="menu-category">
           <h4>Menü1</h4>
@@ -52,13 +47,10 @@
             <div class="item-image">kaja kép</div>
             <button class="add-button">+</button>
           </div>
-          <!-- Repeat items as needed -->
         </div>
-        <!-- Repeat for other menu categories (e.g., Menü2, Menü3) -->
       </section>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

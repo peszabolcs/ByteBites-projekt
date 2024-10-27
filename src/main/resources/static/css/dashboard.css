@@ -1,4 +1,3 @@
-/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #7d3fe3, #00d4d8);
@@ -7,10 +6,8 @@ body {
 
 .dashboard-content {
   padding: 30px;
-  background: transparent; /* to let the gradient background show */
-  min-height: calc(
-    100vh - 100px
-  ); /* Adjusting height to account for header and footer */
+  background: transparent;
+  min-height: calc(100vh - 100px);
 }
 
 .dashboard-content h2 {

@@ -4,14 +4,10 @@
     th:replace="~{fragments/header :: head(cssFile='favorites.css')}"
   ></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
-
-    <!-- Main Favorites Content -->
     <main class="favorites-content">
       <h2>Kedvenceim</h2>
 
-      <!-- Favorite Previous Orders Section -->
       <section class="favorites-orders">
         <h3>Kedvenc korábbi rendelé­seim</h3>
         <p>Nincs kedvenc rendelésed.</p>
@@ -31,7 +27,6 @@
         </div>
       </section>
 
-      <!-- Favorite Restaurants Section -->
       <section class="favorites-restaurants">
         <h3>Kedvenc éttermeim</h3>
         <p>Nincs kedvenc éttermed.</p>
@@ -52,7 +47,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

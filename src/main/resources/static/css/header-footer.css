@@ -99,8 +99,8 @@ header .buttons .register:hover {
 }
 
 .admin-menu {
-  position: absolute; /* or relative, based on your layout */
-  top: 100px; /* Adjust as needed */
+  position: absolute;
+  top: 100px;
   left: 0;
   width: 100%;
   max-width: 200px;
@@ -154,7 +154,7 @@ header .buttons .register:hover {
 .section-header {
   color: grey;
   font-weight: bold;
-  margin-top: 15px; /* Space above each section header */
+  margin-top: 15px;
   margin-bottom: 5px;
   font-size: 0.9em;
   text-transform: uppercase;
@@ -170,7 +170,6 @@ header .buttons .register:hover {
   cursor: pointer;
 }
 
-/* Add a border between sections to visually separate them */
 .section-divider {
   border-bottom: 1px solid #e0e0e0;
   margin: 10px 0;

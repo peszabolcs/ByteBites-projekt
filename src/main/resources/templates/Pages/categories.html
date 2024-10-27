@@ -4,14 +4,11 @@
     th:replace="~{fragments/header :: head(cssFile='categories.css')}"
   ></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Categories Content -->
     <main class="categories-content">
       <h2>Kategóriák</h2>
 
-      <!-- Add New Category Section -->
       <section class="add-category">
         <h3>Új kategória hozzáadása</h3>
         <div class="category-box">
@@ -25,7 +22,6 @@
         </div>
       </section>
 
-      <!-- Change Categories Section -->
       <section class="change-categories">
         <h3>Kategóriák módosítása</h3>
         <div class="category-box">
@@ -43,7 +39,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

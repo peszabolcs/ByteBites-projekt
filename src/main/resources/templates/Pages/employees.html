@@ -4,10 +4,8 @@
     th:replace="~{fragments/header :: head(cssFile='employees.css')}"
   ></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Employees Content -->
     <main class="employees-content">
       <div class="header-actions">
         <h2>Alkalmazottak listája</h2>
@@ -46,13 +44,11 @@
                 </button>
               </td>
             </tr>
-            <!-- Additional rows as needed for testing -->
           </tbody>
         </table>
       </div>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

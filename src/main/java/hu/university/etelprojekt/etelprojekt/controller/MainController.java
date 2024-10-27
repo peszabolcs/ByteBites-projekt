@@ -16,7 +16,7 @@ public class MainController {
         } else {
             model.addAttribute("isAuthenticated", false);
         }
-        return "index"; // Ellenőrizd, hogy ez a helyes sablonnév-e
+        return "index";
     }
     
 

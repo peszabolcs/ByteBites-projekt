@@ -2,14 +2,11 @@
 <html lang="hu">
   <head th:replace="~{fragments/header :: head(cssFile='city.css')}"></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Restaurants Content -->
     <main class="restaurants-content">
-      <h2>Étter­me­k - Cityname</h2>
+      <h2>Éttermek - Cityname</h2>
 
-      <!-- Categories Section -->
       <section class="categories">
         <h3>Kategóriák</h3>
         <div class="category-cards">
@@ -25,12 +22,10 @@
             <img src="hungarian.jpg" alt="Magyar" />
             <p>Magyar<br /><span>3 étterem</span></p>
           </div>
-          <!-- Repeat or add other categories as needed -->
           <div class="carousel-controls">⬅️ ➡️</div>
         </div>
       </section>
 
-      <!-- All Restaurants Section -->
       <section class="all-restaurants">
         <h3>Összes étterem</h3>
         <div class="restaurant-cards">
@@ -38,12 +33,10 @@
             <div class="restaurant-image">kaja kép</div>
             <p>Étterem neve<br /><span>Kategória1, kategória2</span></p>
           </div>
-          <!-- Repeat for each restaurant as needed -->
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

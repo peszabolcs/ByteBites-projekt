@@ -2,15 +2,12 @@
 <html lang="hu">
   <head th:replace="~{fragments/header :: head(cssFile='profile.css')}"></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Content -->
     <div class="center-wrapper">
       <div class="profile-container">
         <h1>Profilom</h1>
 
-        <!-- Profile Section -->
         <section>
           <h2>Saját profil</h2>
           <form>
@@ -27,7 +24,6 @@
           </form>
         </section>
 
-        <!-- Email Section -->
         <section>
           <h2>E-mail</h2>
           <form>
@@ -38,7 +34,6 @@
           </form>
         </section>
 
-        <!-- Password Section -->
         <section>
           <h2>Jelszó</h2>
           <form>
@@ -55,7 +50,6 @@
           </form>
         </section>
 
-        <!-- Saved Cards Section -->
         <section>
           <h2>Elmentett kártyáim</h2>
           <form>
@@ -66,7 +60,6 @@
           </form>
         </section>
 
-        <!-- Saved Address Section -->
         <section>
           <h2>Mentett címem</h2>
           <form>
@@ -83,7 +76,6 @@
           </form>
         </section>
 
-        <!-- Account Management Section -->
         <section class="account-management">
           <h2>Fiók kezelése</h2>
           <p>
@@ -94,7 +86,6 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

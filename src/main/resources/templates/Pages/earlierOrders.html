@@ -4,14 +4,11 @@
     th:replace="~{fragments/header :: head(cssFile='earlierOrders.css')}"
   ></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Orders Content -->
     <main class="orders-content">
       <h2>Rendeléseim</h2>
 
-      <!-- Orders in Progress Section -->
       <section class="orders-in-progress">
         <h3>Folyamatban lévő rendelése­k</h3>
         <p>Nincs folyamatban lévő rendelésed.</p>
@@ -31,7 +28,6 @@
         </div>
       </section>
 
-      <!-- Previous Orders Section -->
       <section class="previous-orders">
         <h3>Korábbi rendelések</h3>
         <p>Még nem adtál le rendelést.</p>
@@ -52,7 +48,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

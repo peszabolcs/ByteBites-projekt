@@ -1,4 +1,3 @@
-/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #7d3fe3, #00d4d8);
@@ -8,9 +7,7 @@ body {
 .restaurants-content {
   padding: 30px;
   background: transparent;
-  min-height: calc(
-    100vh - 100px
-  ); /* Adjusting height to account for header and footer */
+  min-height: calc(100vh - 100px);
 }
 
 .restaurants-content h2 {
@@ -31,7 +28,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Categories Section */
 .category-cards {
   display: flex;
   align-items: center;
@@ -73,7 +69,6 @@ body {
   cursor: pointer;
 }
 
-/* All Restaurants Section */
 .restaurant-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

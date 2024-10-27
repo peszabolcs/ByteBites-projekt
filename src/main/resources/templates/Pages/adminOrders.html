@@ -4,10 +4,8 @@
     th:replace="~{fragments/header :: head(cssFile='adminOrders.css')}"
   ></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main Orders Content -->
     <main class="orders-content">
       <h2>Rendelések</h2>
       <div class="table-container">
@@ -34,13 +32,11 @@
                 <button class="message-button">Üzenet</button>
               </td>
             </tr>
-            <!-- Additional rows as needed for testing -->
           </tbody>
         </table>
       </div>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>

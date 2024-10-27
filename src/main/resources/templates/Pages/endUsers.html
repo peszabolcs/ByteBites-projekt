@@ -2,10 +2,8 @@
 <html lang="hu">
   <head th:replace="~{fragments/header :: head(cssFile='endUsers.css')}"></head>
   <body>
-    <!-- Header -->
     <header th:replace="~{fragments/header :: header}"></header>
 
-    <!-- Main End Users Content -->
     <main class="end-users-content">
       <div class="header-actions">
         <h2>Felhasználók Kezelése</h2>
@@ -42,13 +40,11 @@
                 <button class="suspend-button">Fiók Felfüggesztése</button>
               </td>
             </tr>
-            <!-- Additional rows for testing -->
           </tbody>
         </table>
       </div>
     </main>
 
-    <!-- Footer -->
     <footer th:replace="~{fragments/footer :: footer}"></footer>
   </body>
 </html>
