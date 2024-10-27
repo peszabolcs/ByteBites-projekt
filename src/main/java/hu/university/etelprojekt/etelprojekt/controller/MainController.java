@@ -49,4 +49,9 @@ public class MainController {
     public String showProfilePage() {
         return "Pages/profile";
     }
+
+    @GetMapping("/dashboard")
+    public String showDashboardPage() {
+        return "Pages/dashboard";
+    }
 }

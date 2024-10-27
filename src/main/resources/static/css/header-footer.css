@@ -140,6 +140,10 @@ header .buttons .register:hover {
   text-transform: uppercase;
 }
 
+.section-header a {
+  cursor: pointer;
+}
+
 .admin-menu ul li:not(.section-header):hover {
   background-color: #00c4cc;
   color: #ffffff;

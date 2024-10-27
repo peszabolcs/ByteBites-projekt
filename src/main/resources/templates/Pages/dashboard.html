@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head
+    th:replace="~{fragments/header :: head(cssFile='dashboard.css')}"
+  ></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content">
+      <h2>Dashboard</h2>
+      <div class="stats-container">
+        <div class="stat-box">100<br /><span>Total end users</span></div>
+        <div class="stat-box">66<br /><span>Total orders</span></div>
+        <div class="stat-box">6323<br /><span>Total restaurants</span></div>
+        <div class="stat-box">6323<br /><span>Sales volume</span></div>
+      </div>
+      <div class="chart-container">
+        <div class="chart-box">?</div>
+        <div class="chart-box">?</div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>

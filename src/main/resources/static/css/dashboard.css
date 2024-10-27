@@ -1,0 +1,62 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #7d3fe3, #00d4d8);
+  margin: 0;
+}
+
+.dashboard-content {
+  padding: 30px;
+  background: transparent; /* to let the gradient background show */
+  min-height: calc(
+    100vh - 100px
+  ); /* Adjusting height to account for header and footer */
+}
+
+.dashboard-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.stats-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.stat-box span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #777;
+}
+
+.chart-container {
+  display: flex;
+  gap: 15px;
+}
+
+.chart-box {
+  flex: 1;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #bbb;
+}

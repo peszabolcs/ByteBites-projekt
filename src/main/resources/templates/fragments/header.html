@@ -16,22 +16,23 @@
       </p>
     </div>
     <div class="buttons">
+      <!-- TODO: A fejlesztési fázis idejére fel van cserélve az, hogy mikor mutassa a login/register page-et, és mikor a user/kosár gombokat -->
       <a
-        th:if="${username == null}"
+        th:if="${username != null}"
         th:href="@{/login}"
         class="login"
         id="login-btn"
         >Bejelentkezés</a
       >
       <a
-        th:if="${username == null}"
+        th:if="${username != null}"
         th:href="@{/register}"
         class="register"
         id="register-btn"
         >Regisztráció</a
       >
       <div
-        th:if="${username != null}"
+        th:if="${username == null}"
         class="user-container"
         id="user-container"
       >
@@ -58,7 +59,7 @@
 
     <div id="admin-menu" class="admin-menu hidden">
       <ul class="section-header">
-        <li>Dashboard</li>
+        <li><a th:href="@{/dashboard}">Vezérlőpult</a></li>
         <li>Orders</li>
         <div class="section-divider"></div>
 
