@@ -107,27 +107,46 @@ header .buttons .register:hover {
   z-index: 10;
 }
 
-.hidden {
-  display: none;
-}
-
 .admin-menu h2 {
   color: #00c4cc;
+  margin-bottom: 20px;
 }
 
 .admin-menu ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .admin-menu ul li {
   margin: 5px 0;
+  padding: 5px;
 }
 
-.admin-menu .section-header {
+.admin-menu ul li:not(.section-header) {
+  border-radius: 5px;
+  color: #333;
+}
+
+.section-header {
   color: grey;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 15px; /* Space above each section header */
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.admin-menu ul li:not(.section-header):hover {
+  background-color: #00c4cc;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Add a border between sections to visually separate them */
+.section-divider {
+  border-bottom: 1px solid #e0e0e0;
+  margin: 10px 0;
 }
 
 footer {
