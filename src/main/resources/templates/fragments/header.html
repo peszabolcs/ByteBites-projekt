@@ -44,7 +44,7 @@
         <div class="dropdown">
           <ul>
             <li><a th:href="@{/profile}">Profilom</a></li>
-            <li>Admin</li>
+            <li id="admin-link">Admin</li>
             <li>Rendeléseim</li>
             <li>Kedvenceim</li>
             <li>Ügyfélszolgálat</li>
@@ -55,5 +55,21 @@
         <a th:href="@{/cart}" id="cart-icon" class="cart-icon">Kosár</a>
       </div>
     </div>
+
+    <div id="admin-menu" class="admin-menu hidden">
+      <ul class="section-header">
+        <li>Dashboard</li>
+        <li>Orders</li>
+        <li>Users</li>
+        <li>Employees</li>
+        <li>End users</li>
+        <li>Admin</li>
+        <li>Restaurants</li>
+        <li>Cities</li>
+        <li>Categories</li>
+        <li>System settings</li>
+      </ul>
+    </div>
   </header>
+  <script th:src="@{/js/main.js}"></script>
 </body>
