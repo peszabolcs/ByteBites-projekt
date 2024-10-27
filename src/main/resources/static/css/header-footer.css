@@ -60,6 +60,7 @@ header .buttons .register:hover {
 
 .dropdown {
   position: absolute;
+  display: none;
   top: 45px;
   right: 20px;
   background-color: #ffffff;
