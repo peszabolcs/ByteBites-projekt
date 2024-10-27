@@ -44,4 +44,9 @@ public class MainController {
     public String showOrderPage() {
         return "Pages/order";
     }
+
+    @GetMapping("/profile")
+    public String showProfilePage() {
+        return "Pages/profile";
+    }
 }

@@ -59,7 +59,6 @@ header .buttons .register:hover {
 }
 
 .dropdown {
-  display: none;
   position: absolute;
   top: 30px;
   left: 0;
