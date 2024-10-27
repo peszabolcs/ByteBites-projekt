@@ -54,4 +54,9 @@ public class MainController {
     public String showDashboardPage() {
         return "Pages/dashboard";
     }
+
+    @GetMapping("/adminOrders")
+    public String showAdminOrdersPage() {
+        return "Pages/adminOrders";
+    }
 }
