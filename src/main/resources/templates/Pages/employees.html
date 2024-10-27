@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head
+    th:replace="~{fragments/header :: head(cssFile='employees.css')}"
+  ></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Employees Content -->
+    <main class="employees-content">
+      <div class="header-actions">
+        <h2>Alkalmazottak listája</h2>
+        <button class="add-button">Új felvétel</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Alkalmazott keresése" />
+          <button class="search-button">Keresés</button>
+        </div>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Név</th>
+              <th>Email</th>
+              <th>Telefon</th>
+              <th>Státusz</th>
+              <th>Szerepkör</th>
+              <th>Művelet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" value="#0123456" readonly /></td>
+              <td><input type="text" value="Firstname Lastname" /></td>
+              <td><input type="email" value="email@email.email" /></td>
+              <td><input type="text" value="+000000000" /></td>
+              <td><input type="text" value="active" /></td>
+              <td><input type="text" value="admin" readonly /></td>
+              <td>
+                <button class="edit-role-button">Szerepkör szerkesztése</button>
+                <button class="login-button">Bejelentkezés</button>
+                <button class="remove-employee-button">
+                  Alkalmazott eltávolítása
+                </button>
+              </td>
+            </tr>
+            <!-- Additional rows as needed for testing -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>
