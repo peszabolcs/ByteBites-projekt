@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head
+    th:replace="~{fragments/header :: head(cssFile='restaurant.css')}"
+  ></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Restaurant Menu Content -->
+    <main class="restaurant-menu-content">
+      <!-- Restaurant Details Section -->
+      <section class="restaurant-details">
+        <div class="restaurant-image">KAJA KÉP</div>
+        <div class="restaurant-info">
+          <p>Kategóriák: kat1, kat2, kat3, kat4, kat5</p>
+          <h3>Étterem neve</h3>
+          <p>
+            Kiszállítási összeg: unsigned int Ft, Rendszerhasználati díj: 150 Ft
+          </p>
+          <p>Étterem címe: város, utca, házszám</p>
+          <p>Telefonszám: telefonszám</p>
+          <p>Weboldal:</p>
+        </div>
+        <button class="favorite-button">❤️ Hozzáadás a kedvencekhez</button>
+      </section>
+
+      <!-- Menu Navigation Section -->
+      <nav class="menu-navigation">
+        <button>Menü1</button>
+        <button>Menü2</button>
+        <button>Menü3</button>
+        <button>Menü4</button>
+        <button>Menü5</button>
+        <button>Menü?</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Keresés a menüben" />
+          <button class="search-button">🔍</button>
+        </div>
+      </nav>
+
+      <!-- Menu Items Section -->
+      <section class="menu-items">
+        <div class="menu-category">
+          <h4>Menü1</h4>
+          <div class="menu-item">
+            <div class="item-info">
+              <h5>Étel neve</h5>
+              <p>Étel ára Ft</p>
+              <p>További jellemzők, leírás, stb.</p>
+            </div>
+            <div class="item-image">kaja kép</div>
+            <button class="add-button">+</button>
+          </div>
+          <!-- Repeat items as needed -->
+        </div>
+        <!-- Repeat for other menu categories (e.g., Menü2, Menü3) -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>

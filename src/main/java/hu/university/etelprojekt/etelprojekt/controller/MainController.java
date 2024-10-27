@@ -89,4 +89,9 @@ public class MainController {
     public String showCityPage() {
         return "Pages/city";
     }
+
+    @GetMapping("/restaurant")
+    public String showRestaurantPage() {
+        return "Pages/restaurant";
+    }
 }
