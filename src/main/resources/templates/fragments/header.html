@@ -7,30 +7,38 @@
 <body>
   <header>
     <a th:href="@{/index}"><h1>BYTEBITES</h1></a>
+    <div>
+      <!-- TODO: Debug miatt van benne, a fejlesztési folyamat során szükséges -->
+      <p
+        th:text="'Bejelentkezett állapot: ' + ${#authentication?.authenticated}"
+      >
+        Debug info
+      </p>
+    </div>
     <div class="buttons">
       <a
-        th:if="${#authentication == null}"
+        th:if="${username == null}"
         th:href="@{/login}"
         class="login"
         id="login-btn"
         >Bejelentkezés</a
       >
       <a
-        th:if="${#authentication == null}"
+        th:if="${username == null}"
         th:href="@{/register}"
         class="register"
         id="register-btn"
         >Regisztráció</a
       >
       <div
-        th:if="${#authentication != null}"
+        th:if="${username != null}"
         class="user-container"
         id="user-container"
       >
         <span
           id="username"
           class="username register"
-          th:text="${#authentication.name}"
+          th:text="${#authentication?.name != null ? #authentication.name : 'Guest'}"
           >USERNAME</span
         >
         <div class="dropdown">

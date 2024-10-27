@@ -59,6 +59,7 @@ header .buttons .register:hover {
 }
 
 .dropdown {
+  display: none;
   position: absolute;
   top: 30px;
   left: 0;
@@ -83,6 +84,7 @@ header .buttons .register:hover {
 
 .dropdown ul li:hover {
   background-color: #f0f0f0;
+  display: block;
 }
 
 .cart-icon {
