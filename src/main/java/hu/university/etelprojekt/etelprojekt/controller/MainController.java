@@ -84,4 +84,9 @@ public class MainController {
     public String showEarlierOrdersPage() {
         return "Pages/earlierOrders";
     }
+
+    @GetMapping("/city")
+    public String showCityPage() {
+        return "Pages/city";
+    }
 }

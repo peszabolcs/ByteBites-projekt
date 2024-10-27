@@ -1,0 +1,113 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #7d3fe3, #00d4d8);
+  margin: 0;
+}
+
+.restaurants-content {
+  padding: 30px;
+  background: transparent;
+  min-height: calc(
+    100vh - 100px
+  ); /* Adjusting height to account for header and footer */
+}
+
+.restaurants-content h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.categories,
+.all-restaurants {
+  margin-bottom: 20px;
+}
+
+.categories h3,
+.all-restaurants h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Categories Section */
+.category-cards {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.category-card {
+  width: 120px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.category-card img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.category-card p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.category-card span {
+  font-size: 12px;
+  color: #777;
+}
+
+.carousel-controls {
+  font-size: 24px;
+  color: #00c8c8;
+  cursor: pointer;
+}
+
+/* All Restaurants Section */
+.restaurant-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.restaurant-card {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 120px;
+  background-color: #00c8c8;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.restaurant-card p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.restaurant-card span {
+  font-size: 12px;
+  color: #777;
+}
