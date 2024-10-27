@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head
+    th:replace="~{fragments/header :: head(cssFile='earlierOrders.css')}"
+  ></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Orders Content -->
+    <main class="orders-content">
+      <h2>Rendeléseim</h2>
+
+      <!-- Orders in Progress Section -->
+      <section class="orders-in-progress">
+        <h3>Folyamatban lévő rendelése­k</h3>
+        <p>Nincs folyamatban lévő rendelésed.</p>
+        <div class="order-box">
+          <div class="favorite-icon">💙</div>
+          <div class="order-details">
+            <h4>Étterem neve</h4>
+            <p>Kiszállítás időpontja: év, hónap, nap, óra:perc</p>
+            <p>Rendelés: rendelés azonosítószáma</p>
+            <p>1x rendelt étel neve</p>
+            <p>1x másik rendelt étel neve</p>
+          </div>
+          <div class="order-info">
+            <p class="order-price">unsigned int Ft</p>
+            <button class="reorder-button">Újrarendelés</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Previous Orders Section -->
+      <section class="previous-orders">
+        <h3>Korábbi rendelések</h3>
+        <p>Még nem adtál le rendelést.</p>
+        <div class="order-box">
+          <div class="favorite-icon">❤️</div>
+          <div class="order-details">
+            <h4>Étterem neve</h4>
+            <p>Kiszállítás időpontja: év, hónap, nap, óra:perc</p>
+            <p>Rendelés: rendelés azonosítószáma</p>
+            <p>1x rendelt étel neve</p>
+            <p>1x másik rendelt étel neve</p>
+          </div>
+          <div class="order-info">
+            <p class="order-price">unsigned int Ft</p>
+            <button class="reorder-button">Újrarendelés</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>

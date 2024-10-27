@@ -79,4 +79,9 @@ public class MainController {
     public String showFavoritesPage() {
         return "Pages/favorites";
     }
+
+    @GetMapping("/earlierOrders")
+    public String showEarlierOrdersPage() {
+        return "Pages/earlierOrders";
+    }
 }
