@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head th:replace="~{fragments/header :: head(cssFile='endUsers.css')}"></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main End Users Content -->
+    <main class="end-users-content">
+      <div class="header-actions">
+        <h2>Felhasználók Kezelése</h2>
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Keresés név, email, vagy felhasználói ID alapján"
+          />
+          <button class="search-button">Keresés</button>
+        </div>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Felhasználói ID</th>
+              <th>Név</th>
+              <th>Email</th>
+              <th>Állapot</th>
+              <th>Szerep</th>
+              <th>Műveletek</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" value="#0123456" readonly /></td>
+              <td><input type="text" value="Firstname Lastname" /></td>
+              <td><input type="email" value="email@email.email" /></td>
+              <td><input type="text" value="active" /></td>
+              <td><input type="text" value="end user" readonly /></td>
+              <td>
+                <button class="edit-role-button">Szerep Szerkesztése</button>
+                <button class="login-button">Bejelentkezés</button>
+                <button class="suspend-button">Fiók Felfüggesztése</button>
+              </td>
+            </tr>
+            <!-- Additional rows for testing -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>

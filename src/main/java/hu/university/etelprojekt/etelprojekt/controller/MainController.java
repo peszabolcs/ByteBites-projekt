@@ -64,4 +64,9 @@ public class MainController {
     public String showEmployeesPage() {
         return "Pages/employees";
     }
+
+    @GetMapping("/endUsers")
+    public String showEndUsersPage() {
+        return "Pages/endUsers";
+    }
 }
