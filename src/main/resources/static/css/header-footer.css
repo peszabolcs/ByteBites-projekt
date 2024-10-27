@@ -59,8 +59,8 @@ header .buttons .register:hover {
 }
 
 .dropdown {
-  position: absolute;
   display: none;
+  position: absolute;
   top: 45px;
   right: 20px;
   background-color: #ffffff;
@@ -68,6 +68,10 @@ header .buttons .register:hover {
   border-radius: 5px;
   padding: 10px;
   z-index: 10;
+}
+
+.dropdown.visible {
+  display: block;
 }
 
 .dropdown ul {
