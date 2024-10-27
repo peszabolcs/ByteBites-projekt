@@ -74,4 +74,9 @@ public class MainController {
     public String showCategoriesPage() {
         return "Pages/categories";
     }
+
+    @GetMapping("/favorites")
+    public String showFavoritesPage() {
+        return "Pages/favorites";
+    }
 }

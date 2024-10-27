@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head
+    th:replace="~{fragments/header :: head(cssFile='favorites.css')}"
+  ></head>
+  <body>
+    <!-- Header -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Main Favorites Content -->
+    <main class="favorites-content">
+      <h2>Kedvenceim</h2>
+
+      <!-- Favorite Previous Orders Section -->
+      <section class="favorites-orders">
+        <h3>Kedvenc korábbi rendelé­seim</h3>
+        <p>Nincs kedvenc rendelésed.</p>
+        <div class="order-box">
+          <div class="favorite-icon">❤️</div>
+          <div class="order-details">
+            <h4>Étterem neve</h4>
+            <p>Kiszállítás időpontja: év, hónap, nap, óra:perc</p>
+            <p>Rendelés: rendelés azonosítószáma</p>
+            <p>1x rendelt étel neve</p>
+            <p>1x másik rendelt étel neve</p>
+          </div>
+          <div class="order-info">
+            <p class="order-price">unsigned int Ft</p>
+            <button class="reorder-button">Újr­a­rendelés</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Favorite Restaurants Section -->
+      <section class="favorites-restaurants">
+        <h3>Kedvenc éttermeim</h3>
+        <p>Nincs kedvenc éttermed.</p>
+        <div class="restaurant-box">
+          <div class="favorite-icon">❤️</div>
+          <div class="restaurant-image">KAJA KÉP</div>
+          <div class="restaurant-details">
+            <p>Kategóriák: kat1, kat2, kat3, kat4, kat5</p>
+            <h4>Étterem neve</h4>
+            <p>
+              Kiszállítási díj: unsigned int Ft. Pénzvisszatérítési díj: 150 Ft
+            </p>
+            <p>Étterem címe: város, utca, házszám</p>
+            <p>Telefonszám: telefonszám</p>
+            <p>Nyitvatartási idő: nyitva óra:perc-ig (fent az adatok?)</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </body>
+</html>
