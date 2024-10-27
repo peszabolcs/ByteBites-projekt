@@ -23,4 +23,14 @@ public class MainController {
     public String cartPage() {
         return "Pages/cart"; // Így a "templates/Pages/cart.html" fájlt tölti be
     }
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return "Pages/login"; // Így a "templates/Pages/login.html" fájlt tölti be
+    }
+
+    @GetMapping("/register")
+    public String registerPage() {
+        return "Pages/register"; // Így a "templates/Pages/register.html" fájlt tölti be
+    }
 }
