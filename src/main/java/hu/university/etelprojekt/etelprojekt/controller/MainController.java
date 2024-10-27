@@ -59,4 +59,9 @@ public class MainController {
     public String showAdminOrdersPage() {
         return "Pages/adminOrders";
     }
+
+    @GetMapping("/employees")
+    public String showEmployeesPage() {
+        return "Pages/employees";
+    }
 }
