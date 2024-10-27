@@ -8,12 +8,31 @@
   <header>
     <a th:href="@{/index}"><h1>BYTEBITES</h1></a>
     <div class="buttons">
-      <a th:href="@{/login}" class="login" id="login-btn">Bejelentkezés</a>
-      <a th:href="@{/register}" class="register" id="register-btn"
+      <a
+        th:if="${#authentication == null}"
+        th:href="@{/login}"
+        class="login"
+        id="login-btn"
+        >Bejelentkezés</a
+      >
+      <a
+        th:if="${#authentication == null}"
+        th:href="@{/register}"
+        class="register"
+        id="register-btn"
         >Regisztráció</a
       >
-      <div class="user-container" id="user-container" style="display: none">
-        <span id="username" class="username register">USERNAME</span>
+      <div
+        th:if="${#authentication != null}"
+        class="user-container"
+        id="user-container"
+      >
+        <span
+          id="username"
+          class="username register"
+          th:text="${#authentication.name}"
+          >USERNAME</span
+        >
         <div class="dropdown">
           <ul>
             <li>Profilom</li>
@@ -22,7 +41,7 @@
             <li>Kedvenceim</li>
             <li>Ügyfélszolgálat</li>
             <li>Segítség</li>
-            <li>Kijelentkezés</li>
+            <li><a th:href="@{/logout}">Kijelentkezés</a></li>
           </ul>
         </div>
         <a th:href="@{/cart}" id="cart-icon" class="cart-icon">Kosár</a>
