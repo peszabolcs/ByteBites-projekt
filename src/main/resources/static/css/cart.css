@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #4c4db7, #6a8fd9, #a0e3ff);
-  background-attachment: fixed; /* A gradiens fix marad a scrollozás közben */
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
