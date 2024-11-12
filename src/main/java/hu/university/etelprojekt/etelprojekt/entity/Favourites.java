@@ -1,38 +1,56 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "favourites")
-public class Favourites {
+public class Favourites implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "fav_id")
-    private Long favId;
+    private static final long serialVersionUID = 1L;
+
+    @EmbeddedId
+    private FavouritesId id; // Composite key (user_id, restaurant_id, dish_id)
 
     @ManyToOne
+    @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @ManyToOne
+    @MapsId("restaurantId")
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
     @ManyToOne
+    @MapsId("dishId")
     @JoinColumn(name = "dish_id")
     private Dish dish;
 
-    @Column(name = "fav_type", nullable = false)
+    @Column(name = "favourite_type", nullable = false)
     private String favType;
 
-    // Getters and Setters
-    public Long getFavId() {
-        return favId;
+    // Default constructor
+    public Favourites() {
     }
 
-    public void setFavId(Long favId) {
-        this.favId = favId;
+    // Constructor with parameters
+    public Favourites(FavouritesId id, User user, Restaurant restaurant, Dish dish, String favType) {
+        this.id = id;
+        this.user = user;
+        this.restaurant = restaurant;
+        this.dish = dish;
+        this.favType = favType;
+    }
+
+    // Getters and Setters
+    public FavouritesId getId() {
+        return id;
+    }
+
+    public void setId(FavouritesId id) {
+        this.id = id;
     }
 
     public User getUser() {
@@ -65,5 +83,11 @@ public class Favourites {
 
     public void setFavType(String favType) {
         this.favType = favType;
+    }
+
+    @Override
+    public String toString() {
+        return "Favourites [id=" + id + ", user=" + user + ", restaurant=" + restaurant + ", dish=" + dish
+                + ", favType=" + favType + "]";
     }
 }

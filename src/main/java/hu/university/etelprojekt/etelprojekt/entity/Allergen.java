@@ -1,21 +1,33 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "allergens")
-public class Allergen {
+@Table(name = "allergens") // Optional: specify the table name in the database
+public class Allergen implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "allergen_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the allergenId (primary key)
     private Long allergenId;
 
-    @Column(name = "allergen_name", nullable = false, unique = true)
-    private AllergenType allergenName;
+    private String allergenName; // Store the allergen name directly as a String
 
-    @Column(name = "allergen_name_hungarian", nullable = false)
-    private String allergenNameHungarian;
+    // Default constructor
+    public Allergen() {
+    }
+
+    // Constructor with all fields
+    public Allergen(Long allergenId, String allergenName) {
+        this.allergenId = allergenId;
+        this.allergenName = allergenName;
+    }
 
     // Getters and Setters
     public Long getAllergenId() {
@@ -26,20 +38,16 @@ public class Allergen {
         this.allergenId = allergenId;
     }
 
-    public AllergenType getAllergenName() {
+    public String getAllergenName() {
         return allergenName;
     }
 
-    public void setAllergenName(AllergenType allergenName) {
+    public void setAllergenName(String allergenName) {
         this.allergenName = allergenName;
-        this.allergenNameHungarian = allergenName.getAllergenNameHungarian(); // Set Hungarian name automatically
     }
 
-    public String getAllergenNameHungarian() {
-        return allergenNameHungarian;
-    }
-
-    public void setAllergenNameHungarian(String allergenNameHungarian) {
-        this.allergenNameHungarian = allergenNameHungarian;
+    @Override
+    public String toString() {
+        return "Allergen [allergenId=" + allergenId + ", allergenName=" + allergenName + "]";
     }
 }

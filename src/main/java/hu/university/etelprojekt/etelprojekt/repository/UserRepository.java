@@ -1,11 +1,7 @@
 package hu.university.etelprojekt.etelprojekt.repository;
 
-import hu.university.etelprojekt.etelprojekt.entity.UserType;
-
-import java.util.List;
 import java.util.Optional;
 
-//import org.hibernate.usertype.UserType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,51 +14,33 @@ import hu.university.etelprojekt.etelprojekt.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     // Save or update a user (CRUD operations are provided by JpaRepository)
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "null" })
     User save(User user);
 
     // Find a user by email (useful for login, etc.)
     Optional<User> findByEmail(String email);
 
-    // Find a user by email and user type (e.g., to check if an admin exists with a
-    // given email)
-    Optional<User> findByEmailAndUserType(String email, UserType userType);
-
-    // Find users by user type (e.g., to list all admins)
-    List<User> findByUserType(UserType userType);
-
-    // Find users by user type as a String (optional, if not using enum)
-    List<User> findByUserType(String userType);
-
     // Find a user by their ID
-    Optional<User> findById(Long userId);
+    @SuppressWarnings("null")
+    Optional<User> findById(Long user_id);
+
+    // Method to find user by email and userType
+    Optional<User> findByEmailAndUserType(String email, String userType);
 
     // Delete a user by their ID
-    void deleteById(Long userId);
+    void deleteById(@SuppressWarnings("null") Long user_id);
 
     // Update user status (example of custom query method)
     @Modifying
-    @Query("UPDATE User u SET u.status = :status WHERE u.userId = :userId")
-    void updateUserStatus(@Param("userId") Long userId, @Param("status") String status);
+    @Query("UPDATE User u SET u.status = :status WHERE u.user_id = :user_id")
+    void updateUserStatus(@Param("user_id") Long user_id, @Param("status") String status);
 
     // Update user information (name, phone, address, etc.)
     @Modifying
-    @Query("UPDATE User u SET u.firstName = :firstName, u.lastName = :lastName, u.phoneNumber = :phoneNumber, u.address = :address WHERE u.userId = :userId")
-    void updateUserInfo(@Param("userId") Long userId,
-            @Param("firstName") String firstName,
-            @Param("lastName") String lastName,
-            @Param("phoneNumber") String phoneNumber,
+    @Query("UPDATE User u SET u.first_name = :firstName, u.last_name = :lastName, u.phone_number = :phoneNumber, u.address = :address WHERE u.user_id = :user_id")
+    void updateUserInfo(@Param("user_id") Long user_id,
+            @Param("first_name") String first_name,
+            @Param("last_name") String last_name,
+            @Param("phone_number") String phone_number,
             @Param("address") Address address);
-
-    // Custom method to check if a user is an admin by email
-    default boolean isAdmin(String email) {
-        Optional<User> user = findByEmail(email);
-        return user.isPresent() && user.get().getUserType() == UserType.ADMIN;
-    }
-
-    // Custom method to check if a user is an admin by ID
-    default boolean isAdmin(Long userId) {
-        Optional<User> user = findById(userId);
-        return user.isPresent() && user.get().getUserType() == UserType.ADMIN;
-    }
 }

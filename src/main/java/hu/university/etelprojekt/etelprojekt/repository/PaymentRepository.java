@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
     // Find a payment by its ID
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({ "rawtypes", "unchecked", "null" })
     Optional findById(Long paymentId);
 
     // Find payments by order ID

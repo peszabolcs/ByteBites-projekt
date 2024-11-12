@@ -1,13 +1,12 @@
 package hu.university.etelprojekt.etelprojekt.repository;
 
 import hu.university.etelprojekt.etelprojekt.entity.Restaurant;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,17 +15,18 @@ import java.util.Optional;
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     // Find restaurant by ID
+    @SuppressWarnings("null")
     Optional<Restaurant> findById(Long restaurantId);
 
     // Find restaurant by name
     Optional<Restaurant> findByRestaurantName(String restaurantName);
 
     // Save or update restaurant
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "null" })
     Restaurant save(Restaurant restaurant);
 
     // Delete restaurant by ID
-    void deleteById(Long restaurantId);
+    void deleteById(@SuppressWarnings("null") Long restaurantId);
 
     // Find all restaurants sorted by name
     @Query("SELECT r FROM Restaurant r ORDER BY r.restaurantName ASC")
@@ -58,6 +58,4 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     @Query("UPDATE Restaurant r SET r.deliveryFee = :deliveryFee WHERE r.restaurantId = :restaurantId")
     void updateDeliveryFeeById(@Param("restaurantId") Long restaurantId, @Param("deliveryFee") Double deliveryFee);
 
-    // Find all restaurants with pagination
-    Page<Restaurant> findAll(Pageable pageable);
 }

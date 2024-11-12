@@ -1,6 +1,7 @@
 package hu.university.etelprojekt.etelprojekt.repository;
 
 import hu.university.etelprojekt.etelprojekt.entity.Dish;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -12,10 +13,11 @@ import java.util.Optional;
 public interface DishRepository extends JpaRepository<Dish, Long> {
 
     // Save or update a dish (CRUD operations are provided by JpaRepository)
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "null" })
     Dish save(Dish dish);
 
     // Find a dish by its ID
+    @SuppressWarnings("null")
     Optional<Dish> findById(Long dishId);
 
     // Find all dishes in a specific menu
@@ -25,7 +27,7 @@ public interface DishRepository extends JpaRepository<Dish, Long> {
     List<Dish> findByDishNameIgnoreCaseContaining(String dishName);
 
     // Delete a dish by its ID
-    void deleteById(Long dishId);
+    void deleteById(@SuppressWarnings("null") Long dishId);
 
     // Custom query to find dishes under a certain price
     @Query("SELECT d FROM Dish d WHERE d.price < :price")

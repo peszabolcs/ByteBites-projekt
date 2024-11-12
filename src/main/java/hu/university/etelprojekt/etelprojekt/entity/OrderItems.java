@@ -1,37 +1,63 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity
-@Table(name = "order_items")
-public class OrderItems {
+@Table(name = "order_items") // Specify the table name if needed
+public class OrderItems implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_item_id")
-    private Long orderItemId;
+    private static final long serialVersionUID = 1L;
+
+    @EmbeddedId // Indicates composite primary key
+    private OrderItemsId id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id", referencedColumnName = "order_id", insertable = false, updatable = false) // Foreign
+                                                                                                             // key to
+                                                                                                             // Order
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "dish_id", nullable = false)
+    @JoinColumn(name = "dish_id", referencedColumnName = "dish_id", insertable = false, updatable = false) // Foreign
+                                                                                                           // key to
+                                                                                                           // Dish
     private Dish dish;
 
-    @Column(name = "quantity", nullable = false)
-    private Integer quantity;
+    @ManyToOne
+    @JoinColumn(name = "cart_id", referencedColumnName = "cart_id", insertable = false, updatable = false) // Foreign
+                                                                                                           // key to
+                                                                                                           // Cart
+    private Cart cart;
 
-    @Column(name = "item_price", nullable = false)
-    private Double itemPrice;
+    @Column(name = "quantity")
+    private int quantity;
 
-    // Getters and Setters
-    public Long getOrderItemId() {
-        return orderItemId;
+    @Column(name = "price")
+    private BigDecimal price;
+
+    // Default constructor
+    public OrderItems() {
     }
 
-    public void setOrderItemId(Long orderItemId) {
-        this.orderItemId = orderItemId;
+    // Constructor with all fields
+    public OrderItems(OrderItemsId id, Order order, Dish dish, Cart cart, int quantity, BigDecimal price) {
+        this.id = id;
+        this.order = order;
+        this.dish = dish;
+        this.cart = cart;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    // Getters and Setters
+    public OrderItemsId getId() {
+        return id;
+    }
+
+    public void setId(OrderItemsId id) {
+        this.id = id;
     }
 
     public Order getOrder() {
@@ -50,19 +76,33 @@ public class OrderItems {
         this.dish = dish;
     }
 
-    public Integer getQuantity() {
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public Double getItemPrice() {
-        return itemPrice;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setItemPrice(Double itemPrice) {
-        this.itemPrice = itemPrice;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderItems [id=" + id + ", order=" + order + ", dish=" + dish + ", cart=" + cart + ", quantity="
+                + quantity + ", price=" + price + "]";
     }
 }

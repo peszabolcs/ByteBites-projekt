@@ -1,11 +1,14 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "dish")
-public class Dish {
+public class Dish implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,19 +18,38 @@ public class Dish {
     @Column(name = "dish_name", nullable = false)
     private String dishName;
 
-    @Column(name = "dish_description")
+    @Column(name = "description")
     private String dishDescription;
 
     @Column(name = "price", nullable = false)
     private Double price;
 
+    @Column(name = "picture_url")
+    private String pictureUrl;
+
     @ManyToOne
-    @JoinColumn(name = "restaurant_id", nullable = false)
-    private Restaurant restaurant;
+    @JoinColumn(name = "menu_id", nullable = false)
+    private Menu menu;
 
     @ManyToMany
     @JoinTable(name = "dish_allergen", joinColumns = @JoinColumn(name = "dish_id"), inverseJoinColumns = @JoinColumn(name = "allergen_id"))
     private List<Allergen> allergens;
+
+    // Default constructor
+    public Dish() {
+    }
+
+    // Constructor with all fields
+    public Dish(Long dishId, String dishName, String dishDescription, Double price, String pictureUrl, Menu menu,
+            List<Allergen> allergens) {
+        this.dishId = dishId;
+        this.dishName = dishName;
+        this.dishDescription = dishDescription;
+        this.price = price;
+        this.pictureUrl = pictureUrl;
+        this.menu = menu;
+        this.allergens = allergens;
+    }
 
     // Getters and Setters
     public Long getDishId() {
@@ -62,19 +84,33 @@ public class Dish {
         this.price = price;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
-    public List<Allergen> getAllergen() {
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    public List<Allergen> getAllergens() {
         return allergens;
     }
 
     public void setAllergens(List<Allergen> allergens) {
         this.allergens = allergens;
+    }
+
+    @Override
+    public String toString() {
+        return "Dish [dishId=" + dishId + ", dishName=" + dishName + ", dishDescription=" + dishDescription + ", price="
+                + price + ", pictureUrl=" + pictureUrl + ", menu=" + menu + ", allergens=" + allergens + "]";
     }
 }

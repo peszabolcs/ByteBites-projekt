@@ -1,29 +1,43 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "categories") // Optional: specify the table name in the database
+public class Category implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
-    private Long categoryId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the categoryId (primary key)
+    private Long category_id;
 
-    @Column(name = "category_name", nullable = false)
     private String categoryName;
-
-    @Column(name = "picture_url")
     private String pictureUrl;
+
+    // Default constructor
+    public Category() {
+    }
+
+    // Constructor with all fields
+    public Category(Long categoryId, String categoryName, String pictureUrl) {
+        this.category_id = categoryId;
+        this.categoryName = categoryName;
+        this.pictureUrl = pictureUrl;
+    }
 
     // Getters and Setters
     public Long getCategoryId() {
-        return categoryId;
+        return category_id;
     }
 
     public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+        this.category_id = categoryId;
     }
 
     public String getCategoryName() {
@@ -40,5 +54,11 @@ public class Category {
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "Category [categoryId=" + category_id + ", categoryName=" + categoryName + ", pictureUrl=" + pictureUrl
+                + "]";
     }
 }

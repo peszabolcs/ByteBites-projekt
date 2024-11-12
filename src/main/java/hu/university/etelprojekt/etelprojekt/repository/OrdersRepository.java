@@ -11,7 +11,7 @@ import java.util.List;
 public interface OrdersRepository extends JpaRepository<Order, Long> {
 
     // Find all orders by user
-    List<Order> findByUserId(Long userId);
+    List<Order> findByUserId(Long user_id);
 
     // Find all orders by order status
     List<Order> findByOrderStatus(String orderStatus);

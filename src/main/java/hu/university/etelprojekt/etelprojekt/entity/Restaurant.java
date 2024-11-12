@@ -1,10 +1,14 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "restaurant")
-public class Restaurant {
+public class Restaurant implements Serializable {
+
+    private static final long serialVersionUID = 1L; // Optional, but good practice to include for version control in
+                                                     // serialization
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

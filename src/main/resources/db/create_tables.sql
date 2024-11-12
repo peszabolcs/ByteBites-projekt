@@ -133,7 +133,7 @@ CREATE TABLE dish_allergen (
 
 --INDEXES:
 -- Index for quick lookup of users by email
-CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_user_email ON users(email);
 
 -- Indexes on foreign key columns
 CREATE INDEX idx_favourites_user_id ON favourites(user_id);
@@ -149,3 +149,19 @@ CREATE INDEX idx_payment_order_id ON payment(order_id);
 CREATE INDEX idx_dish_menu_id ON dish(menu_id);
 CREATE INDEX idx_restaurant_address_id ON restaurant(address_id);
 CREATE INDEX idx_restaurant_category_id ON restaurant(category_id);
+
+-- Drop tables if they exist to avoid errors when recreating
+ DROP TABLE IF EXISTS favourites CASCADE;
+ DROP TABLE IF EXISTS order_items CASCADE;
+ DROP TABLE IF EXISTS orders CASCADE;
+ DROP TABLE IF EXISTS payment CASCADE;
+ DROP TABLE IF EXISTS address CASCADE;
+ DROP TABLE IF EXISTS city CASCADE;
+ DROP TABLE IF EXISTS category CASCADE;
+ DROP TABLE IF EXISTS dish CASCADE;
+ DROP TABLE IF EXISTS menu CASCADE;
+ DROP TABLE IF EXISTS restaurant CASCADE;
+ DROP TABLE IF EXISTS allergens CASCADE;
+ DROP TABLE IF EXISTS users CASCADE;
+ DROP TABLE IF EXISTS user_address CASCADE;
+ DROP TABLE IF EXISTS dish_allergen CASCADE;
