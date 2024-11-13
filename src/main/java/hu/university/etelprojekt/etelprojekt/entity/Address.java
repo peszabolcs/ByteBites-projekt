@@ -17,9 +17,9 @@ public class Address implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the addressId (primary key)
     private Long address_id;
 
-    private String postal_code;
+    private String postalCode;
     private String city;
-    private String street_name;
+    private String streetName;
     private String public_place_name;
     private String house_number;
     private String building;
@@ -36,9 +36,9 @@ public class Address implements Serializable {
             String public_place_name, String house_number, String building,
             String staircase, String floor, String door) {
         this.address_id = address_id;
-        this.postal_code = postal_code;
+        this.postalCode = postal_code;
         this.city = city;
-        this.street_name = street_name;
+        this.streetName = street_name;
         this.public_place_name = public_place_name;
         this.house_number = house_number;
         this.building = building;
@@ -57,11 +57,11 @@ public class Address implements Serializable {
     }
 
     public String getPostalCode() {
-        return postal_code;
+        return postalCode;
     }
 
     public void setPostalCode(String postalCode) {
-        this.postal_code = postalCode;
+        this.postalCode = postalCode;
     }
 
     public String getCity() {
@@ -73,11 +73,11 @@ public class Address implements Serializable {
     }
 
     public String getStreetName() {
-        return street_name;
+        return streetName;
     }
 
     public void setStreetName(String streetName) {
-        this.street_name = streetName;
+        this.streetName = streetName;
     }
 
     public String getPublicPlaceName() {
@@ -130,8 +130,8 @@ public class Address implements Serializable {
 
     @Override
     public String toString() {
-        return "Address [addressId=" + address_id + ", postal_code=" + postal_code + ", city=" + city +
-                ", streetName=" + street_name + ", publicPlaceName=" + public_place_name + ", houseNumber=" +
+        return "Address [addressId=" + address_id + ", postal_code=" + postalCode + ", city=" + city +
+                ", streetName=" + streetName + ", publicPlaceName=" + public_place_name + ", houseNumber=" +
                 house_number + ", building=" + building + ", staircase=" + staircase + ", floor=" + floor +
                 ", door=" + door + "]";
     }
