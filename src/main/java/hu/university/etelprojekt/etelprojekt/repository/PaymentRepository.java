@@ -13,7 +13,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
     Optional<Payment> findByStatus(String status);
 
-    Optional<Payment> findByOrder_OrderId(Long orderId);
+    Optional<Payment> findByOrder_OrderId(Long orderId); // This should now work with 'order' field
 
     Optional<Payment> findByPaymentMethod(String paymentMethod);
 
