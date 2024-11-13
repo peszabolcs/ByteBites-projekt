@@ -14,8 +14,7 @@ public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id // This field is the primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment or use your strategy for primary key
-                                                        // generation
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private Long orderId;
 
@@ -35,11 +34,10 @@ public class Order implements Serializable {
     private BigDecimal totalAmount;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id") // Foreign key to User entity
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY) // One-to-many relationship with
-                                                                                      // OrderItems
+    @OneToMany(mappedBy = "order")
     private List<OrderItems> orderItems;
 
     // Default constructor

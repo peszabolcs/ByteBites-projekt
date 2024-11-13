@@ -4,23 +4,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "cities") // Optional: specify the table name in the database
+@Table(name = "city") // Optional: specify the table name in the database
 public class City implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the cityId (primary key)
-    private Long cityId;
+    private Long city_id;
 
     private String cityName;
 
     @ManyToOne // Assuming a Many-to-One relationship with Category
+    @JoinColumn(name = "category_id")
     private Category category;
 
     // Default constructor
@@ -29,18 +31,18 @@ public class City implements Serializable {
 
     // Constructor with all fields
     public City(Long cityId, String cityName, Category category) {
-        this.cityId = cityId;
+        this.city_id = cityId;
         this.cityName = cityName;
         this.category = category;
     }
 
     // Getters and Setters
     public Long getCityId() {
-        return cityId;
+        return city_id;
     }
 
     public void setCityId(Long cityId) {
-        this.cityId = cityId;
+        this.city_id = cityId;
     }
 
     public String getCityName() {
@@ -61,6 +63,6 @@ public class City implements Serializable {
 
     @Override
     public String toString() {
-        return "City [cityId=" + cityId + ", cityName=" + cityName + ", category=" + category + "]";
+        return "City [cityId=" + city_id + ", cityName=" + cityName + ", category=" + category + "]";
     }
 }

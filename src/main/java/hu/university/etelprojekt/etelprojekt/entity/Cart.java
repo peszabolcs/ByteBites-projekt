@@ -1,5 +1,6 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,9 +21,14 @@ public class Cart implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the cartId (primary key)
+    @Column(name = "cart_id")
     private Long cart_id;
 
+    @Column(name = "total_price", nullable = false)
     private BigDecimal total_price;
+
+    @Column(name = "user_id", nullable = false)
+    private User user_id;
 
     @ManyToOne // One user can have many carts, but each cart belongs to one user
     private User user;

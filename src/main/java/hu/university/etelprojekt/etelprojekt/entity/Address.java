@@ -8,20 +8,20 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "addresses") // Optional: specify the table name in the database
+@Table(name = "address") // Optional: specify the table name in the database
 public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the addressId (primary key)
-    private Long addressId;
+    private Long address_id;
 
-    private String postalCode;
+    private String postal_code;
     private String city;
-    private String streetName;
-    private String publicPlaceName;
-    private String houseNumber;
+    private String street_name;
+    private String public_place_name;
+    private String house_number;
     private String building;
     private String staircase;
     private String floor;
@@ -32,15 +32,15 @@ public class Address implements Serializable {
     }
 
     // Constructor with all fields
-    public Address(Long addressId, String postalCode, String city, String streetName,
-            String publicPlaceName, String houseNumber, String building,
+    public Address(Long address_id, String postal_code, String city, String street_name,
+            String public_place_name, String house_number, String building,
             String staircase, String floor, String door) {
-        this.addressId = addressId;
-        this.postalCode = postalCode;
+        this.address_id = address_id;
+        this.postal_code = postal_code;
         this.city = city;
-        this.streetName = streetName;
-        this.publicPlaceName = publicPlaceName;
-        this.houseNumber = houseNumber;
+        this.street_name = street_name;
+        this.public_place_name = public_place_name;
+        this.house_number = house_number;
         this.building = building;
         this.staircase = staircase;
         this.floor = floor;
@@ -49,19 +49,19 @@ public class Address implements Serializable {
 
     // Getters and Setters
     public Long getAddressId() {
-        return addressId;
+        return address_id;
     }
 
     public void setAddressId(Long addressId) {
-        this.addressId = addressId;
+        this.address_id = addressId;
     }
 
     public String getPostalCode() {
-        return postalCode;
+        return postal_code;
     }
 
     public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+        this.postal_code = postalCode;
     }
 
     public String getCity() {
@@ -73,27 +73,27 @@ public class Address implements Serializable {
     }
 
     public String getStreetName() {
-        return streetName;
+        return street_name;
     }
 
     public void setStreetName(String streetName) {
-        this.streetName = streetName;
+        this.street_name = streetName;
     }
 
     public String getPublicPlaceName() {
-        return publicPlaceName;
+        return public_place_name;
     }
 
     public void setPublicPlaceName(String publicPlaceName) {
-        this.publicPlaceName = publicPlaceName;
+        this.public_place_name = publicPlaceName;
     }
 
     public String getHouseNumber() {
-        return houseNumber;
+        return house_number;
     }
 
     public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
+        this.house_number = houseNumber;
     }
 
     public String getBuilding() {
@@ -130,9 +130,9 @@ public class Address implements Serializable {
 
     @Override
     public String toString() {
-        return "Address [addressId=" + addressId + ", postalCode=" + postalCode + ", city=" + city +
-                ", streetName=" + streetName + ", publicPlaceName=" + publicPlaceName + ", houseNumber=" +
-                houseNumber + ", building=" + building + ", staircase=" + staircase + ", floor=" + floor +
+        return "Address [addressId=" + address_id + ", postal_code=" + postal_code + ", city=" + city +
+                ", streetName=" + street_name + ", publicPlaceName=" + public_place_name + ", houseNumber=" +
+                house_number + ", building=" + building + ", staircase=" + staircase + ", floor=" + floor +
                 ", door=" + door + "]";
     }
 }

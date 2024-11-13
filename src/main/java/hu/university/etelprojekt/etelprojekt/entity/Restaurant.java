@@ -7,8 +7,7 @@ import java.io.Serializable;
 @Table(name = "restaurant")
 public class Restaurant implements Serializable {
 
-    private static final long serialVersionUID = 1L; // Optional, but good practice to include for version control in
-                                                     // serialization
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,19 +18,19 @@ public class Restaurant implements Serializable {
     private String restaurantName;
 
     @Column(name = "picture_url")
-    private String pictureUrl;
+    private String picture_url;
 
     @Column(name = "description")
     private String description;
 
     @Column(name = "delivery_fee")
-    private Double deliveryFee;
+    private Double deliveryFee; // Changed to match the Java field name
 
     @Column(name = "website")
     private String website;
 
     @Column(name = "phone_number")
-    private String phoneNumber;
+    private String phone_number;
 
     @ManyToOne
     @JoinColumn(name = "address_id")
@@ -59,11 +58,11 @@ public class Restaurant implements Serializable {
     }
 
     public String getPictureUrl() {
-        return pictureUrl;
+        return picture_url;
     }
 
     public void setPictureUrl(String pictureUrl) {
-        this.pictureUrl = pictureUrl;
+        this.picture_url = pictureUrl;
     }
 
     public String getDescription() {
@@ -74,11 +73,11 @@ public class Restaurant implements Serializable {
         this.description = description;
     }
 
-    public Double getDeliveryFee() {
+    public Double getDeliveryFee() { // Ensure getter matches field name
         return deliveryFee;
     }
 
-    public void setDeliveryFee(Double deliveryFee) {
+    public void setDeliveryFee(Double deliveryFee) { // Ensure setter matches field name
         this.deliveryFee = deliveryFee;
     }
 
@@ -91,11 +90,11 @@ public class Restaurant implements Serializable {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return phone_number;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.phone_number = phoneNumber;
     }
 
     public Address getAddress() {

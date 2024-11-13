@@ -10,25 +10,19 @@ public class OrderItems implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @EmbeddedId // Indicates composite primary key
+    @EmbeddedId
     private OrderItemsId id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id", referencedColumnName = "order_id", insertable = false, updatable = false) // Foreign
-                                                                                                             // key to
-                                                                                                             // Order
+    @JoinColumn(name = "order_id", referencedColumnName = "order_id", insertable = false, updatable = false)
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "dish_id", referencedColumnName = "dish_id", insertable = false, updatable = false) // Foreign
-                                                                                                           // key to
-                                                                                                           // Dish
+    @JoinColumn(name = "dish_id", referencedColumnName = "dish_id", insertable = false, updatable = false)
     private Dish dish;
 
     @ManyToOne
-    @JoinColumn(name = "cart_id", referencedColumnName = "cart_id", insertable = false, updatable = false) // Foreign
-                                                                                                           // key to
-                                                                                                           // Cart
+    @JoinColumn(name = "cart_id", referencedColumnName = "cart_id", insertable = false, updatable = false)
     private Cart cart;
 
     @Column(name = "quantity")

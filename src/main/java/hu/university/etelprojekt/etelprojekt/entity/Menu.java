@@ -8,45 +8,44 @@ import java.util.List;
 @Table(name = "menu")
 public class Menu implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "menu_id")
-    private Long menu_id;
+    private Long id;
 
-    @Column(name = "menu_name", nullable = false)
-    private String menuName;
+    private String name;
 
-    @OneToMany(mappedBy = "menu")
+    // Relationship to Restaurant (add this property)
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id", nullable = false) // restaurant_id in the 'menu' table
+    private Restaurant restaurant;
+
+    // This represents the inverse relationship to Dish
+    @OneToMany(mappedBy = "menu") // 'menu' is the property in the 'Dish' entity
     private List<Dish> dishes;
 
-    // Default constructor
-    public Menu() {
-    }
-
-    // Constructor with all fields
-    public Menu(Long menuId, String menuName, List<Dish> dishes) {
-        this.menu_id = menuId;
-        this.menuName = menuName;
-        this.dishes = dishes;
-    }
-
     // Getters and Setters
-    public Long getMenuId() {
-        return menu_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setMenuId(Long menuId) {
-        this.menu_id = menuId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public String getName() {
+        return name;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
     public List<Dish> getDishes() {
@@ -55,10 +54,5 @@ public class Menu implements Serializable {
 
     public void setDishes(List<Dish> dishes) {
         this.dishes = dishes;
-    }
-
-    @Override
-    public String toString() {
-        return "Menu [menuId=" + menu_id + ", menuName=" + menuName + ", dishes=" + dishes + "]";
     }
 }

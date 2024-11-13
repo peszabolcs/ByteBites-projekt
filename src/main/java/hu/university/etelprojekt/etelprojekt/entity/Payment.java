@@ -1,10 +1,19 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
-import jakarta.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "payment") // Specify the table name if necessary
+@Table(name = "payment")
 public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -12,56 +21,43 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
-    private Long payment_id;
+    private Long paymentId;
 
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false) // Assuming Order is another entity
-    private Order order_id;
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order; // Relationship with the Order entity
 
-    @Column(name = "amount")
+    @Column(name = "amount", nullable = false)
     private Double amount;
 
-    @Column(name = "payment_method")
-    private String payment_method;
+    @Column(name = "payment_method", nullable = false)
+    private String paymentMethod;
 
-    @Column(name = "payment_date")
-    private String payment_date;
+    @Column(name = "payment_date", nullable = false)
+    private LocalDate paymentDate;
 
     @Column(name = "status")
     private String status;
 
-    // Default constructor
-    public Payment() {
-    }
-
-    // Constructor with all fields
-    public Payment(Long paymentId, Order order, Double amount, String paymentMethod, String paymentDate,
-            String status) {
-        this.payment_id = paymentId;
-        this.order_id = order;
-        this.amount = amount;
-        this.payment_method = paymentMethod;
-        this.payment_date = paymentDate;
-        this.status = status;
-    }
-
-    // Getters and Setters
+    // Getter and Setter for paymentId
     public Long getPaymentId() {
-        return payment_id;
+        return paymentId;
     }
 
     public void setPaymentId(Long paymentId) {
-        this.payment_id = paymentId;
+        this.paymentId = paymentId;
     }
 
+    // Getter and Setter for order
     public Order getOrder() {
-        return order_id;
+        return order;
     }
 
     public void setOrder(Order order) {
-        this.order_id = order;
+        this.order = order;
     }
 
+    // Getter and Setter for amount
     public Double getAmount() {
         return amount;
     }
@@ -70,33 +66,30 @@ public class Payment implements Serializable {
         this.amount = amount;
     }
 
+    // Getter and Setter for paymentMethod
     public String getPaymentMethod() {
-        return payment_method;
+        return paymentMethod;
     }
 
     public void setPaymentMethod(String paymentMethod) {
-        this.payment_method = paymentMethod;
+        this.paymentMethod = paymentMethod;
     }
 
-    public String getPaymentDate() {
-        return payment_date;
+    // Getter and Setter for paymentDate
+    public LocalDate getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setPaymentDate(String paymentDate) {
-        this.payment_date = paymentDate;
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public String getPaymentStatus() {
+    // Getter and Setter for status
+    public String getStatus() {
         return status;
     }
 
-    public void setPaymentStatus(String paymentStatus) {
-        this.status = paymentStatus;
-    }
-
-    @Override
-    public String toString() {
-        return "Payment [paymentId=" + payment_id + ", order=" + order_id + ", amount=" + amount + ", paymentMethod="
-                + payment_method + ", paymentDate=" + payment_date + ", paymentStatus=" + status + "]";
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
