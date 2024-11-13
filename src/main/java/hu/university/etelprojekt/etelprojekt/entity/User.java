@@ -1,49 +1,71 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDate;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
 
-    @Column(name = "status")
+    @Column(name = "status", length = 50)
     private String status;
 
     @Column(name = "registration_date", nullable = false)
-    private LocalDate registrationDate;
+    @Temporal(TemporalType.DATE)
+    private Date registrationDate;
 
-    @Column(name = "user_type", nullable = false)
-    private UserType userType;
+    @Column(name = "user_type", nullable = false, length = 50)
+    private String userType;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", length = 15)
     private String phoneNumber;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false, length = 255)
     private String password;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", nullable = false, length = 100, unique = true)
     private String email;
 
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+
     @ManyToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", referencedColumnName = "address_id", nullable = true) // Allow null addresses
     private Address address;
 
-    @OneToMany(mappedBy = "address")
-    private List<User> users;
+    // Default constructor
+    public User() {
+    }
+
+    // Constructor with all fields
+    public User(Long userId, String firstName, String lastName, String status, Date registrationDate,
+            String userType, String phoneNumber, String password, String email, Address address) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.status = status;
+        this.registrationDate = registrationDate;
+        this.userType = userType;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.email = email;
+        this.address = address;
+    }
 
     // Getters and Setters
     public Long getUserId() {
@@ -78,19 +100,19 @@ public class User {
         this.status = status;
     }
 
-    public LocalDate getRegistrationDate() {
+    public Date getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(LocalDate registrationDate) {
+    public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
 
-    public UserType getUserType() {
+    public String getUserType() {
         return userType;
     }
 
-    public void setUserType(UserType userType) {
+    public void setUserType(String userType) {
         this.userType = userType;
     }
 
@@ -126,4 +148,12 @@ public class User {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", status="
+                + status
+                + ", registrationDate=" + registrationDate + ", userType=" + userType + ", phoneNumber="
+                + phoneNumber
+                + ", email=" + email + ", address=" + address + "]";
+    }
 }

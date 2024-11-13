@@ -1,57 +1,43 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "dish")
-public class Dish {
+public class Dish implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "dish_id")
-    private Long dishId;
+    private Long dish_id;
 
-    @Column(name = "dish_name", nullable = false)
-    private String dishName;
+    private String name;
 
-    @Column(name = "dish_description")
-    private String dishDescription;
-
-    @Column(name = "price", nullable = false)
     private Double price;
 
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id", nullable = false)
-    private Restaurant restaurant;
+    private String description;
 
-    @ManyToMany
-    @JoinTable(name = "dish_allergen", joinColumns = @JoinColumn(name = "dish_id"), inverseJoinColumns = @JoinColumn(name = "allergen_id"))
-    private List<Allergen> allergens;
+    // This represents the relationship to Menu
+    @ManyToOne
+    @JoinColumn(name = "menu_id", nullable = false) // 'menu_id' refers to the column in the 'dish' table
+    private Menu menu;
 
     // Getters and Setters
-    public Long getDishId() {
-        return dishId;
+    public Long getId() {
+        return dish_id;
     }
 
-    public void setDishId(Long dishId) {
-        this.dishId = dishId;
+    public void setId(Long id) {
+        this.dish_id = id;
     }
 
-    public String getDishName() {
-        return dishName;
+    public String getName() {
+        return name;
     }
 
-    public void setDishName(String dishName) {
-        this.dishName = dishName;
-    }
-
-    public String getDishDescription() {
-        return dishDescription;
-    }
-
-    public void setDishDescription(String dishDescription) {
-        this.dishDescription = dishDescription;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getPrice() {
@@ -62,19 +48,19 @@ public class Dish {
         this.price = price;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public String getDescription() {
+        return description;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public List<Allergen> getAllergen() {
-        return allergens;
+    public Menu getMenu() {
+        return menu;
     }
 
-    public void setAllergens(List<Allergen> allergens) {
-        this.allergens = allergens;
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
 }

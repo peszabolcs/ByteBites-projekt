@@ -1,34 +1,73 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 @Entity
-@Table(name = "orders")
-public class Order {
+@Table(name = "orders") // Specify the table name if necessary
+public class Order implements Serializable {
 
-    @Id
+    private static final long serialVersionUID = 1L;
+
+    @Id // This field is the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private Long orderId;
 
-    @Column(name = "order_date", nullable = false)
-    private Date orderDate;
+    @Column(name = "delivery_time")
+    private LocalTime deliveryTime;
 
-    @Column(name = "total_price", nullable = false)
-    private Double totalPrice;
+    @Column(name = "system_usage_fee")
+    private BigDecimal systemUsageFee;
+
+    @Column(name = "order_status")
+    private String orderStatus;
+
+    @Column(name = "order_date")
+    private LocalDate orderDate;
+
+    @Column(name = "total_amount")
+    private BigDecimal totalAmount;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id", nullable = false)
-    private Restaurant restaurant;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItems> orderItems;
 
-    @ManyToOne
-    @JoinColumn(name = "payment_id", nullable = false)
-    private Payment payment;
+    // Default constructor
+    public Order() {
+    }
+
+    // Constructor with all fields
+    public Order(Long orderId, LocalTime deliveryTime, BigDecimal systemUsageFee, String orderStatus,
+            LocalDate orderDate, BigDecimal totalAmount, User user, List<OrderItems> orderItems) {
+        this.orderId = orderId;
+        this.deliveryTime = deliveryTime;
+        this.systemUsageFee = systemUsageFee;
+        this.orderStatus = orderStatus;
+        this.orderDate = orderDate;
+        this.totalAmount = totalAmount;
+        this.user = user;
+        this.orderItems = orderItems;
+    }
+
+    // Constructor without orderId (optional)
+    public Order(LocalTime deliveryTime, BigDecimal systemUsageFee, String orderStatus,
+            LocalDate orderDate, BigDecimal totalAmount, User user, List<OrderItems> orderItems) {
+        this.deliveryTime = deliveryTime;
+        this.systemUsageFee = systemUsageFee;
+        this.orderStatus = orderStatus;
+        this.orderDate = orderDate;
+        this.totalAmount = totalAmount;
+        this.user = user;
+        this.orderItems = orderItems;
+    }
 
     // Getters and Setters
     public Long getOrderId() {
@@ -39,20 +78,44 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public Date getOrderDate() {
+    public LocalTime getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(LocalTime deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public BigDecimal getSystemUsageFee() {
+        return systemUsageFee;
+    }
+
+    public void setSystemUsageFee(BigDecimal systemUsageFee) {
+        this.systemUsageFee = systemUsageFee;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 
-    public Double getTotalPrice() {
-        return totalPrice;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public User getUser() {
@@ -63,19 +126,18 @@ public class Order {
         this.user = user;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public List<OrderItems> getOrderItems() {
+        return orderItems;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
+    public void setOrderItems(List<OrderItems> orderItems) {
+        this.orderItems = orderItems;
     }
 
-    public Payment getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Payment payment) {
-        this.payment = payment;
+    @Override
+    public String toString() {
+        return "Order [orderId=" + orderId + ", deliveryTime=" + deliveryTime + ", systemUsageFee=" + systemUsageFee +
+                ", orderStatus=" + orderStatus + ", orderDate=" + orderDate + ", totalAmount=" + totalAmount + ", user="
+                + user + "]";
     }
 }

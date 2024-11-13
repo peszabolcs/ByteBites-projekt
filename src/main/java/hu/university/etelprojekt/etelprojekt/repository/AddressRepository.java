@@ -2,41 +2,24 @@ package hu.university.etelprojekt.etelprojekt.repository;
 
 import hu.university.etelprojekt.etelprojekt.entity.Address;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import java.util.List;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address, Long> {
-    // Find an address by its ID (Read)
-    Optional<Address> findById(Long addressId);
 
-    // Find an address by postal code (optional)
-    Optional<Address> findByPostalCode(String postalCode);
+    // Find all addresses by postal code
+    List<Address> findByPostalCode(String postalCode);
 
-    // Create or update an address (Save/Update)
-    // This is automatically handled by the save() method in JpaRepository
+    // Find all addresses by city
+    List<Address> findByCity(String city);
 
-    // Delete an address by ID (Delete)
-    void deleteById(Long addressId);
+    // Find all addresses by street name (corrected to match the field
+    // 'street_name')
+    List<Address> findByStreetName(String streetName);
 
-    // Update address fields like postal code, city, street name, etc.
-    @Modifying
-    @Query("UPDATE Address a SET a.postalCode = :postalCode, a.city = :city, a.streetName = :streetName, a.houseNumber = :houseNumber, a.building = :building, a.staircase = :staircase, a.floor = :floor, a.door = :door WHERE a.addressId = :addressId")
-    void updateAddress(@Param("addressId") Long addressId,
-            @Param("postalCode") String postalCode,
-            @Param("city") String city,
-            @Param("streetName") String streetName,
-            @Param("houseNumber") String houseNumber,
-            @Param("building") String building,
-            @Param("staircase") String staircase,
-            @Param("floor") String floor,
-            @Param("door") String door);
+    // Custom query: Find addresses by a combination of city and street name
+    List<Address> findByCityAndStreetName(String city, String streetName);
 
-    // Custom method to check if an address exists by postal code (optional)
-    boolean existsByPostalCode(String postalCode);
 }

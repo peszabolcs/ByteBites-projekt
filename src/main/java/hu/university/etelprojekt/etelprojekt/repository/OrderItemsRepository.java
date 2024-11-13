@@ -1,26 +1,31 @@
 package hu.university.etelprojekt.etelprojekt.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
-import hu.university.etelprojekt.etelprojekt.entity.Order;
+import org.springframework.stereotype.Repository;
 import hu.university.etelprojekt.etelprojekt.entity.OrderItems;
+import hu.university.etelprojekt.etelprojekt.entity.OrderItemsId;
 
+import java.math.BigDecimal;
 import java.util.List;
 
-public interface OrderItemsRepository extends JpaRepository<Order, Long> {
+@Repository
+public interface OrderItemsRepository extends JpaRepository<OrderItems, OrderItemsId> {
 
-    // Find all order items by order ID
-    List<OrderItems> findByOrderId(Long orderId);
+    // Find all order items for a specific order
+    List<OrderItems> findByOrder_OrderId(Long orderId);
 
-    // Find all order items by dish ID
-    List<OrderItems> findByDishId(Long dishId);
+    // Find all order items for a specific dish
+    List<OrderItems> findByDish_id(Long dishId);
 
-    // Find order items by order ID and dish ID
-    OrderItems findByOrderIdAndDishId(Long orderId, Long dishId);
+    // Find all order items by quantity
+    List<OrderItems> findByQuantity(int quantity);
 
-    // Custom query to get order items with price details for an order
-    @Query("SELECT oi FROM OrderItem oi WHERE oi.orderId = :orderId")
-    List<OrderItems> findOrderItemsWithPrice(@Param("orderId") Long orderId);
+    // Find all order items by price
+    List<OrderItems> findByPrice(BigDecimal price);
+
+    // Find all order items for a specific order and dish
+    // List<OrderItems> findByOrder_OrderIdAndDish_Dish_id(Long orderId, Long
+    // dish_id);
+    List<OrderItems> findByOrder_OrderIdAndDish_Id(Long orderId, Long dishId);
+
 }

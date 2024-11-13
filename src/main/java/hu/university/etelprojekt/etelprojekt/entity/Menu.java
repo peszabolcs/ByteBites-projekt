@@ -1,38 +1,43 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "menu")
-public class Menu {
+public class Menu implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "menu_id")
-    private Long menuId;
+    private Long id;
 
-    @Column(name = "menu_name", nullable = false, length = 100)
-    private String menuName;
+    private String name;
 
+    // Relationship to Restaurant (add this property)
     @ManyToOne
-    @JoinColumn(name = "restaurant_id", nullable = false)
+    @JoinColumn(name = "restaurant_id", nullable = false) // restaurant_id in the 'menu' table
     private Restaurant restaurant;
 
+    // This represents the inverse relationship to Dish
+    @OneToMany(mappedBy = "menu") // 'menu' is the property in the 'Dish' entity
+    private List<Dish> dishes;
+
     // Getters and Setters
-    public Long getMenuId() {
-        return menuId;
+    public Long getId() {
+        return id;
     }
 
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public String getName() {
+        return name;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Restaurant getRestaurant() {
@@ -41,5 +46,13 @@ public class Menu {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 }

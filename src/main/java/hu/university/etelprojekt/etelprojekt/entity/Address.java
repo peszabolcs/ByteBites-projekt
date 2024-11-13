@@ -1,50 +1,59 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "address")
-public class Address {
+@Table(name = "address") // Optional: specify the table name in the database
+public class Address implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id")
-    private Long addressId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the addressId (primary key)
+    private Long address_id;
 
-    @Column(name = "postal_code", nullable = false)
     private String postalCode;
-
-    @Column(name = "city", nullable = false)
     private String city;
-
-    @Column(name = "street_name", nullable = false)
     private String streetName;
-
-    @Column(name = "public_place_name")
-    private String publicPlaceName;
-
-    @Column(name = "house_number")
-    private String houseNumber;
-
-    @Column(name = "building")
+    private String public_place_name;
+    private String house_number;
     private String building;
-
-    @Column(name = "staircase")
     private String staircase;
-
-    @Column(name = "floor")
     private String floor;
-
-    @Column(name = "door")
     private String door;
+
+    // Default constructor
+    public Address() {
+    }
+
+    // Constructor with all fields
+    public Address(Long address_id, String postal_code, String city, String street_name,
+            String public_place_name, String house_number, String building,
+            String staircase, String floor, String door) {
+        this.address_id = address_id;
+        this.postalCode = postal_code;
+        this.city = city;
+        this.streetName = street_name;
+        this.public_place_name = public_place_name;
+        this.house_number = house_number;
+        this.building = building;
+        this.staircase = staircase;
+        this.floor = floor;
+        this.door = door;
+    }
 
     // Getters and Setters
     public Long getAddressId() {
-        return addressId;
+        return address_id;
     }
 
     public void setAddressId(Long addressId) {
-        this.addressId = addressId;
+        this.address_id = addressId;
     }
 
     public String getPostalCode() {
@@ -72,19 +81,19 @@ public class Address {
     }
 
     public String getPublicPlaceName() {
-        return publicPlaceName;
+        return public_place_name;
     }
 
     public void setPublicPlaceName(String publicPlaceName) {
-        this.publicPlaceName = publicPlaceName;
+        this.public_place_name = publicPlaceName;
     }
 
     public String getHouseNumber() {
-        return houseNumber;
+        return house_number;
     }
 
     public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
+        this.house_number = houseNumber;
     }
 
     public String getBuilding() {
@@ -117,5 +126,13 @@ public class Address {
 
     public void setDoor(String door) {
         this.door = door;
+    }
+
+    @Override
+    public String toString() {
+        return "Address [addressId=" + address_id + ", postal_code=" + postalCode + ", city=" + city +
+                ", streetName=" + streetName + ", publicPlaceName=" + public_place_name + ", houseNumber=" +
+                house_number + ", building=" + building + ", staircase=" + staircase + ", floor=" + floor +
+                ", door=" + door + "]";
     }
 }

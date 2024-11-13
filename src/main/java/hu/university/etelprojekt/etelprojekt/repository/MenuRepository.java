@@ -5,20 +5,19 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface MenuRepository extends JpaRepository<Menu, Long> {
 
-    // Find a menu by its ID
-    Optional<Menu> findById(Long menuId);
+    // Find all menus for a specific restaurant by restaurant ID
+    List<Menu> findByRestaurant_RestaurantId(Long restaurantId);
 
     // Find a menu by its name
-    Optional<Menu> findByMenuName(String menuName);
+    Menu findByName(String name);
 
-    // Find all menus for a specific restaurant
-    List<Menu> findByRestaurantId(Long restaurantId);
+    // Custom query: Find all menus that contain a dish with the given name
+    List<Menu> findByDishesNameContaining(String dishName);
 
-    // Delete a menu by its ID
-    void deleteById(Long menuId);
+    // Custom query: Find menus by restaurant ID and menu name
+    List<Menu> findByRestaurant_RestaurantIdAndName(Long restaurantId, String menuName);
 }
