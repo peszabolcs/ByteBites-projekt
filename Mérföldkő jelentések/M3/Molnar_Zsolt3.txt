@@ -15,6 +15,9 @@ ___
     ##### A feladattal való foglalkozást alátámasztó commit:
 
      - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/d82cb68c5da901ad6e0697c107f7ea2e929272ea
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/22078b667596251fd8992a833e9f21552517179e
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/659097eff112e2abeb28e8483aca466a70372efa
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/51433623a8a8de9c58c759b92e160281f403c9e8
 
  - 8.3.2. Bejelentkezés megvalósítása (CR)
 
@@ -25,6 +28,7 @@ ___
     ##### A feladattal való foglalkozást alátámasztó commit:
 
      - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/6607ee2b9c3514c22e222447b06cb699fa6026af
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/9ac0b99ba566c9f03c176f77b2bc0b17f974f297
 
 - 8.3.9. Rendelési előzmények megtekintése
 
