@@ -4,7 +4,7 @@ Az alábbi tesztdokumentum az Étel projekthez tartozó 8.3.2 Bejelentkezés meg
 
 ## 1. Teszteljárások (TP)
 
-### 1.1. Felhasználónév megadása funkció tesztelése 
+### 1.1. Bejelentkezés funkció tesztelése 
 - Azonosító: TP-01
 - Tesztesetek: TC-01, TC-02, TC-03
 - Leírás: Bejelentkezés funkció tesztelése
