@@ -1,0 +1,59 @@
+### Összefoglaló az `1.` mérföldkőben végzett munkáról
+
+### Projekt tag: `Molnár Zsolt`
+
+___
+
+#### Vállalásaim a mérföldkőben: 
+
+ - 8.3.1. Regisztráció megvalósítása (CR)
+
+    ##### A feladathoz tartozó issue:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/issues/26
+
+    ##### A feladattal való foglalkozást alátámasztó commit:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/d82cb68c5da901ad6e0697c107f7ea2e929272ea
+
+ - 8.3.2. Bejelentkezés megvalósítása (CR)
+
+    ##### A feladathoz tartozó issue:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/issues/27
+
+    ##### A feladattal való foglalkozást alátámasztó commit:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/commit/6607ee2b9c3514c22e222447b06cb699fa6026af
+
+- 8.3.9. Rendelési előzmények megtekintése
+
+    ##### A feladathoz tartozó issue:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/issues/28
+
+    ##### A feladat elvégzését alátámasztó commit:
+
+     
+
+
+- 8.3.11. Tesztelési dokumentum a regisztáció és bejelentkezés funckióhoz (TP, TC)
+
+    ##### A feladathoz tartozó issue:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/issues/29
+
+    ##### A feladat elvégzését alátámasztó commit:
+
+    
+
+
+- 8.3.16. Tesztelési dokumentum a rendelés funkcióhoz (TP, TC)
+
+    ##### A feladathoz tartozó issue:
+
+     - https://git-okt.sed.inf.szte.hu/2024_ib153i-3_etel/etel/-/issues/30
+
+    ##### A feladat elvégzését alátámasztó commit:
+
+     
