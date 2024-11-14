@@ -48,7 +48,7 @@ Az alábbi tesztdokumentum az Étel projekthez tartozó 8.3.3 Éttermek keresés
 ### 2.2. Étterem keresése város alapján funkció tesztesetei
 
 #### 2.2.1. TC-01
-- TP: TP-01
+- TP: TP-02
 - Leírás: étterem keresése város alapján funkció ellenőrzése 
 - Bemenet: `város` = 'Szeged', `speciális` = '-'
 - Művelet: nyomjuk meg a `keresés` gombot 
@@ -57,21 +57,21 @@ Az alábbi tesztdokumentum az Étel projekthez tartozó 8.3.3 Éttermek keresés
 ### 2.3. Étterem keresése speciális étkezés alapján funkció tesztesetei
 
 #### 2.3.1. TC-01
-- TP: TP-01
+- TP: TP-03
 - Leírás: étterem keresése speciális étkezés (vegán) alapján funkció ellenőrzése 
 - Bemenet: `város` = '-', `speciális` = 'vegán'
 - Művelet: nyomjuk meg a `keresés` gombot 
 - Elvárt kimenet: a program megjelenít minden vegán ételeket felszolgáló éttermet, a program csak vegán opcióval rendelkező éttermeket jelenít meg
 
-#### 2.3.2. TC-01
-- TP: TP-01
+#### 2.3.2. TC-02
+- TP: TP-03
 - Leírás: étterem keresése speciális étkezés (vegetáriánus) alapján funkció ellenőrzése 
 - Bemenet: `város` = 'Szeged', `speciális` = 'vegetáriánus'
 - Művelet: nyomjuk meg a `keresés` gombot 
 - Elvárt kimenet: a program megjelenít minden Szeged területén található, vegetáriánus ételt kínáló éttermet, a program csak Szeged területén található és csak vegetáriánus opciót kínáló éttermeket jelenít meg
 
-#### 2.3.3. TC-01
-- TP: TP-01
+#### 2.3.3. TC-03
+- TP: TP-03
 - Leírás: Étterem keresése speciális étkezés (gluténmentes) alapján funkció ellenőrzése 
 - Bemenet: `város` = '-', `speciális` = 'gluténmentes'
 - Művelet: nyomjuk meg a `keresés` gombot 
