@@ -1,0 +1,17 @@
+<configuration>
+    <!-- Fájlba író appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>app.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Csak a saját csomagod logolása -->
+    <logger name="hu.university.etelprojekt.etelprojekt" level="INFO" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <root level="OFF" />
+</configuration>

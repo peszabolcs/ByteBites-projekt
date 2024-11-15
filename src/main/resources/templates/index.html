@@ -35,21 +35,10 @@
     <section class="city-section">
       <h3>Megtalálsz minket ezeken a településeken és még sok helyen</h3>
       <div class="city-grid">
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button class="add-city-button">Város hozzáadása</button>
+        <button
+          th:each="restaurant : ${restaurants}"
+          th:text="${restaurant.restaurantName}"
+        ></button>
       </div>
     </section>
 

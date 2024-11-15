@@ -3,9 +3,11 @@ package hu.university.etelprojekt.etelprojekt.controller;
 import hu.university.etelprojekt.etelprojekt.entity.City;
 import hu.university.etelprojekt.etelprojekt.service.CityService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +16,8 @@ import java.util.Optional;
 @RequestMapping("/api/cities")
 public class CityController {
 
-    private final CityService cityService;
+    @Autowired
+    private CityService cityService;
 
     public CityController(CityService cityService) {
         this.cityService = cityService;
