@@ -26,11 +26,18 @@ public class RestaurantService {
 
     // Get all restaurants
     public List<Restaurant> getAllRestaurants() {
-        logger.info("Adatbázis lekérdezés folyamatban");
-        List<Restaurant> restaurants = restaurantRepository.findAll();
-        logger.info("Adatbázis lekérdezés befejeződött, talált éttermek: " + restaurants.size());
-        return restaurants;
+        logger.debug("getAllRestaurants metódus kezdődik");
+        try {
+            List<Restaurant> restaurants = restaurantRepository.findAll();
+            logger.debug("Repository findAll() hívás eredménye: " + 
+                        (restaurants != null ? restaurants.size() + " étterem" : "null"));
+            return restaurants;
+        } catch (Exception e) {
+            logger.error("Hiba az éttermek lekérdezése során", e);
+            logger.error("Hiba részletei:", e);
+            throw e;
         }
+    }
 
     // Get a restaurant by name
     public Optional<Restaurant> getRestaurantByName(String restaurantName) {

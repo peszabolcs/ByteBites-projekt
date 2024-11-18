@@ -1,8 +1,8 @@
 -- Insert sample data into address table
-INSERT INTO address (postal_code, city, street_name, public_place_name, house_number)
+INSERT INTO address (address_id, postal_code, city, street_name, public_place_name, house_number)
 VALUES 
-('1011', 'Budapest', 'Fő utca', 'Building', '1'),
-('1052', 'Budapest', 'Kossuth Lajos utca', NULL, '2A');
+(1, '1011', 'Budapest', 'Fő utca', 'Building', '1'),
+(2, '1052', 'Budapest', 'Kossuth Lajos utca', NULL, '2A');
 
 -- Insert sample data into users table
 INSERT INTO users (first_name, last_name, status, registration_date, user_type, phone_number, password, email, address_id)

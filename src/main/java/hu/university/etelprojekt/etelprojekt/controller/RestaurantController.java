@@ -30,10 +30,6 @@ public class RestaurantController {
     }
 
     // Get all restaurants
-    @GetMapping
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantService.getAllRestaurants();
-    }
 
     // Get restaurant by name
     @GetMapping("/{name}")

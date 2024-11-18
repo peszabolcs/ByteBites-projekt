@@ -35,10 +35,15 @@
     <section class="city-section">
       <h3>Megtalálsz minket ezeken a településeken és még sok helyen</h3>
       <div class="city-grid">
-        <button
-          th:each="restaurant : ${restaurants}"
-          th:text="${restaurant.restaurantName}"
-        ></button>
+        <!-- Ellenőrizzük, hogy van-e egyáltalán étterem -->
+        <div th:if="${restaurants == null || #lists.isEmpty(restaurants)}">
+          Jelenleg nincsenek elérhető éttermek.
+        </div>
+
+        <!-- Éttermek listázása -->
+        <div th:each="restaurant : ${restaurants}" class="restaurant-card">
+          <h4 th:text="${restaurant.restaurantName}"></h4>
+        </div>
       </div>
     </section>
 

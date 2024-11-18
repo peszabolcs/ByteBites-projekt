@@ -1,3 +1,23 @@
+-- Drop junction tables first
+DROP TABLE IF EXISTS user_address CASCADE;
+DROP TABLE IF EXISTS dish_allergen CASCADE;
+
+-- Drop main tables
+DROP TABLE IF EXISTS payment CASCADE;
+DROP TABLE IF EXISTS order_items CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS favourites CASCADE;
+DROP TABLE IF EXISTS dish CASCADE;
+DROP TABLE IF EXISTS menu CASCADE;
+DROP TABLE IF EXISTS city CASCADE;
+DROP TABLE IF EXISTS restaurant CASCADE;
+DROP TABLE IF EXISTS category CASCADE;
+DROP TABLE IF EXISTS cart CASCADE;
+DROP TABLE IF EXISTS allergens CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS address CASCADE;
+
+
 CREATE TABLE address (
 	address_id SERIAL PRIMARY KEY,
 	postal_code VARCHAR(10) NOT NULL,
@@ -74,14 +94,18 @@ CREATE TABLE dish (
     FOREIGN KEY (menu_id) REFERENCES menu(menu_id)
 );
 CREATE TABLE favourites (
+    favourite_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     restaurant_id INT,
     dish_id INT,
     favourite_type VARCHAR(50) NOT NULL,
-	PRIMARY KEY (user_id, restaurant_id, dish_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
+	FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (restaurant_id) REFERENCES restaurant(restaurant_id),
-    FOREIGN KEY (dish_id) REFERENCES dish(dish_id)
+    FOREIGN KEY (dish_id) REFERENCES dish(dish_id),
+    CONSTRAINT check_favourite_type CHECK (
+        (favourite_type = 'restaurant' AND restaurant_id IS NOT NULL AND dish_id IS NULL) OR
+        (favourite_type = 'dish' AND dish_id IS NOT NULL AND restaurant_id IS NULL)
+    )
 );
 
 CREATE TABLE orders (
@@ -149,21 +173,3 @@ CREATE INDEX idx_payment_order_id ON payment(order_id);
 CREATE INDEX idx_dish_menu_id ON dish(menu_id);
 CREATE INDEX idx_restaurant_address_id ON restaurant(address_id);
 CREATE INDEX idx_restaurant_category_id ON restaurant(category_id);
-
-/*
--- Drop tables if they exist to avoid errors when recreating
- DROP TABLE IF EXISTS favourites CASCADE;
- DROP TABLE IF EXISTS order_items CASCADE;
- DROP TABLE IF EXISTS orders CASCADE;
- DROP TABLE IF EXISTS payment CASCADE;
- DROP TABLE IF EXISTS address CASCADE;
- DROP TABLE IF EXISTS city CASCADE;
- DROP TABLE IF EXISTS category CASCADE;
- DROP TABLE IF EXISTS dish CASCADE;
- DROP TABLE IF EXISTS menu CASCADE;
- DROP TABLE IF EXISTS restaurant CASCADE;
- DROP TABLE IF EXISTS allergens CASCADE;
- DROP TABLE IF EXISTS users CASCADE;
- DROP TABLE IF EXISTS user_address CASCADE;
- DROP TABLE IF EXISTS dish_allergen CASCADE;
- */

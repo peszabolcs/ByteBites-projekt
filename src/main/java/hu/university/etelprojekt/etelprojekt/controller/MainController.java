@@ -1,4 +1,5 @@
 package hu.university.etelprojekt.etelprojekt.controller;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.LoggerFactory;
@@ -23,15 +24,33 @@ public class MainController {
 
     @GetMapping("/")
     public String showRestaurants(Model model) {
-        logger.info("Metódus indult");
+        System.out.println("showRestaurants metódus kezdődik");
         try {
             List<Restaurant> restaurants = restaurantService.getAllRestaurants();
+            System.out.println("Éttermek lekérdezve: " + (restaurants != null ? restaurants.size() : "null") + " db");
+            
+            if (restaurants == null || restaurants.isEmpty()) {
+                System.out.println("Nincs étterem az adatbázisban");
+                restaurants = new ArrayList<>();
+            } else {
+                System.out.println("Talált éttermek:");
+                for (Restaurant r : restaurants) {
+                    System.out.println(" - " + r.getRestaurantName() + " (ID: " + r.getRestaurantId() + ")");
+                }
+            }
+            
             model.addAttribute("restaurants", restaurants);
+            System.out.println("Model feltöltve");
+            
         } catch (Exception e) {
-            logger.error("Hiba történt az éttermek lekérdezése során", e);
+            System.out.println("HIBA: " + e.getMessage());
+            e.printStackTrace();
+            model.addAttribute("restaurants", new ArrayList<>());
+            model.addAttribute("error", "Nem sikerült betölteni az éttermeket");
         }
-        return "index"; // Visszatér a Thymeleaf index sablonhoz
+        return "index";
     }
+    
     
 
     @GetMapping("/index")
