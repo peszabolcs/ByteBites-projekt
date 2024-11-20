@@ -1,3 +1,6 @@
+-- Set the correct Schema
+SET search_path TO bytebites;
+
 -- Drop junction tables first
 DROP TABLE IF EXISTS user_address CASCADE;
 DROP TABLE IF EXISTS dish_allergen CASCADE;
