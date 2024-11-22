@@ -1,8 +1,12 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import java.io.Serializable;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "restaurant")
 public class Restaurant implements Serializable {
@@ -40,76 +44,4 @@ public class Restaurant implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    // Getters and Setters
-    public Long getRestaurantId() {
-        return restaurantId;
-    }
-
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
-    }
-
-    public String getPictureUrl() {
-        return picture_url;
-    }
-
-    public void setPictureUrl(String pictureUrl) {
-        this.picture_url = pictureUrl;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getDeliveryFee() { // Ensure getter matches field name
-        return deliveryFee;
-    }
-
-    public void setDeliveryFee(Double deliveryFee) { // Ensure setter matches field name
-        this.deliveryFee = deliveryFee;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getPhoneNumber() {
-        return phone_number;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phone_number = phoneNumber;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 }
