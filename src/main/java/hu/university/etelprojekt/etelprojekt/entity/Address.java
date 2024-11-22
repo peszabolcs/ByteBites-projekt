@@ -13,8 +13,6 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Entity
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "address") // Optional: specify the table name in the database
@@ -23,17 +21,45 @@ public class Address implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Setter
+    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the addressId (primary key)
     private Long address_id;
 
+    @Setter
+    @Getter
     private String postalCode;
+
+    @Setter
+    @Getter
     private String city;
+
+    @Setter
+    @Getter
     private String streetName;
+
+    @Setter
+    @Getter
     private String publicPlaceName;
+
+    @Setter
+    @Getter
     private String houseNumber;
+
+    @Setter
+    @Getter
     private String building;
+
+    @Setter
+    @Getter
     private String staircase;
+
+    @Setter
+    @Getter
     private String floor;
+
+    @Setter
+    @Getter
     private String door;
 
     @Override
