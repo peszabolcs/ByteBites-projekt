@@ -40,3 +40,27 @@
 - Hely: Online megbeszélés
 - Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
 - Érintett témák: Második mérföldkő lezárása, bemutató leírások egyeztetése
+
+7. megbeszélés:
+
+-Időpont: 2024.10.31
+
+- Hely: Online megbeszélés
+- Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: Adatbázis feladatok egyeztetése, felmerülő kérdések megválaszolása
+
+8. megbeszélés:
+
+-Időpont: 2024.11.08
+
+- Hely: Online megbeszélés
+- Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: Adatbázis debugging felosztása, tervek újragondolása
+
+9. megbeszélés:
+
+-Időpont: 2024.11.17
+
+- Hely: Online megbeszélés
+- Résztvevők: Perjési Szabolcs, Imreh Júlia, Molnár Zsolt, Rózsa Veronika
+- Érintett témák: Harmadik mérföldkő elmaradásainak egyeztetése, feladatok újraosztása
