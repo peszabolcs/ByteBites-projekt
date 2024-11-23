@@ -113,6 +113,8 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- DATABASE STUFF end-->
+
 		<!-- Core Spring Boot dependency -->
    		 <dependency>
        		 <groupId>org.springframework.boot</groupId>
