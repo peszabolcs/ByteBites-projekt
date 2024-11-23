@@ -1,23 +1,20 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "address") // Optional: specify the table name in the database
+@NoArgsConstructor
+@AllArgsConstructor
+//@Table(name = "address") // Optional: specify the table name in the database
 public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,7 +22,6 @@ public class Address implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generate the addressId (primary key)
     private Long address_id;
-
     private String postalCode;
     private String city;
     private String streetName;
@@ -35,6 +31,10 @@ public class Address implements Serializable {
     private String staircase;
     private String floor;
     private String door;
+
+//    @OneToMany
+//    @JoinColumn(name = "restaurant_id")
+//    private List<Restaurant> restaurants;
 
     @Override
     public String toString() {
