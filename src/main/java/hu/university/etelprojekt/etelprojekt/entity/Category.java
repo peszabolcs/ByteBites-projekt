@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "categories") // Optional: specify the table name in the database
+@Table(name = "category") // Optional: specify the table name in the database
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;

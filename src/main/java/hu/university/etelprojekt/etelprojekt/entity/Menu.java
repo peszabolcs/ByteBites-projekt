@@ -1,7 +1,9 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -11,6 +13,8 @@ import java.util.List;
 @Table(name = "menu")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Menu implements Serializable {
 
     @Id

@@ -2,12 +2,17 @@ package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "restaurant")
 public class Restaurant implements Serializable {
 
