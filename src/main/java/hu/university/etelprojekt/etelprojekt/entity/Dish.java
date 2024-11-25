@@ -14,7 +14,9 @@ public class Dish implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long dish_id;
+    @Column(name = "dish_id")
+    private Long dishId;
+
     private String name;
     private String description;
     private Double price;

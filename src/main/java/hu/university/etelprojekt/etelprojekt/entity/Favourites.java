@@ -2,7 +2,15 @@ package hu.university.etelprojekt.etelprojekt.entity;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "favourites")
 public class Favourites implements Serializable {
@@ -30,59 +38,6 @@ public class Favourites implements Serializable {
     @Column(name = "favourite_type", nullable = false)
     private String favType;
 
-    // Default constructor
-    public Favourites() {
-    }
-
-    // Constructor with parameters
-    public Favourites(FavouritesId id, User user, Restaurant restaurant, Dish dish, String favType) {
-        this.id = id;
-        this.user = user;
-        this.restaurant = restaurant;
-        this.dish = dish;
-        this.favType = favType;
-    }
-
-    // Getters and Setters
-    public FavouritesId getId() {
-        return id;
-    }
-
-    public void setId(FavouritesId id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
-
-    public Dish getDish() {
-        return dish;
-    }
-
-    public void setDish(Dish dish) {
-        this.dish = dish;
-    }
-
-    public String getFavType() {
-        return favType;
-    }
-
-    public void setFavType(String favType) {
-        this.favType = favType;
-    }
 
     @Override
     public String toString() {

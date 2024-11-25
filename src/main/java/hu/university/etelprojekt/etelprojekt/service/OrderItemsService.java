@@ -22,7 +22,7 @@ public class OrderItemsService {
 
     // Find all items for a specific dish
     public List<OrderItems> findItemsByDish(Long dishId) {
-        return orderItemsRepository.findByDish_id(dishId);
+        return orderItemsRepository.findByDish_DishId(dishId);
     }
 
     // Find all items by quantity
@@ -37,7 +37,7 @@ public class OrderItemsService {
 
     // Find items by orderId and dishId
     public List<OrderItems> findItemsByOrderAndDish(Long orderId, Long dishId) {
-        return orderItemsRepository.findByOrder_OrderIdAndDish_Id(orderId, dishId);
+        return orderItemsRepository.findByOrder_OrderIdAndDish_DishId(orderId, dishId);
     }
 
     // Add an OrderItem to the database

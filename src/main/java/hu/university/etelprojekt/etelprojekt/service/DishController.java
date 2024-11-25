@@ -33,6 +33,7 @@ public class DishController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+
     // Get dishes by name
     @GetMapping("/name/{name}")
     public ResponseEntity<List<Dish>> getDishesByName(@PathVariable String name) {

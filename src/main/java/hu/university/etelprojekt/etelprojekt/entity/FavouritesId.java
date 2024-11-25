@@ -1,50 +1,34 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
 public class FavouritesId implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @Column(name = "user_id")
     private Long userId;
+
+    @Column(name = "restaurant_id")
     private Long restaurantId;
+
+    @Column(name = "dish_id")
     private Long dishId;
 
-    // Default constructor
-    public FavouritesId() {
-    }
 
-    public FavouritesId(Long userId, Long restaurantId, Long dishId) {
-        this.userId = userId;
-        this.restaurantId = restaurantId;
-        this.dishId = dishId;
-    }
-
-    // Getters and Setters
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getRestaurantId() {
-        return restaurantId;
-    }
-
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    public Long getDishId() {
-        return dishId;
-    }
-
-    public void setDishId(Long dishId) {
-        this.dishId = dishId;
-    }
 
     @Override
     public boolean equals(Object o) {

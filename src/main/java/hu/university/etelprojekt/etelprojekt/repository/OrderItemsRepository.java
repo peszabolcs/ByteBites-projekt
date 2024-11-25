@@ -15,7 +15,7 @@ public interface OrderItemsRepository extends JpaRepository<OrderItems, OrderIte
     List<OrderItems> findByOrder_OrderId(Long orderId);
 
     // Find all order items for a specific dish
-    List<OrderItems> findByDish_id(Long dishId);
+    List<OrderItems> findByDish_DishId(Long dishId);
 
     // Find all order items by quantity
     List<OrderItems> findByQuantity(int quantity);
@@ -26,6 +26,6 @@ public interface OrderItemsRepository extends JpaRepository<OrderItems, OrderIte
     // Find all order items for a specific order and dish
     // List<OrderItems> findByOrder_OrderIdAndDish_Dish_id(Long orderId, Long
     // dish_id);
-    List<OrderItems> findByOrder_OrderIdAndDish_Id(Long orderId, Long dishId);
+    List<OrderItems> findByOrder_OrderIdAndDish_DishId(Long orderId, Long dishId);
 
 }
