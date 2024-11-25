@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-//@Table(name = "address") // Optional: specify the table name in the database
+@Table(name = "address") // Optional: specify the table name in the database
 public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;

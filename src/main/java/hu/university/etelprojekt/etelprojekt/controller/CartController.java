@@ -40,7 +40,7 @@ public class CartController {
     @GetMapping("/user/{userId}")
     public ResponseEntity<Cart> getCartByUserId(@PathVariable Long userId) {
         Optional<Cart> cart = cartService
-                .getCartByUser(new User(userId, null, null, null, null, null, null, null, null, null)); // Assuming a
+                .getCartByUser(new User(userId)); // Assuming a constructor in User that takes ID
                                                                                                         // User
                                                                                                         // constructor
                                                                                                         // that takes ID
