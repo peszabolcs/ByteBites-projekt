@@ -1,9 +1,18 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "order_items") // Specify the table name if needed
 public class OrderItems implements Serializable {
@@ -30,69 +39,6 @@ public class OrderItems implements Serializable {
 
     @Column(name = "price")
     private BigDecimal price;
-
-    // Default constructor
-    public OrderItems() {
-    }
-
-    // Constructor with all fields
-    public OrderItems(OrderItemsId id, Order order, Dish dish, Cart cart, int quantity, BigDecimal price) {
-        this.id = id;
-        this.order = order;
-        this.dish = dish;
-        this.cart = cart;
-        this.quantity = quantity;
-        this.price = price;
-    }
-
-    // Getters and Setters
-    public OrderItemsId getId() {
-        return id;
-    }
-
-    public void setId(OrderItemsId id) {
-        this.id = id;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public Dish getDish() {
-        return dish;
-    }
-
-    public void setDish(Dish dish) {
-        this.dish = dish;
-    }
-
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
 
     @Override
     public String toString() {

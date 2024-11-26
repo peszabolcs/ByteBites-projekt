@@ -1,28 +1,57 @@
 package hu.university.etelprojekt.etelprojekt.controller;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import hu.university.etelprojekt.etelprojekt.entity.Restaurant;
+import hu.university.etelprojekt.etelprojekt.service.RestaurantService;
+
 @Controller
+@Slf4j
 public class MainController {
+    private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+
+    @Autowired
+    private RestaurantService restaurantService;
+
 
     @GetMapping("/")
-        public String home(@AuthenticationPrincipal UserDetails userDetails, Model model) {
-        if (userDetails != null) {
-            model.addAttribute("username", userDetails.getUsername());
-            model.addAttribute("isAuthenticated", true);
-        } else {
-            model.addAttribute("isAuthenticated", false);
+    public String showRestaurants(Model model) {
+        log.info("GetshowRestaurants method called " + model.toString());
+        try {
+            List<Restaurant> restaurants = restaurantService.getAllRestaurants();
+            
+            if (restaurants == null || restaurants.isEmpty()) {
+                log.info("Not found Restaurants in DB: ");
+                restaurants = new ArrayList<>();
+            } else {
+                log.info("Found Restaurants count: " + restaurants.size());
+                for (Restaurant r : restaurants) {
+                    System.out.println(" - " + r.getRestaurantName() + " (ID: " + r.getRestaurantId() + ")");
+                }
+            }
+            
+            model.addAttribute("restaurants", restaurants);            
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("restaurants", new ArrayList<>());
+            model.addAttribute("error", "Unable to load the restaurants");
         }
         return "index";
     }
     
+    
 
     @GetMapping("/index")
-    public String indexPage() {
-        return "index";
+    public String indexPage(Model model) {
+        return showRestaurants(model);
     }
 
     @GetMapping("/cart")

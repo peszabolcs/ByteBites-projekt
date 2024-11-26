@@ -1,3 +1,6 @@
+-- Set the correct Schema
+SET search_path TO bytebites;
+
 CREATE TABLE address (
 	address_id SERIAL PRIMARY KEY,
 	postal_code VARCHAR(10) NOT NULL,
@@ -74,11 +77,11 @@ CREATE TABLE dish (
     FOREIGN KEY (menu_id) REFERENCES menu(menu_id)
 );
 CREATE TABLE favourites (
+    favourite_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     restaurant_id INT,
     dish_id INT,
     favourite_type VARCHAR(50) NOT NULL,
-	PRIMARY KEY (user_id, restaurant_id, dish_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (restaurant_id) REFERENCES restaurant(restaurant_id),
     FOREIGN KEY (dish_id) REFERENCES dish(dish_id)
@@ -95,11 +98,11 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 CREATE TABLE order_items (
+    order_item_id SERIAL PRIMARY KEY,
     order_id INT NOT NULL,
     dish_id INT NOT NULL,
     quantity INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
-	PRIMARY KEY (order_id, dish_id),
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (dish_id) REFERENCES dish(dish_id)
 );
@@ -149,19 +152,3 @@ CREATE INDEX idx_payment_order_id ON payment(order_id);
 CREATE INDEX idx_dish_menu_id ON dish(menu_id);
 CREATE INDEX idx_restaurant_address_id ON restaurant(address_id);
 CREATE INDEX idx_restaurant_category_id ON restaurant(category_id);
-
--- Drop tables if they exist to avoid errors when recreating
- DROP TABLE IF EXISTS favourites CASCADE;
- DROP TABLE IF EXISTS order_items CASCADE;
- DROP TABLE IF EXISTS orders CASCADE;
- DROP TABLE IF EXISTS payment CASCADE;
- DROP TABLE IF EXISTS address CASCADE;
- DROP TABLE IF EXISTS city CASCADE;
- DROP TABLE IF EXISTS category CASCADE;
- DROP TABLE IF EXISTS dish CASCADE;
- DROP TABLE IF EXISTS menu CASCADE;
- DROP TABLE IF EXISTS restaurant CASCADE;
- DROP TABLE IF EXISTS allergens CASCADE;
- DROP TABLE IF EXISTS users CASCADE;
- DROP TABLE IF EXISTS user_address CASCADE;
- DROP TABLE IF EXISTS dish_allergen CASCADE;

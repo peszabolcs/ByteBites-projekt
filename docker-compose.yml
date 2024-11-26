@@ -1,0 +1,9 @@
+services:
+  database:
+    image: postgres:16.4
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=bytebitesdb
+      - POSTGRES_USER=doadmin
+      - POSTGRES_PASSWORD=secret

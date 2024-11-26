@@ -9,10 +9,19 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "carts") // Optional: specify the table name in the database
 public class Cart implements Serializable {
@@ -38,60 +47,6 @@ public class Cart implements Serializable {
 
     @OneToOne // A cart has a one-to-one relationship with an order
     private Order order;
-
-    // Default constructor
-    public Cart() {
-    }
-
-    // Constructor with all fields
-    public Cart(Long cartId, BigDecimal total_price, User user, List<OrderItems> orderItems, Order order) {
-        this.cart_id = cartId;
-        this.total_price = total_price;
-        this.user = user;
-        this.orderItems = orderItems;
-        this.order = order;
-    }
-
-    // Getters and Setters
-    public Long getCartId() {
-        return cart_id;
-    }
-
-    public void setCartId(Long cartId) {
-        this.cart_id = cartId;
-    }
-
-    public BigDecimal getTotalPrice() {
-        return total_price;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.total_price = totalPrice;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public List<OrderItems> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<OrderItems> orderItems) {
-        this.orderItems = orderItems;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
 
     @Override
     public String toString() {

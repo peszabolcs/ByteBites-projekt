@@ -28,7 +28,7 @@ public class FavouritesService {
 
     // Find all favourites by dishId
     public List<Favourites> getFavouritesByDishId(Long dishId) {
-        return favouritesRepository.findByDish_Id(dishId);
+        return favouritesRepository.findByDish_DishId(dishId);
     }
 
     // Find all favourites by favourite type

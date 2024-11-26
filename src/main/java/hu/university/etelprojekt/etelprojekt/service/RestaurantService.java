@@ -1,15 +1,24 @@
 package hu.university.etelprojekt.etelprojekt.service;
 
+import hu.university.etelprojekt.etelprojekt.entity.Dish;
 import hu.university.etelprojekt.etelprojekt.entity.Restaurant;
 import hu.university.etelprojekt.etelprojekt.repository.RestaurantRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class RestaurantService {
 
+    private static final Logger logger = LoggerFactory.getLogger(RestaurantService.class);
+
+    @Autowired
     private final RestaurantRepository restaurantRepository;
 
     public RestaurantService(RestaurantRepository restaurantRepository) {
@@ -18,7 +27,17 @@ public class RestaurantService {
 
     // Get all restaurants
     public List<Restaurant> getAllRestaurants() {
-        return restaurantRepository.findAll();
+        logger.debug("getAllRestaurants metódus kezdődik");
+        try {
+            List<Restaurant> restaurants = restaurantRepository.findAll();
+            logger.debug("Repository findAll() hívás eredménye: " + 
+                        (restaurants != null ? restaurants.size() + " étterem" : "null"));
+            return restaurants;
+        } catch (Exception e) {
+            logger.error("Hiba az éttermek lekérdezése során", e);
+            logger.error("Hiba részletei:", e);
+            throw e;
+        }
     }
 
     // Get a restaurant by name
@@ -57,6 +76,14 @@ public class RestaurantService {
             throw new IllegalArgumentException("Restaurant ID must be provided for update.");
         }
         return restaurantRepository.save(restaurant);
+    }
+
+    public Restaurant findById(Long id) {
+        return restaurantRepository.findById(id).orElse(null);
+    }
+
+    public List<Dish> findDishesByRestaurantId(Long id) {
+        return restaurantRepository.findById(id).map(Restaurant::getDishes).orElse(null);
     }
 
     // Delete a restaurant by ID

@@ -1,29 +1,42 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
+import hu.university.etelprojekt.etelprojekt.entity.Dish;
 import hu.university.etelprojekt.etelprojekt.entity.Restaurant;
 import hu.university.etelprojekt.etelprojekt.service.RestaurantService;
+import jakarta.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.ui.Model;
 
-@RestController
-@RequestMapping("/api/restaurants")
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Controller
 public class RestaurantController {
 
-    private final RestaurantService restaurantService;
+    private static final Logger logger = LoggerFactory.getLogger(RestaurantController.class);
+
+    @Autowired
+    private RestaurantService restaurantService;
 
     public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
 
-    // Get all restaurants
-    @GetMapping
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantService.getAllRestaurants();
+    @GetMapping("/restaurant/{id}")
+    public String getRestaurantDishes(@PathVariable Long id, Model model) {
+        Restaurant restaurant = restaurantService.findById(id);
+        List<Dish> dishes = restaurantService.findDishesByRestaurantId(id);
+        model.addAttribute("restaurant", restaurant);
+        model.addAttribute("dishes", dishes);
+        return "Pages/restaurant";
     }
 
     // Get restaurant by name
@@ -79,5 +92,11 @@ public class RestaurantController {
     public ResponseEntity<Void> deleteRestaurant(@PathVariable("id") Long id) {
         restaurantService.deleteRestaurant(id);
         return ResponseEntity.noContent().build();
+    }
+
+
+    @PostConstruct
+    public void init() {
+        logger.info("RestaurantController példányosítva");
     }
 }

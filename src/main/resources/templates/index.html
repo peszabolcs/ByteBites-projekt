@@ -35,21 +35,15 @@
     <section class="city-section">
       <h3>Megtalálsz minket ezeken a településeken és még sok helyen</h3>
       <div class="city-grid">
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button>CityName</button>
-        <button class="add-city-button">Város hozzáadása</button>
+        <!-- Ellenőrizzük, hogy van-e egyáltalán étterem -->
+        <div th:if="${restaurants == null || #lists.isEmpty(restaurants)}">
+          Jelenleg nincsenek elérhető éttermek.
+        </div>
+
+        <!-- Éttermek listázása -->
+        <div th:each="restaurant : ${restaurants}" class="restaurant-card">
+          <a th:href="@{${restaurant.getRestaurantUrl()}}" th:text="${restaurant.restaurantName}"></a>
+        </div>
       </div>
     </section>
 
