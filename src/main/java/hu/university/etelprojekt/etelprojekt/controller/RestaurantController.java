@@ -39,8 +39,6 @@ public class RestaurantController {
         return "Pages/restaurant";
     }
 
-    // Get all restaurants
-
     // Get restaurant by name
     @GetMapping("/{name}")
     public ResponseEntity<Restaurant> getRestaurantByName(@PathVariable("name") String name) {

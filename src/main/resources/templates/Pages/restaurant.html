@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head
-    th:replace="~{fragments/header :: head(cssFile='restaurant.css')}"
-  ></head>
-  <body>
-    <header th:replace="~{fragments/header :: header}"></header>
+<head th:replace="~{fragments/header :: head(cssFile='restaurant.css')}"></head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
 
-    <main class="restaurant-menu-content">
-      <section class="restaurant-details">
-        <div class="restaurant-image">KAJA KÉP</div>
-        <div class="restaurant-info">
-          <p>Kategóriák: kat1, kat2, kat3, kat4, kat5</p>
-          <h3>Étterem neve</h3>
-          <p>
-            Kiszállítási összeg: unsigned int Ft, Rendszerhasználati díj: 150 Ft
-          </p>
-          <p>Étterem címe: város, utca, házszám</p>
-          <p>Telefonszám: telefonszám</p>
-          <p>Weboldal:</p>
+<main class="restaurant-menu-content">
+  <section class="restaurant-details">
+    <div class="restaurant-image">
+      <img th:src="${restaurant.picture_url}" alt="Restaurant Image" />
+    </div>
+    <div class="restaurant-info">
+      <p>Kategóriák: <span th:text="${restaurant.category.categoryName}"></span></p>
+      <h3 th:text="${restaurant.restaurantName}">Étterem neve</h3>
+      <p>
+        Kiszállítási összeg: <span th:text="${restaurant.deliveryFee}"></span> Ft, Rendszerhasználati díj: 150 Ft
+      </p>
+      <p>Étterem címe: <span th:text="${restaurant.address.city}"></span>, <span th:text="${restaurant.address.streetName}"></span>, <span th:text="${restaurant.address.houseNumber}"></span></p>
+      <p>Telefonszám: <span th:text="${restaurant.phone_number}"></span></p>
+      <p>Weboldal: <a th:href="${restaurant.website}" th:text="${restaurant.website}"></a></p>
+    </div>
+    <button class="favorite-button">❤️ Hozzáadás a kedvencekhez</button>
+  </section>
+
+  <nav class="menu-navigation">
+    <button th:each="menu : ${restaurant.menus}" th:text="${menu.name}"></button>
+    <div class="search-bar">
+      <input type="text" placeholder="Keresés a menüben" />
+      <button class="search-button">🔍</button>
+    </div>
+  </nav>
+
+  <section class="menu-items">
+    <div class="menu-category" th:each="menu : ${restaurant.menus}">
+      <h4 th:text="${menu.name}">Menü1</h4>
+      <div class="menu-item" th:each="dish : ${menu.dishes}">
+        <div class="item-info">
+          <h5 th:text="${dish.name}">Étel neve</h5>
+          <p th:text="${dish.price} + ' Ft'">Étel ára Ft</p>
+          <p th:text="${dish.description}">További jellemzők, leírás, stb.</p>
         </div>
-        <button class="favorite-button">❤️ Hozzáadás a kedvencekhez</button>
-      </section>
-
-      <nav class="menu-navigation">
-        <button>Menü1</button>
-        <button>Menü2</button>
-        <button>Menü3</button>
-        <button>Menü4</button>
-        <button>Menü5</button>
-        <button>Menü?</button>
-        <div class="search-bar">
-          <input type="text" placeholder="Keresés a menüben" />
-          <button class="search-button">🔍</button>
+        <div class="item-image">
+          <img th:src="${dish.picture_url}" alt="Dish Image" />
         </div>
-      </nav>
+        <button class="add-button">+</button>
+      </div>
+    </div>
+  </section>
+</main>
 
-      <section class="menu-items">
-        <div class="menu-category">
-          <h4>Menü1</h4>
-          <div class="menu-item">
-            <div class="item-info">
-              <h5>Étel neve</h5>
-              <p>Étel ára Ft</p>
-              <p>További jellemzők, leírás, stb.</p>
-            </div>
-            <div class="item-image">kaja kép</div>
-            <button class="add-button">+</button>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer th:replace="~{fragments/footer :: footer}"></footer>
-  </body>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
 </html>

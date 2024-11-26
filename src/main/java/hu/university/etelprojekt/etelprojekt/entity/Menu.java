@@ -20,6 +20,8 @@ public class Menu implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="menu_name", nullable = false)
     private String name;
 
     // Relationship to Restaurant (add this property)
