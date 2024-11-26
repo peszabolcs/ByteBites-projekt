@@ -27,4 +27,8 @@ public class Dish implements Serializable {
     @ManyToOne
     @JoinColumn(name = "menu_id", nullable = false) // 'menu_id' refers to the column in the 'dish' table
     private Menu menu;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 }

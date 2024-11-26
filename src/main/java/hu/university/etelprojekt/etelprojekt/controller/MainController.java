@@ -50,8 +50,8 @@ public class MainController {
     
 
     @GetMapping("/index")
-    public String indexPage() {
-        return "index";
+    public String indexPage(Model model) {
+        return showRestaurants(model);
     }
 
     @GetMapping("/cart")

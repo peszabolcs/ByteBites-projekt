@@ -1,5 +1,6 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
+import hu.university.etelprojekt.etelprojekt.entity.Dish;
 import hu.university.etelprojekt.etelprojekt.entity.Restaurant;
 import hu.university.etelprojekt.etelprojekt.service.RestaurantService;
 import jakarta.annotation.PostConstruct;
@@ -27,6 +28,15 @@ public class RestaurantController {
 
     public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
+    }
+
+    @GetMapping("/restaurant/{id}")
+    public String getRestaurantDishes(@PathVariable Long id, Model model) {
+        Restaurant restaurant = restaurantService.findById(id);
+        List<Dish> dishes = restaurantService.findDishesByRestaurantId(id);
+        model.addAttribute("restaurant", restaurant);
+        model.addAttribute("dishes", dishes);
+        return "Pages/restaurant";
     }
 
     // Get all restaurants

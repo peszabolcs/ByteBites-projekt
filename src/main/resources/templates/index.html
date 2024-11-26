@@ -42,7 +42,7 @@
 
         <!-- Éttermek listázása -->
         <div th:each="restaurant : ${restaurants}" class="restaurant-card">
-          <h4 th:text="${restaurant.restaurantName}"></h4>
+          <a th:href="@{${restaurant.getRestaurantUrl()}}" th:text="${restaurant.restaurantName}"></a>
         </div>
       </div>
     </section>

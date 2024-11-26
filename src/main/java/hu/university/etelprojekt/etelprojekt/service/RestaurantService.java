@@ -1,5 +1,6 @@
 package hu.university.etelprojekt.etelprojekt.service;
 
+import hu.university.etelprojekt.etelprojekt.entity.Dish;
 import hu.university.etelprojekt.etelprojekt.entity.Restaurant;
 import hu.university.etelprojekt.etelprojekt.repository.RestaurantRepository;
 
@@ -75,6 +76,14 @@ public class RestaurantService {
             throw new IllegalArgumentException("Restaurant ID must be provided for update.");
         }
         return restaurantRepository.save(restaurant);
+    }
+
+    public Restaurant findById(Long id) {
+        return restaurantRepository.findById(id).orElse(null);
+    }
+
+    public List<Dish> findDishesByRestaurantId(Long id) {
+        return restaurantRepository.findById(id).map(Restaurant::getDishes).orElse(null);
     }
 
     // Delete a restaurant by ID

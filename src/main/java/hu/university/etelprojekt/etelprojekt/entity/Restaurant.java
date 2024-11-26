@@ -2,6 +2,7 @@ package hu.university.etelprojekt.etelprojekt.entity;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,4 +49,11 @@ public class Restaurant implements Serializable {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    public String getRestaurantUrl() {
+        return "/restaurant/" + restaurantId;
+    }
+
+    @OneToMany(mappedBy = "restaurant")
+    private List<Dish> dishes;
 }
