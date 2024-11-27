@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head th:replace="~{fragments/header :: head(cssFile='restaurant.css')}"></head>
+<head th:replace="~{fragments/header :: head(cssFile='restaurant.css')}">
+</head>
 <body>
 <header th:replace="~{fragments/header :: header}"></header>
 
@@ -36,7 +37,7 @@
       <button class="add-button">+</button>
     </div>
   </section>
-
+  <script th:src="@{/js/restaurant.js}"></script>
 </main>
 
 <footer th:replace="~{fragments/footer :: footer}"></footer>
