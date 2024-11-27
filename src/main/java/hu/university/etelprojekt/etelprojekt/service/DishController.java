@@ -41,13 +41,6 @@ public class DishController {
         return dishes.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(dishes);
     }
 
-    // Get dishes by menu ID
-    @GetMapping("/menu/{menuId}")
-    public ResponseEntity<List<Dish>> getDishesByMenuId(@PathVariable Long menuId) {
-        List<Dish> dishes = dishService.getDishesByMenuId(menuId);
-        return dishes.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(dishes);
-    }
-
     // Create or update a dish
     @PostMapping
     public ResponseEntity<Dish> createOrUpdateDish(@RequestBody Dish dish) {

@@ -36,19 +36,14 @@ VALUES
 (nextval('restaurant_restaurant_id_seq'),'Taco Town', 'https://example.com/taco.jpg', 'Best Tacos in Town', 4.99,
  'https://tacotown.com', '+3612345678', (select address_id from address where postal_code = '1052'), (select category_id from category where category_name = 'Mexican'));
 
--- Insert sample data into menu table
-INSERT INTO menu (menu_id, menu_name, restaurant_id)
-VALUES 
-(nextval('menu_menu_id_seq'),'Lunch Specials', (select restaurant_id from restaurant where restaurant_name = 'Pasta Palace')),
-(nextval('menu_menu_id_seq'),'Dinner Specials', (select restaurant_id from restaurant where restaurant_name = 'Taco Town'));
-
 -- Insert sample data into dish table
-INSERT INTO dish (dish_id, dish_name, description, price, picture_url, menu_id)
+INSERT INTO dish (dish_id, dish_name, description, price, picture_url, restaurant_id)
 VALUES 
 (nextval('dish_dish_id_seq'),'Spaghetti Carbonara', 'Classic Italian pasta with pancetta', 12.99, 'https://example' ||
-                                                                                                  '.com/spaghetti.jpg', (select menu_id from menu where menu_name = 'Lunch Specials')),
+                                                                                                  '.com/spaghetti' ||
+                                                                                                  '.jpg', (select restaurant_id from restaurant where restaurant_name = 'Pasta Palace')),
 (nextval('dish_dish_id_seq'),'Taco Supreme', 'Loaded taco with all the toppings', 8.99, 'https://example.com/taco' ||
-                                                                                        '.jpg', (select menu_id from menu where menu_name = 'Dinner Specials'));
+                                                                                        '.jpg', (select restaurant_id from restaurant where restaurant_name = 'Taco Town'));
 
 -- Insert sample data into favourites table
 INSERT INTO favourites (user_id, restaurant_id, dish_id, favourite_type)

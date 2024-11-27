@@ -50,11 +50,9 @@ public class Restaurant implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER)
     private List<Dish> dishes;
 
-    @OneToMany(mappedBy = "restaurant")
-    private List<Menu> menus;
 
     public String getRestaurantUrl() {
         return "/restaurant/" + restaurantId;

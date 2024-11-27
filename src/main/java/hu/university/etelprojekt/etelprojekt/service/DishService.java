@@ -31,11 +31,6 @@ public class DishService {
         return dishRepository.findByName(dishName);
     }
 
-    // Get dishes by menu ID
-    public List<Dish> getDishesByMenuId(Long menuId) {
-        return dishRepository.findByMenu_Id(menuId);
-    }
-
     // Save or update a dish
     public Dish saveDish(Dish dish) {
         return dishRepository.save(dish);

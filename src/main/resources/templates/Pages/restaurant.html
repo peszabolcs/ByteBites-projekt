@@ -31,21 +31,20 @@
   </nav>
 
   <section class="menu-items">
-    <div class="menu-category" th:each="menu : ${restaurant.menus}">
-      <h4 th:text="${menu.name}">Menü1</h4>
-      <div class="menu-item" th:each="dish : ${menu.dishes}">
-        <div class="item-info">
-          <h5 th:text="${dish.name}">Étel neve</h5>
-          <p th:text="${dish.price} + ' Ft'">Étel ára Ft</p>
-          <p th:text="${dish.description}">További jellemzők, leírás, stb.</p>
-        </div>
-        <div class="item-image">
-          <img th:src="${dish.picture_url}" alt="Dish Image" />
-        </div>
-        <button class="add-button">+</button>
+    <h2>Ételek</h2>
+    <div class="menu-item" th:each="dish : ${dishes}">
+      <div class="item-info">
+        <h5 th:text="${dish.name}">Étel neve</h5>
+        <p th:text="${dish.price} + ' Ft'">Étel ára</p>
+        <p th:text="${dish.description}">Leírás</p>
       </div>
+      <div class="item-image">
+        <img th:src="${dish.picture_url}" alt="Étel képe" />
+      </div>
+      <button class="add-button">+</button>
     </div>
   </section>
+
 </main>
 
 <footer th:replace="~{fragments/footer :: footer}"></footer>

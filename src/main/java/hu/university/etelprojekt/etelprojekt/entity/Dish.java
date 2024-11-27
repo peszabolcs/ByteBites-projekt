@@ -23,12 +23,7 @@ public class Dish implements Serializable {
     private String picture_url;
 
 
-    // This represents the relationship to Menu
     @ManyToOne
-    @JoinColumn(name = "menu_id", nullable = false) // 'menu_id' refers to the column in the 'dish' table
-    private Menu menu;
-
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id")
+    @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 }

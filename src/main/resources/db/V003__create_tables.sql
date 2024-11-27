@@ -61,20 +61,14 @@ CREATE TABLE city (
 	category_id INT,
     FOREIGN KEY (category_id) REFERENCES category(category_id)
 );
-CREATE TABLE menu (
-	menu_id SERIAL PRIMARY KEY,
-    menu_name VARCHAR(100) NOT NULL,
-	 restaurant_id INT NOT NULL,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurant(restaurant_id)
-);
 CREATE TABLE dish (
 	dish_id SERIAL PRIMARY KEY,
     dish_name VARCHAR(100) NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
     picture_url VARCHAR(255),
-	menu_id INT,
-    FOREIGN KEY (menu_id) REFERENCES menu(menu_id)
+    restaurant_id INT NOT NULL,
+    FOREIGN KEY (restaurant_id) REFERENCES restaurant(restaurant_id)
 );
 CREATE TABLE favourites (
     favourite_id SERIAL PRIMARY KEY,
@@ -149,6 +143,6 @@ CREATE INDEX idx_order_items_dish_id ON order_items(dish_id);
 
 CREATE INDEX idx_payment_order_id ON payment(order_id);
 
-CREATE INDEX idx_dish_menu_id ON dish(menu_id);
+CREATE INDEX idx_dish_restaurant_id ON dish(restaurant_id);
 CREATE INDEX idx_restaurant_address_id ON restaurant(address_id);
 CREATE INDEX idx_restaurant_category_id ON restaurant(category_id);
