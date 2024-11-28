@@ -22,6 +22,14 @@
     <button class="favorite-button">❤️ Hozzáadás a kedvencekhez</button>
   </section>
 
+  <nav class="menu-navigation">
+    <button th:each="menu : ${restaurant.menus}" th:text="${menu.name}"></button>
+    <div class="search-bar">
+      <input type="text" placeholder="Keresés a menüben" />
+      <button class="search-button">🔍</button>
+    </div>
+  </nav>
+
   <section class="menu-items">
     <h2>Ételek</h2>
     <div class="menu-item" th:each="dish : ${dishes}">
