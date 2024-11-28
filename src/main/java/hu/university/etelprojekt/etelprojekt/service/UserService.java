@@ -3,6 +3,7 @@ package hu.university.etelprojekt.etelprojekt.service;
 import hu.university.etelprojekt.etelprojekt.entity.User;
 import hu.university.etelprojekt.etelprojekt.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     // Find a user by ID
     public Optional<User> findById(Long userId) {
@@ -57,5 +61,14 @@ public class UserService {
     // Delete a user by ID
     public void deleteById(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    public User authenticate(String email, String password) {
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        User user = userOptional.orElse(null);
+        if (passwordEncoder.matches(password, user.getPassword())) {
+            return user;
+        }
+        throw new IllegalArgumentException("Invalid email or password");
     }
 }

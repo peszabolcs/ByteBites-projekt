@@ -19,7 +19,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/cart", "/order").authenticated()
+                .requestMatchers("/cart", "/order", "/users/login").authenticated()
                 .anyRequest().permitAll()
             )
             .formLogin(form -> form

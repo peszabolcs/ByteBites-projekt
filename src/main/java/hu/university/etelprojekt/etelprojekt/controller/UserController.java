@@ -90,4 +90,15 @@ public class UserController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<User> loginUser(@RequestBody User user) {
+        try {
+            // Call the service method to authenticate the user
+            User authenticatedUser = userService.authenticate(user.getEmail(), user.getPassword());
+            return ResponseEntity.ok(authenticatedUser);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
 }
