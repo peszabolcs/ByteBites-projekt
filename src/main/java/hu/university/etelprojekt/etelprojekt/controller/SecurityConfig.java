@@ -1,6 +1,5 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
-import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,12 +18,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/auth/login", "/api/cart", "/order").permitAll()
-                        .anyRequest().authenticated()
-                )
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/cart", "/order").authenticated()
+                .anyRequest().permitAll()
+            )
             .formLogin(form -> form
-                .loginPage("/api/auth/login")
+                .loginPage("/login")
                 .permitAll()
             )
             .logout(logout -> logout
