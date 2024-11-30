@@ -3,7 +3,10 @@ package hu.university.etelprojekt.etelprojekt.controller;
 import hu.university.etelprojekt.etelprojekt.entity.User;
 import hu.university.etelprojekt.etelprojekt.service.UserService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -92,13 +95,35 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> loginUser(@RequestBody User user) {
+    public ResponseEntity<String> loginUser(HttpServletRequest request, @RequestParam("email") String email, @RequestParam("password") String password) {
         try {
             // Call the service method to authenticate the user
-            User authenticatedUser = userService.authenticate(user.getEmail(), user.getPassword());
-            return ResponseEntity.ok(authenticatedUser);
+            User authenticatedUser = userService.authenticate(email, password);
+            HttpSession session = request.getSession();
+            session.setAttribute("user", authenticatedUser);
+            return ResponseEntity.ok("A bejelentkezes sikeres volt!");
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(null);
+            return ResponseEntity.badRequest().body("Hibas email vagy jelszo!");
         }
+    }
+
+    @GetMapping("/session")
+    public ResponseEntity<String> checkSession(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            return ResponseEntity.status(401).body("Nincs bejelentkezve!");
+        }
+        User user = (User) session.getAttribute("user");
+        return ResponseEntity.ok("Bejelentkezve: " + user.getEmail());
+    }
+
+    @GetMapping("/current-user")
+    public ResponseEntity<String> getCurrentUser(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Nincs bejelentkezve.");
+        }
+        User user = (User) session.getAttribute("user");
+        return ResponseEntity.ok(user.getFirstName() + " " + user.getLastName());
     }
 }

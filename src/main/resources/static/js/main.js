@@ -26,3 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+async function checkSession() {
+  try {
+    const response = await fetch("/users/session", {
+      method: "GET",
+    });
+    if (response.ok) {
+      const message = await response.text();
+      console.log(message); // Bejelentkezett felhasználó adatai
+    } else {
+      console.error("Nincs aktív session.");
+    }
+  } catch (error) {
+    console.error("Hiba történt a session ellenőrzésekor:", error);
+  }
+}
+
+// Meghívás például az oldal betöltésekor
+checkSession();

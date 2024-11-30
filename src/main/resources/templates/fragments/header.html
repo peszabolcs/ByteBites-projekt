@@ -8,12 +8,6 @@
   <header>
     <a th:href="@{/index}"><h1>BYTEBITES</h1></a>
     <div>
-      <!-- TODO: Debug miatt van benne, a fejlesztési folyamat során szükséges -->
-      <p
-        th:text="'Bejelentkezett állapot: ' + ${#authentication?.authenticated}"
-      >
-        Debug info
-      </p>
     </div>
     <div class="buttons">
       <!-- TODO: A fejlesztési fázis idejére fel van cserélve az, hogy mikor mutassa a login/register page-et, és mikor a user/kosár gombokat -->
@@ -37,11 +31,11 @@
         id="user-container"
       >
         <span
-          id="username"
-          class="username register"
-          th:text="${#authentication?.name != null ? #authentication.name : 'Guest'}"
-          >USERNAME</span
-        >
+                id="username"
+                class="username register"
+                th:text="${session.user != null ? session.user.firstName + ' ' + session.user.lastName : 'Guest'}"
+        >Guest</span>
+
         <div class="dropdown">
           <ul>
             <li><a th:href="@{/profile}">Profilom</a></li>
@@ -77,4 +71,5 @@
       </ul>
     </div>
   </header>
+<script th:src="@{/js/header.js}"></script>
 </body>

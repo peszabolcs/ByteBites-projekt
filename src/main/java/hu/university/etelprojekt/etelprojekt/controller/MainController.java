@@ -54,10 +54,10 @@ public class MainController {
         return showRestaurants(model);
     }
 
-    @GetMapping("/cart")
-    public String cartPage() {
-        return "Pages/cart";
-    }
+//    @GetMapping("/cart")
+//    public String cartPage() {
+//        return "Pages/cart";
+//    }
 
     @GetMapping("/login")
     public String loginPage() {
