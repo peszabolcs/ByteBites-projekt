@@ -390,3 +390,44 @@
 2024-11-30 20:36:00 - Found Restaurants count: 2
 2024-11-30 20:36:08 - GetshowRestaurants method called {}
 2024-11-30 20:36:08 - Found Restaurants count: 2
+2024-11-30 22:16:55 - GetshowRestaurants method called {}
+2024-11-30 22:16:55 - Found Restaurants count: 2
+2024-11-30 22:16:57 - GetshowRestaurants method called {}
+2024-11-30 22:16:57 - Found Restaurants count: 2
+2024-11-30 22:17:02 - GetshowRestaurants method called {}
+2024-11-30 22:17:02 - Found Restaurants count: 2
+2024-11-30 22:17:14 - GetshowRestaurants method called {}
+2024-11-30 22:17:14 - Found Restaurants count: 2
+2024-11-30 22:21:46 - Starting EtelProjektApplication using Java 21.0.2 with PID 2668 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:21:46 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:21:47 - RestaurantController példányosítva
+2024-11-30 22:21:47 - Started EtelProjektApplication in 1.429 seconds (process running for 6359.09)
+2024-11-30 22:23:40 - Starting EtelProjektApplication using Java 21.0.2 with PID 33324 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:23:40 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:23:43 - RestaurantController példányosítva
+2024-11-30 22:23:44 - Started EtelProjektApplication in 3.463 seconds (process running for 4.356)
+2024-11-30 22:23:46 - GetshowRestaurants method called {}
+2024-11-30 22:23:46 - Found Restaurants count: 2
+2024-11-30 22:24:32 - Starting EtelProjektApplication using Java 21.0.2 with PID 33324 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:24:32 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:24:33 - RestaurantController példányosítva
+2024-11-30 22:24:33 - Started EtelProjektApplication in 0.999 seconds (process running for 53.645)
+2024-11-30 22:24:33 - GetshowRestaurants method called {}
+2024-11-30 22:24:33 - Found Restaurants count: 2
+2024-11-30 22:28:28 - Starting EtelProjektApplication using Java 21.0.2 with PID 33324 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:28:28 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:28:29 - RestaurantController példányosítva
+2024-11-30 22:28:48 - Starting EtelProjektApplication using Java 21.0.2 with PID 33324 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:28:48 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:28:48 - RestaurantController példányosítva
+2024-11-30 22:28:49 - Started EtelProjektApplication in 1.006 seconds (process running for 309.451)
+2024-11-30 22:28:50 - Starting EtelProjektApplication using Java 21.0.2 with PID 33324 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:28:50 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:28:51 - RestaurantController példányosítva
+2024-11-30 22:28:51 - Started EtelProjektApplication in 0.917 seconds (process running for 311.852)
+2024-11-30 22:28:58 - Starting EtelProjektApplication using Java 21.0.2 with PID 33324 (C:\Users\Perje\Documents\Uni\rf1\etel\target\classes started by Perje in C:\Users\Perje\Documents\Uni\rf1\etel)
+2024-11-30 22:28:58 - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 22:28:59 - RestaurantController példányosítva
+2024-11-30 22:28:59 - Started EtelProjektApplication in 0.887 seconds (process running for 319.762)
+2024-11-30 22:28:59 - GetshowRestaurants method called {}
+2024-11-30 22:28:59 - Found Restaurants count: 2

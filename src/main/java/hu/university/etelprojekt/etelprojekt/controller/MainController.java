@@ -59,10 +59,17 @@ public class MainController {
         return showRestaurants(model);
     }
 
-//    @GetMapping("/cart")
-//    public String cartPage() {
-//        return "Pages/cart";
-//    }
+    @GetMapping("/cart")
+    public String viewCart(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            // Ha nincs bejelentkezve, átirányítjuk a login oldalra
+            return "redirect:/login";
+        }
+
+        // Visszatérünk a cart oldalra
+        return "Pages/cart";
+    }
 
     @GetMapping("/login")
     public String loginPage() {
