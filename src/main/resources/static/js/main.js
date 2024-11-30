@@ -45,3 +45,27 @@ async function checkSession() {
 
 // Meghívás például az oldal betöltésekor
 checkSession();
+
+async function goToCart() {
+  try {
+    const response = await fetch("/cart", {
+      method: "GET",
+    });
+
+    if (response.ok) {
+      // Ha be van jelentkezve, a kosár tartalma megjelenhet
+      const message = await response.text();
+      alert(message); // Tesztelési célból kiírjuk a választ
+      window.location.href = "/cart"; // Irány a kosár oldala
+    } else if (response.status === 401) {
+      // Ha nincs bejelentkezve, irány a login oldalra
+      alert("Előbb jelentkezz be a kosár megtekintéséhez!");
+      window.location.href = "/login";
+    }
+  } catch (error) {
+    console.error("Hiba történt a kosár megtekintésekor:", error);
+  }
+}
+
+// Példa: kosár gombra kattintáskor
+document.getElementById("cart-icon").addEventListener("click", goToCart);

@@ -1,7 +1,9 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
+import hu.university.etelprojekt.etelprojekt.entity.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,13 +31,13 @@ public class CartController {
     }
 
     @GetMapping
-    public ResponseEntity<List<String>> viewCart(HttpServletRequest request) {
+    public ResponseEntity<String> viewCart(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
-            return ResponseEntity.status(401).body(null);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Bejelentkezés szükséges.");
         }
 
-        List<String> cart = (List<String>) session.getAttribute("cart");
-        return ResponseEntity.ok(cart != null ? cart : new ArrayList<>());
+        User user = (User) session.getAttribute("user");
+        return ResponseEntity.ok("Üdvözlünk a kosárban, " + user.getFirstName() + "!");
     }
 }
