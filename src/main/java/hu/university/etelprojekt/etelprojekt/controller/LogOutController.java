@@ -11,13 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/logout")
 public class LogOutController {
-    @PostMapping("/logout")
-    public ResponseEntity<String> logoutUser(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        if (session != null) {
-            session.invalidate(); // Session törlése
-        }
-        return ResponseEntity.ok("Kijelentkezés sikeres!");
-    }
+
+
 
 }

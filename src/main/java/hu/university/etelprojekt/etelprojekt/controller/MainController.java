@@ -147,4 +147,13 @@ public class MainController {
 //        return ResponseEntity.ok("Bejelentkezett felhasználó: " + user.getFirstName() + " " + user.getLastName());
 //    }
 
+    @GetMapping("/logout")
+    public String logoutUser(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate(); // Session törlése
+        }
+        return "index";
+    }
+
 }
