@@ -50,6 +50,7 @@ async function goToCart() {
   try {
     const response = await fetch("/cart", {
       method: "GET",
+      credentials: "include",
     });
 
     if (response.ok) {

@@ -95,17 +95,20 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginUser(HttpServletRequest request, @RequestParam("email") String email, @RequestParam("password") String password) {
+    public ResponseEntity<String> loginUser(HttpServletRequest request, @RequestParam String email, @RequestParam String password) {
         try {
-            // Call the service method to authenticate the user
             User authenticatedUser = userService.authenticate(email, password);
+
+            // Session beállítása
             HttpSession session = request.getSession();
             session.setAttribute("user", authenticatedUser);
-            return ResponseEntity.ok("A bejelentkezes sikeres volt!");
+
+            return ResponseEntity.ok("Bejelentkezés sikeres!");
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body("Hibas email vagy jelszo!");
+            return ResponseEntity.badRequest().body("Hibás email vagy jelszó!");
         }
     }
+
 
     @GetMapping("/session")
     public ResponseEntity<String> checkSession(HttpServletRequest request) {

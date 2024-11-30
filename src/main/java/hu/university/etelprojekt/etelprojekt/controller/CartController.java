@@ -30,13 +30,12 @@ public class CartController {
         return ResponseEntity.ok("Hozzáadva a kosárhoz: " + itemName);
     }
 
-    @GetMapping
+    @GetMapping("/cart")
     public ResponseEntity<String> viewCart(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Bejelentkezés szükséges.");
         }
-
         User user = (User) session.getAttribute("user");
         return ResponseEntity.ok("Üdvözlünk a kosárban, " + user.getFirstName() + "!");
     }

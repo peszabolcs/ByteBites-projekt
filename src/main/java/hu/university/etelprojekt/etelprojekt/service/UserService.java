@@ -3,7 +3,6 @@ package hu.university.etelprojekt.etelprojekt.service;
 import hu.university.etelprojekt.etelprojekt.entity.User;
 import hu.university.etelprojekt.etelprojekt.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
