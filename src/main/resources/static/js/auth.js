@@ -6,7 +6,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     const password = formData.get("password");
 
     try {
-        const response = await fetch("/users/login", {
+        const response = await fetch("/login", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams({ email, password }),
