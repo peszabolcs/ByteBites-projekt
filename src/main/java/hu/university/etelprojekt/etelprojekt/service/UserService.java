@@ -64,21 +64,15 @@ public class UserService {
 
     public User authenticate(String email, String password) {
         Optional<User> userOptional = userRepository.findByEmail(email);
-        //User user = userOptional.orElse(null);
-        System.out.println("Lekérdezett email: " + email);
         if (userOptional.isEmpty()) {
-            System.out.println("Felhasználó nem található az adatbázisban.");
-            throw new IllegalArgumentException("Invalid email or password");
+            throw new IllegalArgumentException("Hibás email vagy jelszó");
         }
         User user = userOptional.get();
-        System.out.println("Talált felhasználó: " + user.getEmail() + ", " + user.getPassword());
-        if (user.getPassword().equals(password)) {
-            return user;
-        }
         if (!user.getPassword().equals(password)) {
-            System.out.println("Jelszó nem egyezik. Beírt: " + password + ", Adatbázis: " + user.getPassword());
-            throw new IllegalArgumentException("Invalid email or password");
+            throw new IllegalArgumentException("Hibás email vagy jelszó");
         }
-        throw new IllegalArgumentException("Invalid email or password");
+        System.out.println("Autentikált felhasználó: " + user.getUserId());
+        return user; // Mindig friss objektum
     }
+
 }

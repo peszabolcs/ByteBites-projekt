@@ -91,9 +91,9 @@ CREATE TABLE orders (
 	user_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-CREATE TABLE order_items (
+CREATE TABLE cart_items (
     order_item_id SERIAL PRIMARY KEY,
-    order_id INT NOT NULL,
+    order_id INT,
     dish_id INT NOT NULL,
     quantity INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
@@ -138,8 +138,8 @@ CREATE INDEX idx_favourites_restaurant_id ON favourites(restaurant_id);
 CREATE INDEX idx_favourites_dish_id ON favourites(dish_id);
 
 CREATE INDEX idx_orders_user_id ON orders(user_id);
-CREATE INDEX idx_order_items_order_id ON order_items(order_id);
-CREATE INDEX idx_order_items_dish_id ON order_items(dish_id);
+CREATE INDEX idx_cart_items_order_id ON cart_items(order_id);
+CREATE INDEX idx_cart_items_dish_id ON cart_items(dish_id);
 
 CREATE INDEX idx_payment_order_id ON payment(order_id);
 

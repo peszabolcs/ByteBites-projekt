@@ -1,8 +1,8 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
-import hu.university.etelprojekt.etelprojekt.entity.OrderItems;
+import hu.university.etelprojekt.etelprojekt.entity.CartItems;
 import hu.university.etelprojekt.etelprojekt.entity.OrderItemsId;
-import hu.university.etelprojekt.etelprojekt.service.OrderItemsService;
+import hu.university.etelprojekt.etelprojekt.service.CartItemsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,43 +14,43 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/order-items")
-public class OrderItemsController {
+public class CartItemsController {
 
     @Autowired
-    private OrderItemsService orderItemsService;
+    private CartItemsService orderItemsService;
 
     // Get all order items for a specific order
     @GetMapping("/order/{orderId}")
-    public ResponseEntity<List<OrderItems>> getOrderItemsByOrder(@PathVariable Long orderId) {
-        List<OrderItems> items = orderItemsService.findItemsByOrder(orderId);
+    public ResponseEntity<List<CartItems>> getOrderItemsByOrder(@PathVariable Long orderId) {
+        List<CartItems> items = orderItemsService.findItemsByOrder(orderId);
         return new ResponseEntity<>(items, HttpStatus.OK);
     }
 
     // Get all order items for a specific dish
     @GetMapping("/dish/{dishId}")
-    public ResponseEntity<List<OrderItems>> getOrderItemsByDish(@PathVariable Long dishId) {
-        List<OrderItems> items = orderItemsService.findItemsByDish(dishId);
+    public ResponseEntity<List<CartItems>> getOrderItemsByDish(@PathVariable Long dishId) {
+        List<CartItems> items = orderItemsService.findItemsByDish(dishId);
         return new ResponseEntity<>(items, HttpStatus.OK);
     }
 
     // Get order items by quantity
     @GetMapping("/quantity/{quantity}")
-    public ResponseEntity<List<OrderItems>> getOrderItemsByQuantity(@PathVariable int quantity) {
-        List<OrderItems> items = orderItemsService.findItemsByQuantity(quantity);
+    public ResponseEntity<List<CartItems>> getOrderItemsByQuantity(@PathVariable int quantity) {
+        List<CartItems> items = orderItemsService.findItemsByQuantity(quantity);
         return new ResponseEntity<>(items, HttpStatus.OK);
     }
 
     // Get order items by price
-    @GetMapping("/price/{price}")
-    public ResponseEntity<List<OrderItems>> getOrderItemsByPrice(@PathVariable BigDecimal price) {
-        List<OrderItems> items = orderItemsService.findItemsByPrice(price);
-        return new ResponseEntity<>(items, HttpStatus.OK);
-    }
+//    @GetMapping("/price/{price}")
+//    public ResponseEntity<List<CartItems>> getOrderItemsByPrice(@PathVariable BigDecimal price) {
+//        List<CartItems> items = orderItemsService.findItemsByPrice(price);
+//        return new ResponseEntity<>(items, HttpStatus.OK);
+//    }
 
     // Create a new order item
     @PostMapping
-    public ResponseEntity<OrderItems> createOrderItem(@RequestBody OrderItems orderItem) {
-        OrderItems savedOrderItem = orderItemsService.saveOrderItem(orderItem);
+    public ResponseEntity<CartItems> createOrderItem(@RequestBody CartItems orderItem) {
+        CartItems savedOrderItem = orderItemsService.saveOrderItem(orderItem);
         return new ResponseEntity<>(savedOrderItem, HttpStatus.CREATED);
     }
 

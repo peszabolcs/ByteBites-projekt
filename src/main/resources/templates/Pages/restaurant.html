@@ -33,10 +33,10 @@
       <div class="item-image">
         <img th:src="${dish.picture_url}" alt="Étel képe" />
       </div>
-      <button class="add-button">+</button>
+      <button class="add-button" th:data-dish-id="${dish.dishId}" onclick="addToCart(this)">+</button>
     </div>
   </section>
-
+  <script th:src="@{/js/cart.js}"></script>
 </main>
 
 <footer th:replace="~{fragments/footer :: footer}"></footer>

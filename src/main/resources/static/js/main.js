@@ -32,16 +32,32 @@ async function checkSession() {
     const response = await fetch("/users/session", {
       method: "GET",
     });
+
+    console.log("HTTP válasz státusz:", response.status);
+
     if (response.ok) {
-      const message = await response.text();
-      console.log(message); // Bejelentkezett felhasználó adatai
+      const userData = await response.json();
+      console.log("Bejelentkezett felhasználó:", userData);
+      return userData;
+    } else if (response.status === 401) {
+      console.warn("Nincs aktív session. Bejelentkezés szükséges.");
+      return null;
+    } else if (response.status === 500) {
+      const errorMessage = await response.text();
+      console.error("Szerverhiba történt:", errorMessage);
+      alert("Szerverhiba történt: " + errorMessage);
     } else {
-      console.error("Nincs aktív session.");
+      console.error(`Nem várt státuszkód: ${response.status}`);
     }
   } catch (error) {
-    console.error("Hiba történt a session ellenőrzésekor:", error);
+    console.error("Hiba történt a fetch kérés során:", error);
   }
+  return null;
 }
+
+
+
+
 
 // Meghívás például az oldal betöltésekor
 checkSession();
@@ -55,8 +71,8 @@ async function goToCart() {
 
     if (response.ok) {
       // Ha be van jelentkezve, a kosár tartalma megjelenhet
-      const message = await response.text();
-      alert(message); // Tesztelési célból kiírjuk a választ
+      // const message = await response.text();
+      // alert(message); // Tesztelési célból kiírjuk a választ
       window.location.href = "/cart"; // Irány a kosár oldala
     } else if (response.status === 401) {
       // Ha nincs bejelentkezve, irány a login oldalra

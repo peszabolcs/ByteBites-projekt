@@ -1,14 +1,6 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,16 +26,14 @@ public class Cart implements Serializable {
     private Long cart_id;
 
     @Column(name = "total_price", nullable = false)
-    private BigDecimal total_price;
+    private BigDecimal total_price = BigDecimal.ZERO;
 
-    @Column(name = "user_id", nullable = false)
-    private User user_id;
-
-    @ManyToOne // One user can have many carts, but each cart belongs to one user
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @OneToMany // A cart can contain many order items
-    private List<OrderItems> orderItems;
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true) // A cart can contain many order items
+    private List<CartItems> cartItems;
 
     @OneToOne // A cart has a one-to-one relationship with an order
     private Order order;
@@ -51,7 +41,7 @@ public class Cart implements Serializable {
     @Override
     public String toString() {
         return "Cart [cartId=" + cart_id + ", totalPrice=" + total_price + ", user=" + user + ", orderItems="
-                + orderItems
+                + cartItems
                 + ", order=" + order + "]";
     }
 }

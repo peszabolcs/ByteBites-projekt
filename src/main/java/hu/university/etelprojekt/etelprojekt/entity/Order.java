@@ -46,8 +46,8 @@ public class Order implements Serializable {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItems> orderItems;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CartItems> cartItems;
 
     @Override
     public String toString() {

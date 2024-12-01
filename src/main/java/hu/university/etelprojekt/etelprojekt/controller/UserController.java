@@ -1,6 +1,7 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
 import hu.university.etelprojekt.etelprojekt.entity.User;
+import hu.university.etelprojekt.etelprojekt.entity.UserDTO;
 import hu.university.etelprojekt.etelprojekt.service.UserService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -98,8 +99,9 @@ public class UserController {
     public ResponseEntity<String> loginUser(HttpServletRequest request, @RequestParam String email, @RequestParam String password) {
         try {
             User authenticatedUser = userService.authenticate(email, password);
+            System.out.println("Bejelentkezett userId: " + authenticatedUser.getUserId());
 
-            // Session beállítása
+            // Frissítjük a session-t a legfrissebb User objektummal
             HttpSession session = request.getSession();
             session.setAttribute("user", authenticatedUser);
 
@@ -110,15 +112,21 @@ public class UserController {
     }
 
 
+
     @GetMapping("/session")
-    public ResponseEntity<String> checkSession(HttpServletRequest request) {
+    public ResponseEntity<UserDTO> getSessionUser(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
-            return ResponseEntity.status(401).body("Nincs bejelentkezve!");
+            return ResponseEntity.status(401).body(null);
         }
         User user = (User) session.getAttribute("user");
-        return ResponseEntity.ok("Bejelentkezve: " + user.getEmail());
+        UserDTO userDTO = new UserDTO(user.getUserId(), user.getFirstName(), user.getLastName(), user.getEmail());
+        return ResponseEntity.ok(userDTO);
     }
+
+
+
+
 
     @GetMapping("/current-user")
     public ResponseEntity<String> getCurrentUser(HttpServletRequest request) {

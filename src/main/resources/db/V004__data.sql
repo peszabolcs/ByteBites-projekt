@@ -63,14 +63,14 @@ VALUES
 (nextval('orders_order_id_seq'), '18:45', 1.50, 'in transit', CURRENT_DATE, 20.99, (select user_id from users where
                                                                                                                   first_name = 'Jane'));
 
--- Insert sample data into order_items table
-INSERT INTO order_items (order_item_id, order_id, dish_id, quantity, price)
-VALUES 
-(nextval('order_items_order_item_id_seq'), (select order_id from orders where user_id = (select user_id from users
-                                                                                                        where
-                                                                                                            first_name = 'John')), (select dish_id from dish where dish_name = 'Spaghetti Carbonara'), 2, 12.99),
-(nextval('order_items_order_item_id_seq'), (select order_id from orders where user_id = (select user_id from users
-                                                                                                        where first_name = 'Jane')), (select dish_id from dish where dish_name = 'Taco Supreme'), 1, 8.99);
+-- Insert sample data into cart_items table
+-- INSERT INTO cart_items (cart_item_id, order_id, dish_id, quantity, price)
+-- VALUES
+-- (nextval('cart_items_order_item_id_seq'), (select order_id from orders where user_id = (select user_id from users
+--                                                                                                         where
+--                                                                                                             first_name = 'John')), (select dish_id from dish where dish_name = 'Spaghetti Carbonara'), 2, 12.99),
+-- (nextval('cart_items_order_item_id_seq'), (select order_id from orders where user_id = (select user_id from users
+--                                                                                                         where first_name = 'Jane')), (select dish_id from dish where dish_name = 'Taco Supreme'), 1, 8.99);
 
 -- Insert sample data into payment table
 INSERT INTO payment (payment_id, amount, status, payment_method, payment_date, order_id)
