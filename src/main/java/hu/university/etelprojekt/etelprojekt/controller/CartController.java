@@ -1,7 +1,7 @@
 package hu.university.etelprojekt.etelprojekt.controller;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-import hu.university.etelprojekt.etelprojekt.entity.Dish;
+import hu.university.etelprojekt.etelprojekt.entity.CartItemDTO;
+import hu.university.etelprojekt.etelprojekt.entity.CartItems;
 import hu.university.etelprojekt.etelprojekt.entity.User;
 import hu.university.etelprojekt.etelprojekt.repository.DishRepository;
 import hu.university.etelprojekt.etelprojekt.repository.UserRepository;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -45,6 +44,26 @@ public class CartController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @GetMapping("/items")
+    public ResponseEntity<List<CartItemDTO>> getCartItems(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            return ResponseEntity.status(401).build();
+        }
+
+        User sessionUser = (User) session.getAttribute("user");
+        List<CartItemDTO> cartItemDTOs = cartService.getCartByUser(sessionUser)
+                .map(cart -> cart.getCartItems().stream()
+                        .map(CartItemDTO::fromEntity)
+                        .toList())
+                .orElse(new ArrayList<>());
+
+        return ResponseEntity.ok(cartItemDTOs);
+    }
+
+
+
 
 
 

@@ -1,5 +1,7 @@
 package hu.university.etelprojekt.etelprojekt.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +16,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_items") // Specify the table name if needed
+@Table(name = "cart_items")
+@JsonIdentityInfo(generator =  ObjectIdGenerators.PropertyGenerator.class, property = "orderItemId")
 public class CartItems implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,7 +31,7 @@ public class CartItems implements Serializable {
     @JoinColumn(name = "cart_id", referencedColumnName = "cart_id", nullable = false)
     private Cart cart;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="dish_id", referencedColumnName = "dish_id", nullable = false)
     private Dish dish;
 
